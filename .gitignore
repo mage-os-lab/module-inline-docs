@@ -1,0 +1,4 @@
+/vendor/
+/phpcs.xml
+.phpcs.cache
+.DS_Store
