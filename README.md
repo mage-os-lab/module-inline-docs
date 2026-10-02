@@ -8,8 +8,10 @@ The notes **ship inside the module** and are served locally. There is no externa
 documentation service, no API token, and no HTTP call on page load — so it is safe
 to install anywhere and it never depends on anything being reachable.
 
-Fields with nothing written for them get no marker. That's intended: coverage is
-not the goal, usefulness is.
+A marker appears only beside a field this module has a note for — which are the
+fields that ship with **no native `<comment>`** of their own, the gap this fills.
+Fields Magento already documents keep their own inline note and get no marker, so
+the two never duplicate.
 
 ## What ships with it
 
