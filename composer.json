@@ -1,0 +1,16 @@
+{
+    "name": "mage-os/module-inline-docs",
+    "description": "Renders module documentation inline in the Magento admin, next to the config field it describes.",
+    "type": "magento2-module",
+    "license": "MIT",
+    "require": {
+        "php": ">=8.1",
+        "magento/framework": "*",
+        "magento/module-backend": "*",
+        "magento/module-config": "*"
+    },
+    "autoload": {
+        "files": ["registration.php"],
+        "psr-4": { "MageOS\\InlineDocs\\": "" }
+    }
+}

@@ -1,0 +1,199 @@
+/*
+ * Inline documentation marker + popover.
+ *
+ * Deliberately quiet: the marker sits next to a field label on a dense admin form,
+ * so at rest it should read as punctuation rather than as a control competing with
+ * the form itself. It gains contrast on hover and focus, and the card only appears
+ * when asked for.
+ *
+ * Everything is namespaced `mosdoc-` — the admin stylesheet is a shared space and
+ * generic class names there cause damage a long way from here.
+ */
+
+:root {
+    --mosdoc-accent: #0a7cff;
+    --mosdoc-ink: #303030;
+    --mosdoc-muted: #6e6e6e;
+    --mosdoc-line: #e3e3e3;
+    --mosdoc-surface: #fff;
+}
+
+/* ---------------------------------------------------------------- marker --- */
+
+.mosdoc-marker {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+    margin-left: 6px;
+    padding: 0;
+    border: 1px solid var(--mosdoc-line);
+    border-radius: 50%;
+    background: transparent;
+    color: var(--mosdoc-muted);
+    font: 600 10px/1 system-ui, -apple-system, "Segoe UI", sans-serif;
+    cursor: pointer;
+    vertical-align: middle;
+    transition: color .15s ease, border-color .15s ease, background-color .15s ease, transform .15s ease;
+}
+
+.mosdoc-marker::before {
+    content: "i";
+    font-style: italic;
+}
+
+.mosdoc-marker:hover,
+.mosdoc-marker:focus-visible,
+.mosdoc-marker--active {
+    color: #fff;
+    border-color: var(--mosdoc-accent);
+    background: var(--mosdoc-accent);
+    transform: scale(1.08);
+}
+
+.mosdoc-marker:focus-visible {
+    outline: 2px solid rgba(10, 124, 255, .35);
+    outline-offset: 2px;
+}
+
+/* --------------------------------------------------------------- popover --- */
+
+.mosdoc-popover {
+    position: fixed;
+    z-index: 1000;
+    box-sizing: border-box;
+    padding: 14px 16px 12px;
+    border: 1px solid var(--mosdoc-line);
+    border-radius: 10px;
+    background: var(--mosdoc-surface);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .04), 0 8px 24px -6px rgba(0, 0, 0, .18);
+    color: var(--mosdoc-ink);
+    font: 400 13px/1.55 system-ui, -apple-system, "Segoe UI", sans-serif;
+    opacity: 0;
+    transform: translateY(-4px);
+    transition: opacity .14s ease, transform .14s ease;
+}
+
+.mosdoc-popover--visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.mosdoc-popover__arrow {
+    position: absolute;
+    top: -5px;
+    width: 9px;
+    height: 9px;
+    margin-left: -4px;
+    border-top: 1px solid var(--mosdoc-line);
+    border-left: 1px solid var(--mosdoc-line);
+    border-radius: 1px;
+    background: var(--mosdoc-surface);
+    transform: rotate(45deg);
+}
+
+.mosdoc-popover--above .mosdoc-popover__arrow {
+    top: auto;
+    bottom: -5px;
+    transform: rotate(225deg);
+}
+
+.mosdoc-popover__body p {
+    margin: 0 0 .65em;
+}
+
+.mosdoc-popover__body p:last-child {
+    margin-bottom: 0;
+}
+
+.mosdoc-popover__body strong {
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+.mosdoc-popover__body code {
+    padding: 1px 5px;
+    border-radius: 4px;
+    background: #f3f4f6;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 12px;
+}
+
+.mosdoc-popover__body a {
+    color: var(--mosdoc-accent);
+}
+
+.mosdoc-popover__foot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 12px;
+    padding-top: 10px;
+    border-top: 1px solid var(--mosdoc-line);
+}
+
+.mosdoc-popover__module {
+    overflow: hidden;
+    color: var(--mosdoc-muted);
+    font-size: 11px;
+    letter-spacing: .02em;
+    text-overflow: ellipsis;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.mosdoc-popover__toggle {
+    flex-shrink: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: none;
+    color: var(--mosdoc-accent);
+    font: inherit;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.mosdoc-popover__toggle:hover {
+    text-decoration: underline;
+}
+
+.mosdoc-popover__more {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid var(--mosdoc-line);
+    color: var(--mosdoc-muted);
+    font-size: 12.5px;
+    line-height: 1.5;
+}
+
+.mosdoc-popover__more p {
+    margin: 0 0 .6em;
+}
+
+.mosdoc-popover__more p:last-child {
+    margin-bottom: 0;
+}
+
+.mosdoc-popover__more strong {
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+.mosdoc-popover__more code {
+    padding: 1px 5px;
+    border-radius: 4px;
+    background: #f3f4f6;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 12px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .mosdoc-marker,
+    .mosdoc-popover {
+        transition: none;
+    }
+}

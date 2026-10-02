@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!--
+    Scoped to the system configuration screen only — deliberately NOT default.xml.
+
+    An earlier version loaded on every admin page via default.xml and referenced the
+    generic `content` container. That is wrong twice over. It loaded CSS and JS onto
+    pages with no configuration fields at all, and on the admin login and two-factor
+    auth screens it actively broke rendering: the `admin-login` page layout defines
+    only login.header / login.content / login.footer — there is no `content`
+    container — while Magento_TwoFactorAuth declares its form as a *block* named
+    `content`. Blocks and containers share one namespace, so referencing `content`
+    there collided with the TFA form and the login screen rendered without it.
+
+    This handle only applies where config fields exist, which is the only place the
+    markers can appear anyway.
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="MageOS_InlineDocs::css/inline-docs.css"/>
+    </head>
+    <body>
+        <referenceContainer name="content">
+            <block class="Magento\Backend\Block\Template"
+                   name="mageos.inlinedocs.bootstrap"
+                   template="MageOS_InlineDocs::bootstrap.phtml">
+                <arguments>
+                    <argument name="view_model" xsi:type="object">MageOS\InlineDocs\ViewModel\InlineDocs</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+    </body>
+</page>
