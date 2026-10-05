@@ -41,6 +41,7 @@ class Converter implements ConverterInterface
                 'modal'   => $modal,
                 'module'  => trim((string)$field->getAttribute('module')),
                 'section' => trim((string)$field->getAttribute('section')),
+                'url'     => trim((string)$field->getAttribute('url')),
             ];
         }
 

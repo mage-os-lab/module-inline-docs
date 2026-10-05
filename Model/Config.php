@@ -15,6 +15,7 @@ use Magento\Framework\App\Config\ScopeConfigInterface;
 class Config
 {
     private const XML_ENABLED = 'mageos_inlinedocs/general/enabled';
+    private const XML_SHOW_DOC_LINK = 'mageos_inlinedocs/general/show_full_documentation_link';
 
     public function __construct(
         private readonly ScopeConfigInterface $scopeConfig
@@ -24,5 +25,10 @@ class Config
     public function isEnabled(): bool
     {
         return $this->scopeConfig->isSetFlag(self::XML_ENABLED);
+    }
+
+    public function showFullDocumentationLink(): bool
+    {
+        return $this->scopeConfig->isSetFlag(self::XML_SHOW_DOC_LINK);
     }
 }

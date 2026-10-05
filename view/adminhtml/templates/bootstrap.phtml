@@ -21,7 +21,8 @@ if (!$viewModel->isEnabled()) {
 }
 $config = json_encode(
     [
-        'fetchUrl' => $viewModel->getFetchUrl(),
+        'fetchUrl'    => $viewModel->getFetchUrl(),
+        'showDocLink' => $viewModel->showDocLink(),
     ],
     JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT
 );

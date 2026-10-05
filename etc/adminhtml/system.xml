@@ -15,6 +15,12 @@
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                     <comment>Shows a documentation marker next to configuration fields that have a note available. The notes ship with the module; nothing is fetched from an external service.</comment>
                 </field>
+                <field id="show_full_documentation_link" translate="label comment" type="select" sortOrder="20" showInDefault="1">
+                    <label>Show "Full documentation" Link</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>When enabled, a note that carries a documentation URL also shows a "Full documentation" link. Off by default; only notes that define a URL are affected.</comment>
+                    <depends><field id="enabled">1</field></depends>
+                </field>
             </group>
         </section>
     </system>

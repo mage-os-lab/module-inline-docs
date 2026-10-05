@@ -37,11 +37,12 @@ class InlineDocProvider
                 continue;
             }
             $blocks[$id] = [
-                // `markdown` is the short popover note; the JS renders a small Markdown subset.
+                // `markdown` is the short form; `modal` the full note the popover shows.
                 'markdown'   => (string)($f['comment'] ?? ''),
                 'modal'      => (string)($f['modal'] ?? ''),
                 'title'      => (string)($f['section'] ?? '') ?: (string)($f['module'] ?? ''),
                 'moduleName' => (string)($f['module'] ?? ''),
+                'url'        => (string)($f['url'] ?? ''),
             ];
         }
 

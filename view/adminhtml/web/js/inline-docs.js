@@ -82,43 +82,35 @@ define(['jquery', 'mage/translate'], function ($, $t) {
             .css('left', Math.round(rect.left + rect.width / 2 - left) + 'px');
     }
 
-    function openPopover($anchor, block) {
+    function openPopover($anchor, block, showDocLink) {
         closePopover();
 
-        var hasModal = !!(block.modal && String(block.modal).trim()),
-            $popover = $(
-                '<div class="mosdoc-popover" role="dialog" aria-modal="false">' +
-                    '<span class="mosdoc-popover__arrow"></span>' +
-                    '<div class="mosdoc-popover__body"></div>' +
-                    '<div class="mosdoc-popover__more" hidden></div>' +
-                    '<div class="mosdoc-popover__foot">' +
-                        '<span class="mosdoc-popover__module"></span>' +
-                    '</div>' +
-                '</div>'
-            );
+        var $popover = $(
+            '<div class="mosdoc-popover" role="dialog" aria-modal="false">' +
+                '<span class="mosdoc-popover__arrow"></span>' +
+                '<div class="mosdoc-popover__body"></div>' +
+                '<div class="mosdoc-popover__foot">' +
+                    '<span class="mosdoc-popover__module"></span>' +
+                '</div>' +
+            '</div>'
+        );
 
-        $popover.find('.mosdoc-popover__body').html(renderMarkdown(block.markdown || ''));
+        // The whole note is shown at once — no "more" to click. `modal` carries
+        // the full explanation; `markdown` is the short form kept as a fallback.
+        var full = (block.modal && String(block.modal).trim()) || block.markdown || '';
+        $popover.find('.mosdoc-popover__body').html(renderMarkdown(String(full)));
         $popover.find('.mosdoc-popover__module').text(block.title || block.moduleName || '');
 
-        // The longer explanation is revealed in place rather than linking off to
-        // an external documentation site — the notes ship with the module.
-        if (hasModal) {
-            var $more = $popover.find('.mosdoc-popover__more').html(renderMarkdown(String(block.modal)));
-            var $toggle = $('<button/>', {
-                type: 'button',
-                'class': 'mosdoc-popover__toggle',
-                'aria-expanded': 'false',
-                text: $t('More details')
-            });
-            $toggle.on('click', function () {
-                var expanded = !$more.prop('hidden');
-                $more.prop('hidden', expanded);
-                $toggle
-                    .attr('aria-expanded', String(!expanded))
-                    .text(expanded ? $t('More details') : $t('Show less'));
-                if (state.anchor) { place($popover, state.anchor); }
-            });
-            $toggle.prependTo($popover.find('.mosdoc-popover__foot'));
+        // Optional "Full documentation" link: only when enabled in config AND the
+        // field actually carries a URL.
+        if (showDocLink && block.url) {
+            $('<a/>', {
+                'class': 'mosdoc-popover__link',
+                href: block.url,
+                target: '_blank',
+                rel: 'noopener noreferrer',
+                text: $t('Full documentation')
+            }).appendTo($popover.find('.mosdoc-popover__foot'));
         }
 
         $('body').append($popover);
@@ -144,7 +136,7 @@ define(['jquery', 'mage/translate'], function ($, $t) {
         return $label.length ? $label : $row.find('td.label').first();
     }
 
-    function addMarker(elementId, block) {
+    function addMarker(elementId, block, showDocLink) {
         var $target = labelTargetFor(elementId);
 
         if (!$target || !$target.length || $target.find('.mosdoc-marker').length) {
@@ -166,7 +158,7 @@ define(['jquery', 'mage/translate'], function ($, $t) {
             if (state.open === elementId) {
                 closePopover();
             } else {
-                openPopover($marker, block);
+                openPopover($marker, block, showDocLink);
             }
         });
 
@@ -195,7 +187,7 @@ define(['jquery', 'mage/translate'], function ($, $t) {
                 var blocks = (response && response.blocks) || {};
 
                 Object.keys(blocks).forEach(function (elementId) {
-                    addMarker(elementId, blocks[elementId]);
+                    addMarker(elementId, blocks[elementId], config.showDocLink);
                 });
             });
 

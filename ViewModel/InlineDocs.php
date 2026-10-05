@@ -24,6 +24,11 @@ class InlineDocs implements ArgumentInterface
         return $this->config->isEnabled();
     }
 
+    public function showDocLink(): bool
+    {
+        return $this->config->showFullDocumentationLink();
+    }
+
     public function getFetchUrl(): string
     {
         return $this->urlBuilder->getUrl('mageos_inlinedocs/inline/fetch');

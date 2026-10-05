@@ -5,6 +5,7 @@
         <mageos_inlinedocs>
             <general>
                 <enabled>0</enabled>
+                <show_full_documentation_link>0</show_full_documentation_link>
             </general>
         </mageos_inlinedocs>
     </default>

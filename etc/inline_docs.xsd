@@ -35,5 +35,8 @@
         <xs:attribute name="module" type="xs:string" use="optional"/>
         <!-- Section label, e.g. "Catalog" (shown in the card footer). -->
         <xs:attribute name="section" type="xs:string" use="optional"/>
+        <!-- Optional "Full documentation" URL; shown only when the feature's link
+             toggle is enabled. -->
+        <xs:attribute name="url" type="xs:string" use="optional"/>
     </xs:complexType>
 </xs:schema>
