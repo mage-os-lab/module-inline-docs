@@ -4,6 +4,8 @@ In-admin documentation for **Magento / Mage-OS**: a small marker next to a
 **Stores → Configuration** field opens a card explaining what that setting
 actually does — and, where there's more to say, a **More details** panel.
 
+<img width="1077" height="482" alt="inline_docs" src="https://github.com/user-attachments/assets/c48b7726-4f70-42c9-9eac-9b9ebf3464df" />
+
 The notes **ship inside the module** and are served locally. There is no external
 documentation service, no API token, and no HTTP call on page load — so it is safe
 to install anywhere and it never depends on anything being reachable.
