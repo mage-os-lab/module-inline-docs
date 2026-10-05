@@ -133,7 +133,19 @@ define(['jquery', 'mage/translate'], function ($, $t) {
         }
         var $label = $row.find('td.label label').first();
 
-        return $label.length ? $label : $row.find('td.label').first();
+        if ($label.length) {
+            // The field name sits in a <span> that carries the [SCOPE] indicator
+            // as a CSS ::after (rendered below the text). Append the marker INSIDE
+            // that span — after the text, before the ::after — so it stays inline
+            // with the label and never gets pushed below the scope line.
+            var $span = $label.find('span[data-config-scope]').first();
+            if (!$span.length) {
+                $span = $label.find('span').first();
+            }
+            return $span.length ? $span : $label;
+        }
+
+        return $row.find('td.label').first();
     }
 
     function addMarker(elementId, block, showDocLink) {
