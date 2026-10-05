@@ -2,7 +2,7 @@
 
 In-admin documentation for **Magento / Mage-OS**: a small marker next to a
 **Stores → Configuration** field opens a card explaining what that setting
-actually does — and, where there's more to say, a **More details** panel.
+actually does — the whole note shown at once, with the parent section named below.
 
 <img width="1077" height="482" alt="inline_docs" src="https://github.com/user-attachments/assets/c48b7726-4f70-42c9-9eac-9b9ebf3464df" />
 
@@ -77,7 +77,8 @@ Enable Inline Documentation → Yes**.
 
 | Setting | Notes |
 |---|---|
-| Enable Inline Documentation | Off by default. The only setting — everything is served locally. |
+| Enable Inline Documentation | Off by default. Everything is served locally. |
+| Show "Full documentation" Link | Off by default. When on, a note that defines a URL also shows a link through to it. |
 
 ## Architecture
 
@@ -87,9 +88,9 @@ Enable Inline Documentation → Yes**.
   from that map. No network, no token; a miss simply returns nothing.
 - **`Controller/Adminhtml/Inline/Fetch`** — one request per page returns the
   notes for the ids on it.
-- **`view/adminhtml/web/js/inline-docs.js`** — renders the marker, the popover and
-  the *More details* panel; any content is HTML-escaped before the tiny Markdown
-  subset is applied, so a note can never inject markup.
+- **`view/adminhtml/web/js/inline-docs.js`** — renders the marker and the popover;
+  any content is HTML-escaped before the tiny Markdown subset is applied, so a note
+  can never inject markup.
 
 Every failure path returns empty and logs. A documentation aid must never break
 the screen it decorates.
