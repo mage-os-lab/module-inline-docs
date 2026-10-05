@@ -1,9 +1,9 @@
 {
-    "name": "nicolasperic/module-inline-docs",
+    "name": "mage-os-lab/module-inline-docs",
     "description": "In-admin documentation for Magento / Mage-OS: a note next to each Stores → Configuration field, served from inside the installation with no external service.",
     "type": "magento2-module",
     "license": "MIT",
-    "homepage": "https://github.com/nicolasperic/mage-os-inline-docs",
+    "homepage": "https://github.com/mage-os-lab/module-inline-docs",
     "authors": [
         {
             "name": "Nicolas Peric",

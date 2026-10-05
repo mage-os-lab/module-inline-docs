@@ -62,7 +62,7 @@ companion [magento-doc-generator](https://github.com/nicolasperic/magento-doc-ge
 ## Install
 
 ```bash
-composer require nicolasperic/module-inline-docs
+composer require mage-os-lab/module-inline-docs
 bin/magento module:enable MageOS_InlineDocs
 bin/magento setup:upgrade
 bin/magento cache:flush
