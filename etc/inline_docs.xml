@@ -2781,8 +2781,8 @@
     </technical>
   </field>
   <field id="catalog_custom_options_date_fields_order" module="Magento_Catalog" section="Catalog" path="catalog/custom_options/date_fields_order">
-    <summary>The order in which the day, month and year inputs appear for date custom options.</summary>
-    <usage><![CDATA[<p>Sets the arrangement of the day, month and year fields for date-type custom options, to match local date conventions.</p>]]></usage>
+    <summary>The order of day, month and year in custom date option inputs.</summary>
+    <usage><![CDATA[<p>Sets how date-type custom options are laid out on the storefront — for example day/month/year versus month/day/year.</p>]]></usage>
     <technical>
       <config_path>catalog/custom_options/date_fields_order</config_path>
       <default_value>m,d,y</default_value>
@@ -2791,8 +2791,8 @@
     </technical>
   </field>
   <field id="catalog_custom_options_time_format" module="Magento_Catalog" section="Catalog" path="catalog/custom_options/time_format">
-    <summary>Whether time custom options use a 12-hour or 24-hour clock.</summary>
-    <usage><![CDATA[<p>Chooses between a <strong>12h (AM/PM)</strong> and a <strong>24h</strong> time format for time-type custom options.</p>]]></usage>
+    <summary>Whether custom time options use 12- or 24-hour format.</summary>
+    <usage><![CDATA[<p>Controls the clock format shown for date/time custom options on product pages.</p>]]></usage>
     <values>
       <value id="12h" label="12h AM/PM">Show times in 12-hour AM/PM format.</value>
       <value id="24h" label="24h">Show times in 24-hour format.</value>
@@ -2805,8 +2805,8 @@
     </technical>
   </field>
   <field id="catalog_custom_options_use_calendar" module="Magento_Catalog" section="Catalog" path="catalog/custom_options/use_calendar">
-    <summary>Whether date-type custom options use a JavaScript date picker.</summary>
-    <usage><![CDATA[<p>When <strong>Yes</strong>, date and time custom options are entered through a JavaScript calendar instead of separate dropdowns.</p>]]></usage>
+    <summary>Show a calendar picker for date custom options.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, date custom options use a calendar widget instead of plain dropdowns.</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -2818,8 +2818,8 @@
     </technical>
   </field>
   <field id="catalog_custom_options_year_range" module="Magento_Catalog" section="Catalog" path="catalog/custom_options/year_range">
-    <summary>Sets the from-to years offered by date custom options; use a four-digit year.</summary>
-    <usage><![CDATA[<p>Limits the span of years selectable in product date/time custom-option dropdowns. Use a four-digit year format for both ends, per the native note. The range can differ per website/store view.</p>]]></usage>
+    <summary>The range of years offered in date custom options.</summary>
+    <usage><![CDATA[<p>Limits the selectable years for date custom options, entered as a four-digit <code>from,to</code> range. Leave blank for the default range.</p>]]></usage>
     <technical>
       <config_path>catalog/custom_options/year_range</config_path>
       <scope>Store View</scope>
@@ -2828,8 +2828,8 @@
     </technical>
   </field>
   <field id="catalog_downloadable_content_disposition" module="Magento_Downloadable" path="catalog/downloadable/content_disposition">
-    <summary>Whether downloads are delivered inline or as a file attachment.</summary>
-    <usage><![CDATA[<p>Sets the HTTP Content-Disposition for downloads, choosing whether files are served <strong>inline</strong> (shown in the browser) or as an <strong>attachment</strong> (prompting a save). Can differ per website or store view.</p>]]></usage>
+    <summary>Whether downloadable files download or open in the browser.</summary>
+    <usage><![CDATA[<p>Sets the Content-Disposition for downloadable links — force a download, or open the file inline in the browser.</p>]]></usage>
     <values>
       <value id="attachment" label="attachment">Force downloadable files to download.</value>
       <value id="inline" label="inline">Let the browser open downloadable files in place.</value>
@@ -2842,8 +2842,8 @@
     </technical>
   </field>
   <field id="catalog_downloadable_disable_guest_checkout" module="Magento_Downloadable" path="catalog/downloadable/disable_guest_checkout">
-    <summary>Forces account creation when the cart has downloadable items, so download links belong to an account.</summary>
-    <usage><![CDATA[<p>When <strong>Yes</strong>, guest checkout is blocked for carts containing downloadable products, so purchases tie to a registered account. As the native note says, guest checkout still works only for shareable downloads. Website scoped.</p>]]></usage>
+    <summary>Require an account when the cart has downloadable items.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, orders containing downloadable products require a customer account (guest checkout is blocked), unless the product's links are shareable.</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -2856,8 +2856,8 @@
     </technical>
   </field>
   <field id="catalog_downloadable_downloads_number" module="Magento_Downloadable" path="catalog/downloadable/downloads_number">
-    <summary>The default limit on how many times a downloadable link can be downloaded.</summary>
-    <usage><![CDATA[<p>The default maximum number of downloads allowed per link for new downloadable products. Individual products can override this. Can be set per website.</p>]]></usage>
+    <summary>Default number of downloads allowed per purchased link.</summary>
+    <usage><![CDATA[<p>The default download limit applied to new downloadable links. Leave blank or <code>0</code> for unlimited.</p>]]></usage>
     <technical>
       <config_path>catalog/downloadable/downloads_number</config_path>
       <default_value>0</default_value>
@@ -2866,8 +2866,8 @@
     </technical>
   </field>
   <field id="catalog_downloadable_links_target_new_window" module="Magento_Downloadable" path="catalog/downloadable/links_target_new_window">
-    <summary>Whether download links open in a new browser window.</summary>
-    <usage><![CDATA[<p>When <strong>Yes</strong>, downloadable links open in a new browser window or tab instead of the current one. Can be set per website.</p>]]></usage>
+    <summary>Open downloadable links in a new browser window.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, download links open in a new tab or window.</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -2880,8 +2880,8 @@
     </technical>
   </field>
   <field id="catalog_downloadable_links_title" module="Magento_Downloadable" path="catalog/downloadable/links_title">
-    <summary>The default heading shown above a downloadable product's links.</summary>
-    <usage><![CDATA[<p>The default title for the downloadable links section on product pages. Can differ per website or store view.</p>]]></usage>
+    <summary>Default heading shown above a product's downloadable links.</summary>
+    <usage><![CDATA[<p>The default title for the Links section on downloadable product pages (for example, "Links").</p>]]></usage>
     <technical>
       <config_path>catalog/downloadable/links_title</config_path>
       <default_value>Links</default_value>
@@ -2889,8 +2889,8 @@
     </technical>
   </field>
   <field id="catalog_downloadable_order_item_status" module="Magento_Downloadable" path="catalog/downloadable/order_item_status">
-    <summary>The order item status at which a customer's downloads become available.</summary>
-    <usage><![CDATA[<p>Determines when purchased downloads are released to the customer, based on the order item&#039;s status (such as Pending or Invoiced). Can be set per website.</p>]]></usage>
+    <summary>When a purchased download becomes available.</summary>
+    <usage><![CDATA[<p>Whether access to downloads is granted once the order is Pending, or only after it is Invoiced (paid).</p>]]></usage>
     <values>
       <value id="1" label="Pending">Grant access to downloads once the order is Pending.</value>
       <value id="9" label="Invoiced">Grant access to downloads only after the order is Invoiced.</value>
@@ -2903,8 +2903,8 @@
     </technical>
   </field>
   <field id="catalog_downloadable_samples_title" module="Magento_Downloadable" path="catalog/downloadable/samples_title">
-    <summary>The default heading shown above a downloadable product's samples.</summary>
-    <usage><![CDATA[<p>The default title for the samples section on downloadable product pages. Can differ per website or store view.</p>]]></usage>
+    <summary>Default heading shown above a product's sample files.</summary>
+    <usage><![CDATA[<p>The default title for the Samples section on downloadable product pages (for example, "Samples").</p>]]></usage>
     <technical>
       <config_path>catalog/downloadable/samples_title</config_path>
       <default_value>Samples</default_value>
@@ -2912,8 +2912,8 @@
     </technical>
   </field>
   <field id="catalog_downloadable_shareable" module="Magento_Downloadable" path="catalog/downloadable/shareable">
-    <summary>Whether downloadable links can be shared rather than tied to the purchasing account.</summary>
-    <usage><![CDATA[<p>When <strong>Yes</strong>, download links are shareable and can be accessed without signing in to the purchasing account; when <strong>No</strong>, access is restricted to that account. Can be set per website.</p>]]></usage>
+    <summary>Allow downloadable links to be used without signing in.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, downloadable links are shareable and can be accessed without a customer account, which also permits guest checkout for them.</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -2926,8 +2926,8 @@
     </technical>
   </field>
   <field id="catalog_fields_masks_meta_description" module="Magento_Catalog" section="Catalog" path="catalog/fields_masks/meta_description">
-    <summary>Template that auto-fills a product's meta description when none is set, keeping SEO metadata consistent; use {{name}}/{{description}}.</summary>
-    <usage><![CDATA[<p>A mask that auto-generates the meta description for products that lack one, keeping SEO metadata consistent across the catalog. Use {{name}} and {{description}} as placeholders for the product name and description. Applies only when a product has no manual meta description. Global setting (default scope).</p>]]></usage>
+    <summary>Template for auto-generating a product's meta description.</summary>
+    <usage><![CDATA[<p>Pattern used to build the meta description when a product has none. Supports placeholders such as <code>{{name}}</code> and <code>{{description}}</code>.</p>]]></usage>
     <technical>
       <config_path>catalog/fields_masks/meta_description</config_path>
       <default_value>{{name}}</default_value>
@@ -2935,8 +2935,8 @@
     </technical>
   </field>
   <field id="catalog_fields_masks_meta_keyword" module="Magento_Catalog" section="Catalog" path="catalog/fields_masks/meta_keyword">
-    <summary>Template that auto-builds a product's Meta Keywords from placeholders like {{name}} and {{sku}}.</summary>
-    <usage><![CDATA[<p>The pattern used to auto-generate a product&#039;s Meta Keywords, built from placeholders such as <code>{{name}}</code> and <code>{{sku}}</code> (per the note). It fills the SEO meta-keywords field for products that don&#039;t have one set, saving manual entry across a catalogue. Default scope.</p>]]></usage>
+    <summary>Template for auto-generating a product's meta keywords.</summary>
+    <usage><![CDATA[<p>Pattern used to build meta keywords when a product has none. Supports placeholders such as <code>{{name}}</code> and <code>{{sku}}</code>.</p>]]></usage>
     <technical>
       <config_path>catalog/fields_masks/meta_keyword</config_path>
       <default_value>{{name}}</default_value>
@@ -2944,8 +2944,8 @@
     </technical>
   </field>
   <field id="catalog_fields_masks_meta_title" module="Magento_Catalog" section="Catalog" path="catalog/fields_masks/meta_title">
-    <summary>Template for auto-filling a product's meta title when left blank; {{name}} inserts the product name.</summary>
-    <usage><![CDATA[<p>Pattern used to generate a product&#039;s Meta Title when it isn&#039;t set manually, with <code>{{name}}</code> standing in for the product name. Applied when products are saved, so existing products keep their current titles until re-saved.</p>]]></usage>
+    <summary>Template for auto-generating a product's meta title.</summary>
+    <usage><![CDATA[<p>Pattern used to build the meta title when a product has none. Supports the <code>{{name}}</code> placeholder.</p>]]></usage>
     <technical>
       <config_path>catalog/fields_masks/meta_title</config_path>
       <default_value>{{name}}</default_value>
@@ -2953,8 +2953,8 @@
     </technical>
   </field>
   <field id="catalog_fields_masks_sku" module="Magento_Catalog" section="Catalog" path="catalog/fields_masks/sku">
-    <summary>Template for auto-building a new product's SKU when left blank; use {{name}} for the product name. Affects only products created afterward.</summary>
-    <usage><![CDATA[<p>Pattern used to auto-generate a SKU when a product is saved without one, with {{name}} standing in for the product name. It only shapes SKUs of products created after the change; existing SKUs are untouched.</p>]]></usage>
+    <summary>Template for auto-generating a product SKU.</summary>
+    <usage><![CDATA[<p>Pattern used to build a SKU when none is entered. Supports the <code>{{name}}</code> placeholder.</p>]]></usage>
     <technical>
       <config_path>catalog/fields_masks/sku</config_path>
       <default_value>{{name}}</default_value>
@@ -2962,8 +2962,8 @@
     </technical>
   </field>
   <field id="catalog_frontend_default_sort_by" module="Magento_Catalog" section="Catalog" path="catalog/frontend/default_sort_by">
-    <summary>Initial sort order on category listings before a shopper chooses one; an individual category can override it. Per website/store.</summary>
-    <usage><![CDATA[<p>The sort order category pages use by default until a shopper picks another; the options are your available sort attributes. An individual category can override this, and the default can differ per website/store view.</p>]]></usage>
+    <summary>The default product sort order on category pages.</summary>
+    <usage><![CDATA[<p>Which sort shoppers see first on category listings, unless an individual category overrides it.</p>]]></usage>
     <values>
       <value id="position" label="Position">Default sort by the position set in the category.</value>
       <value id="name" label="Product Name">Default sort by product name.</value>
@@ -2977,8 +2977,8 @@
     </technical>
   </field>
   <field id="catalog_frontend_default_sort_by_order" module="Magento_Catalog" section="Catalog" path="catalog/frontend/default_sort_by_order">
-    <summary>Default sort order for category product listings; shoppers can still re-sort.</summary>
-    <usage><![CDATA[<p>The initial sort applied to category product lists. It only sets the default — shoppers can re-sort — and applies to category pages per the native note. Website/store scoped, so store views can differ.</p>]]></usage>
+    <summary>Direction of the default category sort.</summary>
+    <usage><![CDATA[<p>Whether the default category sort runs ascending or descending.</p>]]></usage>
     <values>
       <value id="ASC" label="Ascending">Sort ascending (A&#x2013;Z, low&#x2013;high).</value>
       <value id="DESC" label="Descending">Sort descending (Z&#x2013;A, high&#x2013;low).</value>
@@ -2991,8 +2991,8 @@
     </technical>
   </field>
   <field id="catalog_frontend_flat_catalog_category" module="Magento_Catalog" section="Catalog" path="catalog/frontend/flat_catalog_category">
-    <summary>Whether the storefront reads categories from flat (denormalized) tables.</summary>
-    <usage><![CDATA[<p>When <strong>Yes</strong>, category data is served from a flat table for faster reads. A legacy performance option; leave off unless a specific setup requires it.</p>]]></usage>
+    <summary>Use the flat category index on the storefront.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, the storefront reads categories from the flat index — a legacy performance option. Flat catalog is deprecated and is usually left <strong>No</strong>.</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -3006,8 +3006,8 @@
     </technical>
   </field>
   <field id="catalog_frontend_flat_catalog_product" module="Magento_Catalog" section="Catalog" path="catalog/frontend/flat_catalog_product">
-    <summary>Whether the storefront reads products from flat (denormalized) tables.</summary>
-    <usage><![CDATA[<p>When <strong>Yes</strong>, product data is served from a flat table for faster reads. A legacy performance option; leave off unless a specific setup requires it.</p>]]></usage>
+    <summary>Use the flat product index on the storefront.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, the storefront reads products from the flat index — a legacy performance option. Flat catalog is deprecated and is usually left <strong>No</strong>.</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -3021,8 +3021,8 @@
     </technical>
   </field>
   <field id="catalog_frontend_grid_per_page" module="Magento_Catalog" section="Catalog" path="catalog/frontend/grid_per_page">
-    <summary>Default products-per-page for grid view; must be one of the allowed values.</summary>
-    <usage><![CDATA[<p>Default number of products shown per page in grid view. As the native note says, it must be one of the configured &#039;allowed values&#039; list or it is rejected. Can differ per website/store view.</p>]]></usage>
+    <summary>Default number of products per page in grid mode.</summary>
+    <usage><![CDATA[<p>The pre-selected "per page" count for grid view. Must be one of the allowed values below.</p>]]></usage>
     <technical>
       <config_path>catalog/frontend/grid_per_page</config_path>
       <default_value>12</default_value>
@@ -3031,8 +3031,8 @@
     </technical>
   </field>
   <field id="catalog_frontend_grid_per_page_values" module="Magento_Catalog" section="Catalog" path="catalog/frontend/grid_per_page_values">
-    <summary>The choices in the storefront per-page selector; the default per-page value must be one of these.</summary>
-    <usage><![CDATA[<p>Comma-separated list of options offered in the &#039;products per page&#039; selector on grid category pages. The configured default per-page value must appear in this list, otherwise the selector falls back unexpectedly. Can differ per website/store.</p>]]></usage>
+    <summary>The selectable per-page counts for grid mode.</summary>
+    <usage><![CDATA[<p>Comma-separated list of "products per page" choices offered to shoppers in grid view.</p>]]></usage>
     <technical>
       <config_path>catalog/frontend/grid_per_page_values</config_path>
       <default_value>12,24,36</default_value>
@@ -3041,8 +3041,8 @@
     </technical>
   </field>
   <field id="catalog_frontend_list_allow_all" module="Magento_Catalog" section="Catalog" path="catalog/frontend/list_allow_all">
-    <summary>Yes adds an 'All' choice to the per-page dropdown; on big categories loading every product at once can be slow.</summary>
-    <usage><![CDATA[<p>When <strong>Yes</strong>, the storefront&#039;s &#039;Show X Per Page&#039; dropdown includes an <strong>All</strong> option (per the note). Gotcha: on large categories, letting shoppers render every product on one page is slow and easy to abuse for scraping. Set per website or store view.</p>]]></usage>
+    <summary>Offer an "All" option in the per-page dropdown.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, shoppers can choose to show every product on one page. Use with care on large categories.</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -3055,8 +3055,8 @@
     </technical>
   </field>
   <field id="catalog_frontend_list_mode" module="Magento_Catalog" section="Catalog" path="catalog/frontend/list_mode">
-    <summary>The default layout of product lists &#x2014; grid, list, or a toggle between them.</summary>
-    <usage><![CDATA[<p>How category product lists are displayed by default: <strong>Grid Only</strong>, <strong>List Only</strong>, <strong>Grid (default) / List</strong>, or <strong>List (default) / Grid</strong> (the latter two let shoppers switch).</p>]]></usage>
+    <summary>Which view modes (grid/list) category pages offer.</summary>
+    <usage><![CDATA[<p>Sets whether category pages show a grid, a list, or both with one as the default.</p>]]></usage>
     <values>
       <value id="grid" label="Grid Only">Show products as a grid only.</value>
       <value id="list" label="List Only">Show products as a list only.</value>
@@ -3071,8 +3071,8 @@
     </technical>
   </field>
   <field id="catalog_frontend_list_per_page" module="Magento_Catalog" section="Catalog" path="catalog/frontend/list_per_page">
-    <summary>Default number of products shown per page in list mode; must be one of the allowed values.</summary>
-    <usage><![CDATA[<p>The default products-per-page for the catalog list view. As the field note says, the value must appear in the allowed-values list configured alongside it, or it is rejected. Scoped to website/store, so each store view can default differently.</p>]]></usage>
+    <summary>Default number of products per page in list mode.</summary>
+    <usage><![CDATA[<p>The pre-selected "per page" count for list view. Must be one of the allowed values below.</p>]]></usage>
     <technical>
       <config_path>catalog/frontend/list_per_page</config_path>
       <default_value>10</default_value>
@@ -3081,8 +3081,8 @@
     </technical>
   </field>
   <field id="catalog_frontend_list_per_page_values" module="Magento_Catalog" section="Catalog" path="catalog/frontend/list_per_page_values">
-    <summary>Comma-separated page-size options shown in the category list per-page selector.</summary>
-    <usage><![CDATA[<p>The comma-separated list of page-size options shoppers can pick from on category list pages; each value becomes one choice in the per-page selector. Can differ per website or store view.</p>]]></usage>
+    <summary>The selectable per-page counts for list mode.</summary>
+    <usage><![CDATA[<p>Comma-separated list of "products per page" choices offered to shoppers in list view.</p>]]></usage>
     <technical>
       <config_path>catalog/frontend/list_per_page_values</config_path>
       <default_value>5,10,15,20,25</default_value>
@@ -3091,8 +3091,8 @@
     </technical>
   </field>
   <field id="catalog_frontend_remember_pagination" module="Magento_Catalog" section="Catalog" path="catalog/frontend/remember_pagination">
-    <summary>Yes remembers each visitor's per-page choice across category pages; this multiplies cached page variants and can create duplicate SEO URLs.</summary>
-    <usage><![CDATA[<p>When Yes, the storefront remembers each visitor&#039;s chosen products-per-page setting as they browse categories. The native note&#039;s SEO and cache warnings follow from this: storing per-page variants multiplies cached page versions and creates duplicate-content URL parameters. Global setting (default scope).</p>]]></usage>
+    <summary>Remember each shopper's page-size and sort choices.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, pagination and sort selections persist for the shopper across pages. May affect SEO and increase the number of cached page variations.</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -3105,8 +3105,8 @@
     </technical>
   </field>
   <field id="catalog_frontend_show_swatch_tooltip" module="Magento_Swatches" path="catalog/frontend/show_swatch_tooltip">
-    <summary>Whether a tooltip preview is shown when hovering over a swatch.</summary>
-    <usage><![CDATA[<p>When <strong>Yes</strong>, hovering over a swatch displays a tooltip preview of the option. Can differ per website or store view.</p>]]></usage>
+    <summary>Show a preview tooltip when hovering a swatch.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, hovering a colour or image swatch shows an enlarged preview tooltip.</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -3119,8 +3119,8 @@
     </technical>
   </field>
   <field id="catalog_frontend_show_swatches_in_product_list" module="Magento_Swatches" path="catalog/frontend/show_swatches_in_product_list">
-    <summary>Whether swatches appear in product listings.</summary>
-    <usage><![CDATA[<p>When <strong>Yes</strong>, attribute swatches are shown for products in category and search listings; when <strong>No</strong>, they are hidden there. Can differ per website or store view.</p>]]></usage>
+    <summary>Show configurable swatches on category listings.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, swatches appear on product tiles in category and search results, not only on the product page.</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -3133,8 +3133,8 @@
     </technical>
   </field>
   <field id="catalog_frontend_swatches_per_product" module="Magento_Swatches" path="catalog/frontend/swatches_per_product">
-    <summary>How many swatches are shown per product in product listings.</summary>
-    <usage><![CDATA[<p>The maximum number of swatches displayed for a single product in category and search listings. Can differ per website or store view.</p>]]></usage>
+    <summary>Maximum swatches shown per product in listings.</summary>
+    <usage><![CDATA[<p>Caps how many swatches are displayed on a product tile in listings before the rest are truncated.</p>]]></usage>
     <technical>
       <config_path>catalog/frontend/swatches_per_product</config_path>
       <default_value>16</default_value>
@@ -3143,8 +3143,8 @@
     </technical>
   </field>
   <field id="catalog_layered_navigation_display_category" module="Magento_Catalog" section="Catalog" path="catalog/layered_navigation/display_category">
-    <summary>Whether the category filter is shown in layered navigation.</summary>
-    <usage><![CDATA[<p>When <strong>Yes</strong>, layered navigation includes a category filter alongside attribute filters.</p>]]></usage>
+    <summary>Show the category filter in layered navigation.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, a category filter appears in layered navigation on listing pages.</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -3157,8 +3157,8 @@
     </technical>
   </field>
   <field id="catalog_layered_navigation_display_product_count" module="Magento_LayeredNavigation" path="catalog/layered_navigation/display_product_count">
-    <summary>Whether the number of matching products is shown next to each filter option.</summary>
-    <usage><![CDATA[<p>When <strong>Yes</strong>, layered navigation shows a count of matching products beside each filter value. Can be set per store view.</p>]]></usage>
+    <summary>Show the product count next to each filter option.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, each layered-navigation option shows how many products match it.</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -3171,8 +3171,8 @@
     </technical>
   </field>
   <field id="catalog_layered_navigation_interval_division_limit" module="Magento_LayeredNavigation" path="catalog/layered_navigation/interval_division_limit">
-    <summary>Only used with Improved price-range calculation; controls how price filters split into sub-ranges.</summary>
-    <usage><![CDATA[<p>Number of products that will not be divided into sub-intervals in layered-navigation price filters. Applies only when the price range calculation is set to &#039;Improved&#039;. Tune it to balance filter granularity against usability. Can differ per website/store.</p>]]></usage>
+    <summary>Minimum products before a price range is subdivided.</summary>
+    <usage><![CDATA[<p>Price intervals holding fewer products than this are not split further in layered navigation.</p>]]></usage>
     <technical>
       <config_path>catalog/layered_navigation/interval_division_limit</config_path>
       <default_value>9</default_value>
@@ -3182,8 +3182,8 @@
     </technical>
   </field>
   <field id="catalog_layered_navigation_one_price_interval" module="Magento_LayeredNavigation" path="catalog/layered_navigation/one_price_interval">
-    <summary>Yes shows a price bucket as a single price instead of a range when every item in it has the same price.</summary>
-    <usage><![CDATA[<p>When Yes, a layered-navigation price filter bucket displays one price rather than a from–to range if all prices within it are equal (native note). Applies only with the Improved price range calculation (depends). Can differ per website/store view.</p>]]></usage>
+    <summary>Collapse identical prices into a single interval.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, products that all share one price are grouped into a single price filter rather than a range.</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -3197,8 +3197,8 @@
     </technical>
   </field>
   <field id="catalog_layered_navigation_price_range_calculation" module="Magento_LayeredNavigation" path="catalog/layered_navigation/price_range_calculation">
-    <summary>How price filter ranges are calculated &#x2014; automatically or by a manual step.</summary>
-    <usage><![CDATA[<p>Chooses how price-filter buckets are built: automatically, or using a manual fixed step set in Default Price Navigation Step. Can be set per store view.</p>]]></usage>
+    <summary>How price-filter ranges are calculated.</summary>
+    <usage><![CDATA[<p>Whether layered-navigation price ranges are built automatically (by equal spans or equal product counts) or from a fixed manual step.</p>]]></usage>
     <values>
       <value id="auto" label="Automatic (equalize price ranges)">Build price ranges with equal spans automatically.</value>
       <value id="improved" label="Automatic (equalize product counts)">Build price ranges with roughly equal product counts.</value>
@@ -3212,8 +3212,8 @@
     </technical>
   </field>
   <field id="catalog_layered_navigation_price_range_max_intervals" module="Magento_LayeredNavigation" path="catalog/layered_navigation/price_range_max_intervals">
-    <summary>Caps how many price brackets layered navigation builds in manual mode (max 100); more means finer filters but a longer list.</summary>
-    <usage><![CDATA[<p>The upper limit on the number of price intervals layered navigation generates, up to 100 (per the note). More intervals give finer price filters but a longer sidebar list. Applies only when price-range calculation is set to <strong>manual</strong>. Set per website or store view.</p>]]></usage>
+    <summary>Maximum number of price intervals shown.</summary>
+    <usage><![CDATA[<p>Caps how many price ranges layered navigation displays (up to 100).</p>]]></usage>
     <technical>
       <config_path>catalog/layered_navigation/price_range_max_intervals</config_path>
       <default_value>10</default_value>
@@ -3223,8 +3223,8 @@
     </technical>
   </field>
   <field id="catalog_layered_navigation_price_range_step" module="Magento_LayeredNavigation" path="catalog/layered_navigation/price_range_step">
-    <summary>The fixed price interval used to build price-filter ranges.</summary>
-    <usage><![CDATA[<p>The price interval for each price-filter range. Applies only when Price Navigation Step Calculation is set to Manual. Can be set per store view.</p>]]></usage>
+    <summary>The fixed price step used for manual ranges.</summary>
+    <usage><![CDATA[<p>The width of each price interval when the range calculation is set to Manual.</p>]]></usage>
     <technical>
       <config_path>catalog/layered_navigation/price_range_step</config_path>
       <default_value>100</default_value>
@@ -3234,8 +3234,8 @@
     </technical>
   </field>
   <field id="catalog_navigation_max_depth" module="Magento_Catalog" section="Catalog" path="catalog/navigation/max_depth">
-    <summary>How many category levels deep the top navigation menu renders.</summary>
-    <usage><![CDATA[<p>The maximum category depth shown in the storefront top menu. A smaller value keeps the menu shallow on deep category trees.</p>]]></usage>
+    <summary>How many category levels appear in the top menu.</summary>
+    <usage><![CDATA[<p>The maximum category depth rendered in the storefront top navigation. <code>0</code> means no limit.</p>]]></usage>
     <technical>
       <config_path>catalog/navigation/max_depth</config_path>
       <default_value>0</default_value>
@@ -3244,8 +3244,8 @@
     </technical>
   </field>
   <field id="catalog_placeholder_placeholder" module="Magento_Catalog" section="Catalog" path="catalog/placeholder/placeholder">
-    <summary>The fallback images shown for products that have no image of their own.</summary>
-    <usage><![CDATA[<p>Upload the placeholder images (base, small and thumbnail) used wherever a product is missing its own image.</p>]]></usage>
+    <summary>Fallback image shown when a product has no image.</summary>
+    <usage><![CDATA[<p>The default placeholder used wherever a product is missing its own image, set per image role (base, small, thumbnail, swatch).</p>]]></usage>
     <technical>
       <config_path>catalog/placeholder/placeholder</config_path>
       <scope>Store View</scope>
@@ -3253,8 +3253,8 @@
     </technical>
   </field>
   <field id="catalog_price_scope" module="Magento_Catalog" section="Catalog" path="catalog/price/scope">
-    <summary>Global vs per-website pricing; switching to website lets each site set its own prices but needs a reindex.</summary>
-    <usage><![CDATA[<p>Sets whether product prices are shared globally or managed per website (which also fixes the base-currency scope). Switching to Website lets each website keep its own prices but is disruptive to reverse and requires a price reindex.</p>]]></usage>
+    <summary>Whether product prices are global or set per website.</summary>
+    <usage><![CDATA[<p>Sets the scope of catalog prices. <strong>Global</strong> uses one price everywhere; <strong>Website</strong> allows a different price per website. Changing it can affect existing prices and must line up with your base-currency scope.</p>]]></usage>
     <values>
       <value id="0" label="Global">One price per product across the whole catalog.</value>
       <value id="1" label="Website">Allow a different price per website.</value>
@@ -3267,8 +3267,8 @@
     </technical>
   </field>
   <field id="catalog_product_video_play_if_base" module="Magento_ProductVideo" path="catalog/product_video/play_if_base">
-    <summary>Whether a product's base video plays automatically on the product page.</summary>
-    <usage><![CDATA[<p>When <strong>Yes</strong>, the video marked as the product&#039;s base media starts playing automatically on the product page. Can be set per website or store view.</p>]]></usage>
+    <summary>Autoplay the base video on the product page.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, the product's base video plays automatically when the page opens.</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -3281,8 +3281,8 @@
     </technical>
   </field>
   <field id="catalog_product_video_show_related" module="Magento_ProductVideo" path="catalog/product_video/show_related">
-    <summary>Whether related videos are shown when a product video ends.</summary>
-    <usage><![CDATA[<p>When <strong>Yes</strong>, related videos are displayed after a product video finishes playing. Can be set per website or store view.</p>]]></usage>
+    <summary>Show related YouTube videos after playback.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, YouTube may display related videos when a product video finishes.</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -3295,8 +3295,8 @@
     </technical>
   </field>
   <field id="catalog_product_video_video_auto_restart" module="Magento_ProductVideo" path="catalog/product_video/video_auto_restart">
-    <summary>Whether a product video restarts automatically after it finishes.</summary>
-    <usage><![CDATA[<p>When <strong>Yes</strong>, a product video loops, restarting automatically once it reaches the end. Can be set per website or store view.</p>]]></usage>
+    <summary>Loop product videos when they finish.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, a product video restarts automatically after it ends.</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -3309,16 +3309,16 @@
     </technical>
   </field>
   <field id="catalog_product_video_youtube_api_key" module="Magento_ProductVideo" path="catalog/product_video/youtube_api_key">
-    <summary>The YouTube Data API key used to fetch video details when adding product videos.</summary>
-    <usage><![CDATA[<p>The API key the admin uses to call the YouTube Data API when retrieving metadata for product videos hosted on YouTube. Obtain it from the Google API console.</p>]]></usage>
+    <summary>YouTube Data API key used to embed product videos.</summary>
+    <usage><![CDATA[<p>The API key required to load and play YouTube videos on product pages.</p>]]></usage>
     <technical>
       <config_path>catalog/product_video/youtube_api_key</config_path>
       <scope>Global</scope>
     </technical>
   </field>
   <field id="catalog_productalert_allow_price" module="Magento_ProductAlert" path="catalog/productalert/allow_price">
-    <summary>Whether customers can sign up to be emailed when a product's price changes.</summary>
-    <usage><![CDATA[<p>When <strong>Yes</strong>, a price-change alert sign-up appears on product pages so customers can be emailed when the price changes; <strong>No</strong> removes it. Can be set per website or store view.</p>]]></usage>
+    <summary>Let customers subscribe to price-drop alerts.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, a "notify me when the price drops" option appears on product pages.</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -3331,8 +3331,8 @@
     </technical>
   </field>
   <field id="catalog_productalert_allow_stock" module="Magento_ProductAlert" path="catalog/productalert/allow_stock">
-    <summary>Whether customers can sign up to be emailed when an out-of-stock product is available again.</summary>
-    <usage><![CDATA[<p>When <strong>Yes</strong>, an in-stock alert sign-up appears on product pages so customers can be notified when the item returns to stock; <strong>No</strong> removes it. Can differ per website.</p>]]></usage>
+    <summary>Let customers subscribe to back-in-stock alerts.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, a "notify me when back in stock" option appears on out-of-stock products.</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -3345,8 +3345,8 @@
     </technical>
   </field>
   <field id="catalog_productalert_cron_error_email" module="Magento_ProductAlert" path="catalog/productalert_cron/error_email">
-    <summary>The email address notified if the product alert cron job fails.</summary>
-    <usage><![CDATA[<p>The recipient address for error notifications raised when the product-alert cron job cannot complete. Leave empty to send no error email.</p>]]></usage>
+    <summary>Address that receives product-alert cron error reports.</summary>
+    <usage><![CDATA[<p>The email notified if the product-alert cron job fails.</p>]]></usage>
     <technical>
       <config_path>catalog/productalert_cron/error_email</config_path>
       <scope>Global</scope>
@@ -3354,8 +3354,8 @@
     </technical>
   </field>
   <field id="catalog_productalert_cron_error_email_identity" module="Magento_ProductAlert" path="catalog/productalert_cron/error_email_identity">
-    <summary>Which store email identity product alert error emails are sent from.</summary>
-    <usage><![CDATA[<p>Selects the sender identity for product-alert error notifications — one of the <strong>Store Email Addresses</strong> identities configured under <em>General → Store Email Addresses</em>.</p>]]></usage>
+    <summary>The sender identity for cron error emails.</summary>
+    <usage><![CDATA[<p>Which store email identity sends product-alert cron error notifications.</p>]]></usage>
     <values>
       <value id="general" label="General Contact">Send as the General Contact store identity.</value>
       <value id="sales" label="Sales Representative">Send as the Sales Representative store identity.</value>
@@ -3371,8 +3371,8 @@
     </technical>
   </field>
   <field id="catalog_productalert_cron_error_email_template" module="Magento_ProductAlert" path="catalog/productalert_cron/error_email_template">
-    <summary>Email template for the alert sent when the product-alert cron job (price/stock alerts) fails.</summary>
-    <usage><![CDATA[<p>Selects the template for the email sent to administrators when the product alerts cron run encounters an error. Choosing Default falls back to the theme&#039;s template (native note). Global setting (default scope).</p>]]></usage>
+    <summary>The template for product-alert cron error emails.</summary>
+    <usage><![CDATA[<p>The transactional template used to report product-alert cron failures.</p>]]></usage>
     <technical>
       <config_path>catalog/productalert_cron/error_email_template</config_path>
       <default_value>catalog_productalert_cron_error_email_template</default_value>
@@ -3381,8 +3381,8 @@
     </technical>
   </field>
   <field id="catalog_productalert_cron_frequency" module="Magento_ProductAlert" path="catalog/productalert_cron/frequency">
-    <summary>How often the scheduled job that sends product alert emails runs.</summary>
-    <usage><![CDATA[<p>Sets the schedule for the product-alert cron job that sends pending price and stock notifications. Choose from the available frequency options.</p>]]></usage>
+    <summary>How often product-alert emails are sent.</summary>
+    <usage><![CDATA[<p>The schedule on which the product-alert cron job runs and sends queued price and stock alerts.</p>]]></usage>
     <values>
       <value id="D" label="Daily">Run once a day.</value>
       <value id="W" label="Weekly">Run once a week.</value>
@@ -3396,16 +3396,16 @@
     </technical>
   </field>
   <field id="catalog_productalert_cron_time" module="Magento_ProductAlert" path="catalog/productalert_cron/time">
-    <summary>The time of day the product alert cron job runs.</summary>
-    <usage><![CDATA[<p>The start time (hour, minute, second) at which the product-alert cron job runs on its configured frequency.</p>]]></usage>
+    <summary>Time of day the product-alert cron runs.</summary>
+    <usage><![CDATA[<p>The clock time at which the product-alert job runs on its scheduled days.</p>]]></usage>
     <technical>
       <config_path>catalog/productalert_cron/time</config_path>
       <scope>Global</scope>
     </technical>
   </field>
   <field id="catalog_productalert_email_identity" module="Magento_ProductAlert" path="catalog/productalert/email_identity">
-    <summary>Which store email identity product alert emails are sent from.</summary>
-    <usage><![CDATA[<p>Selects the sender identity used for product alert emails — one of the <strong>Store Email Addresses</strong> identities (General Contact, Sales Representative, Customer Support, Custom 1/2) configured under <em>General → Store Email Addresses</em>. Can differ per store view.</p>]]></usage>
+    <summary>The store identity price/stock alert emails are sent from.</summary>
+    <usage><![CDATA[<p>Which store email identity (sender) is used for product-alert emails.</p>]]></usage>
     <values>
       <value id="general" label="General Contact">Send as the General Contact store identity.</value>
       <value id="sales" label="Sales Representative">Send as the Sales Representative store identity.</value>
@@ -3421,8 +3421,8 @@
     </technical>
   </field>
   <field id="catalog_productalert_email_price_template" module="Magento_ProductAlert" path="catalog/productalert/email_price_template">
-    <summary>Email template for product price-drop alert notifications.</summary>
-    <usage><![CDATA[<p>Selects the template used for price-alert emails sent when a watched product&#039;s price drops. Choosing Default resolves via theme fallback per the native note. Website/store scoped, so each store view can brand it.</p>]]></usage>
+    <summary>The email template used for price-drop alerts.</summary>
+    <usage><![CDATA[<p>The transactional template used when sending price-alert emails.</p>]]></usage>
     <technical>
       <config_path>catalog/productalert/email_price_template</config_path>
       <default_value>catalog_productalert_email_price_template</default_value>
@@ -3431,8 +3431,8 @@
     </technical>
   </field>
   <field id="catalog_productalert_email_stock_template" module="Magento_ProductAlert" path="catalog/productalert/email_stock_template">
-    <summary>Email template for the 'back in stock' alert customers subscribe to; choose a custom one or keep Default.</summary>
-    <usage><![CDATA[<p>The template for the stock (back-in-stock) alert email sent to customers who subscribed to be notified when a product is available again. Pick a custom template to brand it, or leave <strong>Default</strong>, which follows theme fallback (per the note). Set per website or store view.</p>]]></usage>
+    <summary>The email template used for back-in-stock alerts.</summary>
+    <usage><![CDATA[<p>The transactional template used when sending stock-alert emails.</p>]]></usage>
     <technical>
       <config_path>catalog/productalert/email_stock_template</config_path>
       <default_value>catalog_productalert_email_stock_template</default_value>
@@ -3441,8 +3441,8 @@
     </technical>
   </field>
   <field id="catalog_recently_products_compared_count" module="Magento_Reports" path="catalog/recently_products/compared_count">
-    <summary>The number of products shown in the Recently Compared block.</summary>
-    <usage><![CDATA[<p>The maximum number of items displayed in the Recently Compared Products block. Can differ per store view.</p>]]></usage>
+    <summary>How many compared products to keep per shopper.</summary>
+    <usage><![CDATA[<p>The maximum number of items retained in a shopper's "recently compared" list.</p>]]></usage>
     <technical>
       <config_path>catalog/recently_products/compared_count</config_path>
       <default_value>5</default_value>
@@ -3451,8 +3451,8 @@
     </technical>
   </field>
   <field id="catalog_recently_products_recently_compared_lifetime" module="Magento_Catalog" section="Catalog" path="catalog/recently_products/recently_compared_lifetime">
-    <summary>How long a product stays in the Recently Compared widget, in days.</summary>
-    <usage><![CDATA[<p>The retention period, in days, for entries shown by the Recently Compared Products widget.</p>]]></usage>
+    <summary>How long recently-compared entries are kept (seconds).</summary>
+    <usage><![CDATA[<p>Lifetime, in seconds, of a shopper's recently-compared product records.</p>]]></usage>
     <technical>
       <config_path>catalog/recently_products/recently_compared_lifetime</config_path>
       <default_value>1000</default_value>
@@ -3461,8 +3461,8 @@
     </technical>
   </field>
   <field id="catalog_recently_products_recently_viewed_lifetime" module="Magento_Catalog" section="Catalog" path="catalog/recently_products/recently_viewed_lifetime">
-    <summary>How long a product stays in the Recently Viewed widget, in days.</summary>
-    <usage><![CDATA[<p>The retention period, in days, for entries shown by the Recently Viewed Products widget.</p>]]></usage>
+    <summary>How long recently-viewed entries are kept (seconds).</summary>
+    <usage><![CDATA[<p>Lifetime, in seconds, of a shopper's recently-viewed product records.</p>]]></usage>
     <technical>
       <config_path>catalog/recently_products/recently_viewed_lifetime</config_path>
       <default_value>1000</default_value>
@@ -3471,8 +3471,8 @@
     </technical>
   </field>
   <field id="catalog_recently_products_scope" module="Magento_Reports" path="catalog/recently_products/scope">
-    <summary>The scope recently viewed/compared product lists are tracked across.</summary>
-    <usage><![CDATA[<p>Sets whether recently viewed and compared products are tracked per <strong>Website</strong>, <strong>Store</strong>, or <strong>Store View</strong>. Can be set per website.</p>]]></usage>
+    <summary>The scope recently viewed/compared lists are shared across.</summary>
+    <usage><![CDATA[<p>Whether a shopper's recently viewed and compared products are shared per website, per store, or per store view.</p>]]></usage>
     <values>
       <value id="website" label="Website">Aggregate report data per website.</value>
       <value id="group" label="Store">Aggregate report data per store.</value>
@@ -3486,8 +3486,8 @@
     </technical>
   </field>
   <field id="catalog_recently_products_synchronize_with_backend" module="Magento_Catalog" section="Catalog" path="catalog/recently_products/synchronize_with_backend">
-    <summary>Whether recently viewed/compared products are stored server-side rather than only in the browser.</summary>
-    <usage><![CDATA[<p>When <strong>Yes</strong>, the recently viewed/compared lists are synchronised to backend storage, so they follow a signed-in customer across devices instead of living only in the browser.</p>]]></usage>
+    <summary>Persist recently viewed/compared lists server-side.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, these lists are saved on the server so they follow a signed-in customer across devices.</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -3499,8 +3499,8 @@
     </technical>
   </field>
   <field id="catalog_recently_products_viewed_count" module="Magento_Reports" path="catalog/recently_products/viewed_count">
-    <summary>The number of products shown in the Recently Viewed block.</summary>
-    <usage><![CDATA[<p>The maximum number of items displayed in the Recently Viewed Products block. Can differ per store view.</p>]]></usage>
+    <summary>How many viewed products to keep per shopper.</summary>
+    <usage><![CDATA[<p>The maximum number of items retained in a shopper's "recently viewed" list.</p>]]></usage>
     <technical>
       <config_path>catalog/recently_products/viewed_count</config_path>
       <default_value>5</default_value>
@@ -3509,8 +3509,8 @@
     </technical>
   </field>
   <field id="catalog_review_active" module="Magento_Review" path="catalog/review/active">
-    <summary>Turns product reviews on or off on the storefront.</summary>
-    <usage><![CDATA[<p>Controls whether the <strong>Product Reviews</strong> feature is available on the storefront, letting shoppers read and submit reviews. Can be set per website or store view.</p>]]></usage>
+    <summary>Enable product reviews on the storefront.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, customers can read and submit product reviews.</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -3523,8 +3523,8 @@
     </technical>
   </field>
   <field id="catalog_review_allow_guest" module="Magento_Review" path="catalog/review/allow_guest">
-    <summary>Whether visitors who aren't logged in can submit product reviews.</summary>
-    <usage><![CDATA[<p>When <strong>Yes</strong>, guests who are not signed-in customers can write product reviews; when <strong>No</strong>, only registered customers can. Applies only when <strong>Product Reviews</strong> is enabled. Can differ per website.</p>]]></usage>
+    <summary>Let guests submit product reviews.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, shoppers can post reviews without an account. When <strong>No</strong>, only signed-in customers can.</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -3538,8 +3538,8 @@
     </technical>
   </field>
   <field id="catalog_search_autocomplete_limit" module="Magento_CatalogSearch" path="catalog/search/autocomplete_limit">
-    <summary>Maximum number of suggestions shown in the search autocomplete dropdown.</summary>
-    <usage><![CDATA[<p>Caps how many suggestions the search box shows as the shopper types.</p>]]></usage>
+    <summary>Maximum suggestions shown in search autocomplete.</summary>
+    <usage><![CDATA[<p>Caps how many suggestions appear in the search-box dropdown as a shopper types.</p>]]></usage>
     <technical>
       <config_path>catalog/search/autocomplete_limit</config_path>
       <default_value>8</default_value>
@@ -3548,8 +3548,8 @@
     </technical>
   </field>
   <field id="catalog_search_elasticsearch8_enable_auth" module="Magento_Elasticsearch8" path="catalog/search/elasticsearch8_enable_auth">
-    <summary>Whether HTTP authentication is used when connecting to Elasticsearch 8.</summary>
-    <usage><![CDATA[<p>When Yes, a username and password are sent with requests to the Elasticsearch 8 server. Applies only when the search engine is set to Elasticsearch 8.</p>]]></usage>
+    <summary>Require authentication to connect to Elasticsearch 8.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, Magento sends the username and password below when connecting to Elasticsearch.</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -3563,8 +3563,8 @@
     </technical>
   </field>
   <field id="catalog_search_elasticsearch8_index_prefix" module="Magento_Elasticsearch8" path="catalog/search/elasticsearch8_index_prefix">
-    <summary>The prefix added to the names of the Elasticsearch 8 indices.</summary>
-    <usage><![CDATA[<p>The string prepended to index names in Elasticsearch 8, letting several stores or environments share one cluster without index-name collisions. Applies only when the search engine is set to Elasticsearch 8.</p>]]></usage>
+    <summary>Prefix for the Elasticsearch indexes Magento creates.</summary>
+    <usage><![CDATA[<p>Namespaces this installation's indexes so several stores can share one Elasticsearch cluster without clashing.</p>]]></usage>
     <technical>
       <config_path>catalog/search/elasticsearch8_index_prefix</config_path>
       <default_value>magento2</default_value>
@@ -3573,8 +3573,8 @@
     </technical>
   </field>
   <field id="catalog_search_elasticsearch8_minimum_should_match" module="Magento_Elasticsearch8" path="catalog/search/elasticsearch8_minimum_should_match">
-    <summary>How many query terms a product must match to appear in Elasticsearch results; stricter values return fewer, more relevant hits.</summary>
-    <usage><![CDATA[<p>Sets Elasticsearch&#039;s minimum_should_match for catalog search: how many of the query&#039;s terms a product must contain to be returned. Stricter values give fewer, more precise results; looser ones return more but noisier matches. Applies only with the Elasticsearch 8 engine (depends).</p>]]></usage>
+    <summary>The minimum-should-match rule for Elasticsearch queries.</summary>
+    <usage><![CDATA[<p>Controls how many query terms must match. Uses Elasticsearch's minimum_should_match syntax.</p>]]></usage>
     <technical>
       <config_path>catalog/search/elasticsearch8_minimum_should_match</config_path>
       <scope>Global</scope>
@@ -3583,8 +3583,8 @@
     </technical>
   </field>
   <field id="catalog_search_elasticsearch8_password" module="Magento_Elasticsearch8" path="catalog/search/elasticsearch8_password">
-    <summary>The password for Elasticsearch 8 HTTP authentication.</summary>
-    <usage><![CDATA[<p>The password used together with the user name to authenticate to the Elasticsearch 8 server. Applies only when Elasticsearch 8 is the search engine and HTTP authentication is enabled.</p>]]></usage>
+    <summary>Password for the Elasticsearch connection.</summary>
+    <usage><![CDATA[<p>The password Magento uses when Elasticsearch authentication is enabled.</p>]]></usage>
     <technical>
       <config_path>catalog/search/elasticsearch8_password</config_path>
       <scope>Global</scope>
@@ -3592,8 +3592,8 @@
     </technical>
   </field>
   <field id="catalog_search_elasticsearch8_server_hostname" module="Magento_Elasticsearch8" path="catalog/search/elasticsearch8_server_hostname">
-    <summary>The hostname or IP address of the Elasticsearch 8 server.</summary>
-    <usage><![CDATA[<p>The host where the Elasticsearch 8 cluster is reached. Applies only when the search engine is set to Elasticsearch 8.</p>]]></usage>
+    <summary>Hostname of the Elasticsearch server.</summary>
+    <usage><![CDATA[<p>The host Magento connects to for Elasticsearch.</p>]]></usage>
     <technical>
       <config_path>catalog/search/elasticsearch8_server_hostname</config_path>
       <default_value>localhost</default_value>
@@ -3602,8 +3602,8 @@
     </technical>
   </field>
   <field id="catalog_search_elasticsearch8_server_port" module="Magento_Elasticsearch8" path="catalog/search/elasticsearch8_server_port">
-    <summary>The TCP port the Elasticsearch 8 server listens on.</summary>
-    <usage><![CDATA[<p>The port used to connect to the Elasticsearch 8 server. Applies only when the search engine is set to Elasticsearch 8.</p>]]></usage>
+    <summary>Port of the Elasticsearch server.</summary>
+    <usage><![CDATA[<p>The TCP port Magento uses to reach Elasticsearch.</p>]]></usage>
     <technical>
       <config_path>catalog/search/elasticsearch8_server_port</config_path>
       <default_value>9200</default_value>
@@ -3612,8 +3612,8 @@
     </technical>
   </field>
   <field id="catalog_search_elasticsearch8_server_timeout" module="Magento_Elasticsearch8" path="catalog/search/elasticsearch8_server_timeout">
-    <summary>How long, in seconds, to wait for the Elasticsearch 8 server before timing out.</summary>
-    <usage><![CDATA[<p>The connection timeout for requests to the Elasticsearch 8 server. Applies only when the search engine is set to Elasticsearch 8.</p>]]></usage>
+    <summary>Connection timeout for Elasticsearch, in seconds.</summary>
+    <usage><![CDATA[<p>How long Magento waits for Elasticsearch to respond before giving up.</p>]]></usage>
     <technical>
       <config_path>catalog/search/elasticsearch8_server_timeout</config_path>
       <default_value>15</default_value>
@@ -3621,9 +3621,19 @@
       <depends>engine=elasticsearch8</depends>
     </technical>
   </field>
+  <field id="catalog_search_elasticsearch8_test_connect_wizard" module="Magento_Elasticsearch8" path="catalog/search/elasticsearch8_test_connect_wizard">
+    <summary>Test the connection to Elasticsearch.</summary>
+    <usage><![CDATA[<p>Runs a live check that Magento can reach Elasticsearch with the settings above.</p>]]></usage>
+    <technical>
+      <config_path>catalog/search/elasticsearch8_test_connect_wizard</config_path>
+      <scope>Global</scope>
+      <frontend_model>Magento\Elasticsearch8\Block\Adminhtml\System\Config\TestConnection</frontend_model>
+      <depends>engine=elasticsearch8</depends>
+    </technical>
+  </field>
   <field id="catalog_search_elasticsearch8_username" module="Magento_Elasticsearch8" path="catalog/search/elasticsearch8_username">
-    <summary>The user name for Elasticsearch 8 HTTP authentication.</summary>
-    <usage><![CDATA[<p>The account name used to authenticate to the Elasticsearch 8 server. Applies only when Elasticsearch 8 is the search engine and HTTP authentication is enabled.</p>]]></usage>
+    <summary>Username for the Elasticsearch connection.</summary>
+    <usage><![CDATA[<p>The username Magento uses when Elasticsearch authentication is enabled.</p>]]></usage>
     <technical>
       <config_path>catalog/search/elasticsearch8_username</config_path>
       <scope>Global</scope>
@@ -3631,8 +3641,8 @@
     </technical>
   </field>
   <field id="catalog_search_enable_eav_indexer" module="Magento_CatalogSearch" path="catalog/search/enable_eav_indexer">
-    <summary>Yes maintains a dedicated product EAV index to speed reindexing; check no third-party extension relies on it before disabling.</summary>
-    <usage><![CDATA[<p>When Yes, Magento keeps a separate product EAV indexer, speeding up indexation. Relevant with the MySQL search engine (depends). As the native note warns, confirm no third-party extension uses this index before turning it off. Global setting (default scope).</p>]]></usage>
+    <summary>Use the product EAV indexer to speed up indexing.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, the product EAV indexer is enabled to speed up indexation. Make sure your search engine is configured to support it.</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -3646,8 +3656,8 @@
     </technical>
   </field>
   <field id="catalog_search_engine" module="Magento_Search" path="catalog/search/engine">
-    <summary>Selects the search engine backend; falls back to the default engine when unset.</summary>
-    <usage><![CDATA[<p>Chooses which search engine backend powers catalog search. As the field note says, the default search engine is used when nothing is specified. Changing the engine requires the matching service to be running and a search reindex before results reflect the new backend.</p>]]></usage>
+    <summary>The search engine powering catalog search.</summary>
+    <usage><![CDATA[<p>Selects the backend used for product search and indexing. If left unset, the default engine is used.</p>]]></usage>
     <values>
       <value id="elasticsearch8" label="Elasticsearch 8 (Deprecated)">Index and search with Elasticsearch 8 (deprecated).</value>
       <value id="opensearch" label="OpenSearch">Index and search with OpenSearch.</value>
@@ -3661,8 +3671,8 @@
     </technical>
   </field>
   <field id="catalog_search_max_count_cacheable_search_terms" module="Magento_CatalogSearch" path="catalog/search/max_count_cacheable_search_terms">
-    <summary>How many popular search terms to cache; 0 caches all after a term's second search. Higher speeds more searches but uses more cache.</summary>
-    <usage><![CDATA[<p>Caps how many popular search terms are cached for faster results; <code>0</code> caches every term after its second search (per the note). A higher cap serves more searches from cache at the cost of more cache storage. Set per website or store view.</p>]]></usage>
+    <summary>How many popular search terms are cached.</summary>
+    <usage><![CDATA[<p>The number of popular search terms kept in cache for faster responses.</p>]]></usage>
     <technical>
       <config_path>catalog/search/max_count_cacheable_search_terms</config_path>
       <default_value>100</default_value>
@@ -3671,8 +3681,8 @@
     </technical>
   </field>
   <field id="catalog_search_max_query_length" module="Magento_CatalogSearch" path="catalog/search/max_query_length">
-    <summary>Longest search string accepted; must stay compatible with the configured search engine's limit.</summary>
-    <usage><![CDATA[<p>Caps the length of storefront search queries. Set it beyond what your search engine allows and searches can error, so keep the two in sync as the native note warns. Website/store scoped.</p>]]></usage>
+    <summary>Maximum length of a search query.</summary>
+    <usage><![CDATA[<p>Queries longer than this are truncated. Must be compatible with the matching setting in your search engine.</p>]]></usage>
     <technical>
       <config_path>catalog/search/max_query_length</config_path>
       <default_value>128</default_value>
@@ -3681,8 +3691,8 @@
     </technical>
   </field>
   <field id="catalog_search_min_query_length" module="Magento_CatalogSearch" path="catalog/search/min_query_length">
-    <summary>Shortest search term that returns results; must match the search engine's own minimum or results won't line up. Per website/store.</summary>
-    <usage><![CDATA[<p>The minimum number of characters a shopper must type before search returns results. As the native note says, it must be consistent with the configured search engine (OpenSearch/Elasticsearch); a mismatch means queries the engine would answer get rejected, or vice-versa. A very low value hurts performance. Per website/store.</p>]]></usage>
+    <summary>Minimum length of a search query.</summary>
+    <usage><![CDATA[<p>Queries shorter than this are ignored. Must be compatible with the matching setting in your search engine.</p>]]></usage>
     <technical>
       <config_path>catalog/search/min_query_length</config_path>
       <default_value>3</default_value>
@@ -3691,8 +3701,8 @@
     </technical>
   </field>
   <field id="catalog_search_opensearch_enable_auth" module="Magento_OpenSearch" path="catalog/search/opensearch_enable_auth">
-    <summary>Whether to send HTTP authentication credentials when connecting to OpenSearch.</summary>
-    <usage><![CDATA[<p>When <strong>Yes</strong>, Magento authenticates to OpenSearch using the configured username and password. Applies only when the search engine is set to OpenSearch.</p>]]></usage>
+    <summary>Require authentication to connect to OpenSearch.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, Magento sends the username and password below when connecting to OpenSearch.</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -3706,8 +3716,8 @@
     </technical>
   </field>
   <field id="catalog_search_opensearch_index_prefix" module="Magento_OpenSearch" path="catalog/search/opensearch_index_prefix">
-    <summary>A prefix added to OpenSearch index names for this installation.</summary>
-    <usage><![CDATA[<p>Prepended to the names of the catalog search indexes, letting several installations share one OpenSearch cluster without clashing. Applies only when the search engine is set to OpenSearch.</p>]]></usage>
+    <summary>Prefix for the OpenSearch indexes Magento creates.</summary>
+    <usage><![CDATA[<p>Namespaces this installation's indexes so several stores can share one OpenSearch cluster without clashing.</p>]]></usage>
     <technical>
       <config_path>catalog/search/opensearch_index_prefix</config_path>
       <default_value>magento2</default_value>
@@ -3716,8 +3726,8 @@
     </technical>
   </field>
   <field id="catalog_search_opensearch_minimum_should_match" module="Magento_OpenSearch" path="catalog/search/opensearch_minimum_should_match">
-    <summary>How many query terms a document must match to be returned; stricter values narrow results.</summary>
-    <usage><![CDATA[<p>Passes a minimum-should-match rule to OpenSearch controlling how many of a query&#039;s terms a result must contain. Stricter settings return fewer, more precise matches; looser ones broaden recall. Applies only when the OpenSearch engine is selected. Default scope.</p>]]></usage>
+    <summary>The minimum-should-match rule for OpenSearch queries.</summary>
+    <usage><![CDATA[<p>Controls how many query terms must match. Uses OpenSearch's minimum_should_match syntax.</p>]]></usage>
     <technical>
       <config_path>catalog/search/opensearch_minimum_should_match</config_path>
       <scope>Global</scope>
@@ -3726,8 +3736,8 @@
     </technical>
   </field>
   <field id="catalog_search_opensearch_password" module="Magento_OpenSearch" path="catalog/search/opensearch_password">
-    <summary>The password for HTTP authentication to OpenSearch.</summary>
-    <usage><![CDATA[<p>The password used to authenticate to the OpenSearch server. Applies only when the engine is OpenSearch and <strong>Enable OpenSearch HTTP Auth</strong> is set to Yes.</p>]]></usage>
+    <summary>Password for the OpenSearch connection.</summary>
+    <usage><![CDATA[<p>The password Magento uses when OpenSearch authentication is enabled.</p>]]></usage>
     <technical>
       <config_path>catalog/search/opensearch_password</config_path>
       <scope>Global</scope>
@@ -3735,8 +3745,8 @@
     </technical>
   </field>
   <field id="catalog_search_opensearch_server_hostname" module="Magento_OpenSearch" path="catalog/search/opensearch_server_hostname">
-    <summary>The hostname or IP address of the OpenSearch server used for catalog search.</summary>
-    <usage><![CDATA[<p>The address Magento connects to when indexing and querying catalog search. Applies only when the search engine is set to OpenSearch.</p>]]></usage>
+    <summary>Hostname of the OpenSearch server.</summary>
+    <usage><![CDATA[<p>The host Magento connects to for OpenSearch.</p>]]></usage>
     <technical>
       <config_path>catalog/search/opensearch_server_hostname</config_path>
       <default_value>localhost</default_value>
@@ -3745,8 +3755,8 @@
     </technical>
   </field>
   <field id="catalog_search_opensearch_server_port" module="Magento_OpenSearch" path="catalog/search/opensearch_server_port">
-    <summary>The port on which the OpenSearch server accepts connections.</summary>
-    <usage><![CDATA[<p>The TCP port used to reach the OpenSearch server. Applies only when the search engine is set to OpenSearch.</p>]]></usage>
+    <summary>Port of the OpenSearch server.</summary>
+    <usage><![CDATA[<p>The TCP port Magento uses to reach OpenSearch.</p>]]></usage>
     <technical>
       <config_path>catalog/search/opensearch_server_port</config_path>
       <default_value>9200</default_value>
@@ -3755,8 +3765,8 @@
     </technical>
   </field>
   <field id="catalog_search_opensearch_server_timeout" module="Magento_OpenSearch" path="catalog/search/opensearch_server_timeout">
-    <summary>The request timeout for connections to the OpenSearch server.</summary>
-    <usage><![CDATA[<p>How long Magento waits for an OpenSearch request before timing out. Applies only when the search engine is set to OpenSearch.</p>]]></usage>
+    <summary>Connection timeout for OpenSearch, in seconds.</summary>
+    <usage><![CDATA[<p>How long Magento waits for OpenSearch to respond before giving up.</p>]]></usage>
     <technical>
       <config_path>catalog/search/opensearch_server_timeout</config_path>
       <default_value>15</default_value>
@@ -3764,9 +3774,19 @@
       <depends>engine=opensearch</depends>
     </technical>
   </field>
+  <field id="catalog_search_opensearch_test_connect_wizard" module="Magento_OpenSearch" path="catalog/search/opensearch_test_connect_wizard">
+    <summary>Test the connection to OpenSearch.</summary>
+    <usage><![CDATA[<p>Runs a live check that Magento can reach OpenSearch with the settings above.</p>]]></usage>
+    <technical>
+      <config_path>catalog/search/opensearch_test_connect_wizard</config_path>
+      <scope>Global</scope>
+      <frontend_model>Magento\OpenSearch\Block\Adminhtml\System\Config\TestConnection</frontend_model>
+      <depends>engine=opensearch</depends>
+    </technical>
+  </field>
   <field id="catalog_search_opensearch_username" module="Magento_OpenSearch" path="catalog/search/opensearch_username">
-    <summary>The username for HTTP authentication to OpenSearch.</summary>
-    <usage><![CDATA[<p>The user name used to authenticate to the OpenSearch server. Applies only when the engine is OpenSearch and <strong>Enable OpenSearch HTTP Auth</strong> is set to Yes.</p>]]></usage>
+    <summary>Username for the OpenSearch connection.</summary>
+    <usage><![CDATA[<p>The username Magento uses when OpenSearch authentication is enabled.</p>]]></usage>
     <technical>
       <config_path>catalog/search/opensearch_username</config_path>
       <scope>Global</scope>
@@ -3774,8 +3794,8 @@
     </technical>
   </field>
   <field id="catalog_search_search_recommendations_count" module="Magento_AdvancedSearch" path="catalog/search/search_recommendations_count">
-    <summary>How many search term recommendations to show.</summary>
-    <usage><![CDATA[<p>The number of alternative search-term recommendations shown for a query. Applies only when search recommendations are enabled. Can differ per store view.</p>]]></usage>
+    <summary>How many search recommendations to show.</summary>
+    <usage><![CDATA[<p>The number of recommended terms displayed for a search.</p>]]></usage>
     <technical>
       <config_path>catalog/search/search_recommendations_count</config_path>
       <default_value>5</default_value>
@@ -3785,8 +3805,8 @@
     </technical>
   </field>
   <field id="catalog_search_search_recommendations_count_results_enabled" module="Magento_AdvancedSearch" path="catalog/search/search_recommendations_count_results_enabled">
-    <summary>Whether to show the number of results next to each search recommendation.</summary>
-    <usage><![CDATA[<p>When <strong>Yes</strong>, each search recommendation displays how many results it would return. Applies only when search recommendations are enabled. Can differ per store view.</p>]]></usage>
+    <summary>Show result counts next to search recommendations.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, each recommendation shows how many results it would return.</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -3800,8 +3820,8 @@
     </technical>
   </field>
   <field id="catalog_search_search_recommendations_enabled" module="Magento_AdvancedSearch" path="catalog/search/search_recommendations_enabled">
-    <summary>Suggests alternative searches for weak queries; adds query-time work that can slow the storefront.</summary>
-    <usage><![CDATA[<p>When <strong>Yes</strong>, search result pages offer recommended alternative queries. Generating them adds processing on each search — the native note&#039;s slowdown warning — so weigh it against the extra help for shoppers. Website/store scoped, so you can enable it per store view.</p>]]></usage>
+    <summary>Offer alternative-term recommendations for searches.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, searches suggest related terms. May slow the site on large catalogs.</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -3815,7 +3835,7 @@
   </field>
   <field id="catalog_search_search_suggestion_count" module="Magento_AdvancedSearch" path="catalog/search/search_suggestion_count">
     <summary>How many search suggestions to show.</summary>
-    <usage><![CDATA[<p>The number of search suggestions offered for a query. Applies only when search suggestions are enabled. Can differ per store view.</p>]]></usage>
+    <usage><![CDATA[<p>The number of "did you mean" suggestions offered for a search.</p>]]></usage>
     <technical>
       <config_path>catalog/search/search_suggestion_count</config_path>
       <default_value>2</default_value>
@@ -3825,8 +3845,8 @@
     </technical>
   </field>
   <field id="catalog_search_search_suggestion_count_results_enabled" module="Magento_AdvancedSearch" path="catalog/search/search_suggestion_count_results_enabled">
-    <summary>Adds a result count beside each search suggestion; computing a count per suggestion adds queries, which is why it can slow the storefront.</summary>
-    <usage><![CDATA[<p>Shows how many products match each search suggestion. Each suggestion needs its own count query, which is the load the native note warns about. Applies only when search suggestions are enabled. Can differ per website/store view.</p>]]></usage>
+    <summary>Show result counts next to search suggestions.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, each suggestion shows how many results it would return.</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -3840,8 +3860,8 @@
     </technical>
   </field>
   <field id="catalog_search_search_suggestion_enabled" module="Magento_AdvancedSearch" path="catalog/search/search_suggestion_enabled">
-    <summary>Yes offers as-you-type search suggestions; each adds index queries, so weigh the speed hit on busy stores.</summary>
-    <usage><![CDATA[<p>When <strong>Yes</strong>, the storefront search box offers suggested terms as shoppers type. The native warning reflects the cost: every keystroke can hit the search index, so on high-traffic stores or large catalogues this adds real load. Set per website or store view.</p>]]></usage>
+    <summary>Offer spelling suggestions for searches.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, misspelled searches receive "did you mean" suggestions. May slow the site on large catalogs.</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -3854,8 +3874,8 @@
     </technical>
   </field>
   <field id="catalog_seo_category_canonical_tag" module="Magento_Catalog" section="Catalog" path="catalog/seo/category_canonical_tag">
-    <summary>Whether a canonical link meta tag is added to category pages.</summary>
-    <usage><![CDATA[<p>When <strong>Yes</strong>, category pages emit a <code>rel=&quot;canonical&quot;</code> tag pointing at the preferred URL, helping search engines avoid duplicate-content issues.</p>]]></usage>
+    <summary>Add a canonical link tag to category pages.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, category pages emit a canonical URL to reduce duplicate-content issues in search engines.</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -3868,8 +3888,8 @@
     </technical>
   </field>
   <field id="catalog_seo_category_url_suffix" module="Magento_CatalogUrlRewrite" path="catalog/seo/category_url_suffix">
-    <summary>Appended to every category URL; changing it rewrites all category URLs and can break old links.</summary>
-    <usage><![CDATA[<p>Suffix (e.g. <code>.html</code>) added to category URLs. Changing it rewrites every category URL, so existing inbound links break unless redirects are in place, and you must refresh the cache afterwards. Can differ per website/store.</p>]]></usage>
+    <summary>Suffix appended to category URLs (e.g. .html).</summary>
+    <usage><![CDATA[<p>The suffix added to category URL keys. Refresh the cache after changing it.</p>]]></usage>
     <technical>
       <config_path>catalog/seo/category_url_suffix</config_path>
       <default_value>.html</default_value>
@@ -3878,8 +3898,8 @@
     </technical>
   </field>
   <field id="catalog_seo_generate_category_product_rewrites" module="Magento_CatalogUrlRewrite" path="catalog/seo/generate_category_product_rewrites">
-    <summary>Yes builds category-path product URLs; No permanently deletes them with no restore.</summary>
-    <usage><![CDATA[<p><strong>Yes</strong> generates URL rewrites that include the category path for products, shaping storefront URLs and their SEO. Turning it <strong>No</strong> permanently deletes those existing rewrites with no way to restore them, which can break indexed links.</p>]]></usage>
+    <summary>Generate URL rewrites for products under categories.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, products get category-path URLs. <strong>Warning:</strong> turning this off permanently removes existing category/product URL rewrites.</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -3893,8 +3913,8 @@
     </technical>
   </field>
   <field id="catalog_seo_product_canonical_tag" module="Magento_Catalog" section="Catalog" path="catalog/seo/product_canonical_tag">
-    <summary>Whether a canonical link meta tag is added to product pages.</summary>
-    <usage><![CDATA[<p>When <strong>Yes</strong>, product pages emit a <code>rel=&quot;canonical&quot;</code> tag pointing at the preferred URL (useful when a product is reachable under multiple category paths).</p>]]></usage>
+    <summary>Add a canonical link tag to product pages.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, product pages emit a canonical URL to reduce duplicate-content issues in search engines.</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -3907,8 +3927,8 @@
     </technical>
   </field>
   <field id="catalog_seo_product_rewrite_context" module="Magento_CatalogUrlRewrite" path="catalog/seo/product_rewrite_context">
-    <summary>Whether product URL rewrites are generated at website or store-view scope.</summary>
-    <usage><![CDATA[<p>Controls the scope at which product URL rewrites are created when a product is edited: per website or per store view, as the field note describes. Store-view scope yields more granular URLs per view but produces more rewrite records to maintain.</p>]]></usage>
+    <summary>Scope used when generating product URL rewrites.</summary>
+    <usage><![CDATA[<p>Whether product URL rewrites are generated at the website or the store-view level when a product is edited.</p>]]></usage>
     <values>
       <value id="website" label="Website">Generate product URL rewrites per website.</value>
       <value id="store_view" label="Store View">Generate product URL rewrites per store view.</value>
@@ -3921,8 +3941,8 @@
     </technical>
   </field>
   <field id="catalog_seo_product_url_suffix" module="Magento_CatalogUrlRewrite" path="catalog/seo/product_url_suffix">
-    <summary>Suffix appended to product URLs (e.g. .html); changing it rewrites every product URL.</summary>
-    <usage><![CDATA[<p>The suffix added to product URLs, such as .html. Can differ per website/store view. Changing it alters every product URL and requires URL rewrites to regenerate plus a cache refresh; old URLs may 404 unless redirects exist.</p>]]></usage>
+    <summary>Suffix appended to product URLs (e.g. .html).</summary>
+    <usage><![CDATA[<p>The suffix added to product URL keys. Refresh the cache after changing it.</p>]]></usage>
     <technical>
       <config_path>catalog/seo/product_url_suffix</config_path>
       <default_value>.html</default_value>
@@ -3931,8 +3951,8 @@
     </technical>
   </field>
   <field id="catalog_seo_product_url_transliteration" module="Magento_Catalog" section="Catalog" path="catalog/seo/product_url_transliteration">
-    <summary>Whether accented/non-Latin characters are transliterated when building product URL keys.</summary>
-    <usage><![CDATA[<p>When <strong>Yes</strong>, characters like &#039;é&#039; are converted to ASCII when a product&#039;s URL key is generated, producing cleaner URLs.</p>]]></usage>
+    <summary>Transliterate accented characters in product URLs.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, non-ASCII characters in URL keys are converted to ASCII equivalents.</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -3945,8 +3965,8 @@
     </technical>
   </field>
   <field id="catalog_seo_product_use_categories" module="Magento_CatalogUrlRewrite" path="catalog/seo/product_use_categories">
-    <summary>Whether product URLs include their category path.</summary>
-    <usage><![CDATA[<p>When <strong>Yes</strong>, a product reachable under a category gets a URL that includes the category path (e.g. <code>/gear/bags/product</code>). Affects URL structure and canonicalisation.</p>]]></usage>
+    <summary>Include the category path in product URLs.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, product URLs include their category path (for example <code>/category/product</code>).</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -3959,8 +3979,8 @@
     </technical>
   </field>
   <field id="catalog_seo_save_rewrites_history" module="Magento_CatalogUrlRewrite" path="catalog/seo/save_rewrites_history">
-    <summary>Whether a permanent (301) redirect is created when a product or category URL key changes.</summary>
-    <usage><![CDATA[<p>When <strong>Yes</strong>, changing a URL key leaves behind a permanent redirect from the old URL, so existing links and search rankings are preserved.</p>]]></usage>
+    <summary>Keep a redirect when a URL key changes.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, changing a product or category URL key creates a permanent (301) redirect from the old URL.</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -3973,8 +3993,8 @@
     </technical>
   </field>
   <field id="catalog_seo_search_terms" module="Magento_CatalogSearch" path="catalog/seo/search_terms">
-    <summary>Enables the storefront Popular Search Terms page.</summary>
-    <usage><![CDATA[<p>When enabled, a public page listing popular search terms is published, which can help search engines discover catalog pages.</p>]]></usage>
+    <summary>Make the storefront search-terms page available.</summary>
+    <usage><![CDATA[<p>When <strong>Enabled</strong>, the popular-search-terms page is accessible to shoppers and search-engine crawlers.</p>]]></usage>
     <values>
       <value id="1" label="Enable"/>
       <value id="0" label="Disable"/>
@@ -3987,8 +4007,8 @@
     </technical>
   </field>
   <field id="catalog_seo_title_separator" module="Magento_Catalog" section="Catalog" path="catalog/seo/title_separator">
-    <summary>The character placed between parts of the page title.</summary>
-    <usage><![CDATA[<p>The separator (e.g. <code>-</code> or <code>|</code>) used to join segments of the HTML page title.</p>]]></usage>
+    <summary>Character separating the parts of page titles.</summary>
+    <usage><![CDATA[<p>The separator placed between segments of SEO page titles — for example a dash or a pipe.</p>]]></usage>
     <technical>
       <config_path>catalog/seo/title_separator</config_path>
       <default_value>-</default_value>
