@@ -95580,8 +95580,8 @@
     </technical>
   </field>
   <field id="sales_backpressure_enabled" module="Magento_Quote" path="sales/backpressure/enabled">
-    <summary>Whether rate limiting is applied to order placement requests.</summary>
-    <usage><![CDATA[<p>When Yes, the number of order-placement requests is capped per customer and per guest to protect the store from bursts of checkout traffic. Can differ per website or store view.</p>]]></usage>
+    <summary>Throttle how many orders a shopper can place in a short window.</summary>
+    <usage><![CDATA[<p>Guards checkout against bursts of order attempts — bots, double-clicks, or abuse. When <strong>Yes</strong>, order placement is rate-limited per shopper using the limits below. When <strong>No</strong>, no limit is applied.</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -95594,8 +95594,8 @@
     </technical>
   </field>
   <field id="sales_backpressure_guest_limit" module="Magento_Quote" path="sales/backpressure/guest_limit">
-    <summary>Maximum order-placement requests allowed per guest in the period.</summary>
-    <usage><![CDATA[<p>The cap on how many order-placement requests a single guest may make within the configured reset period. Applies only when rate limiting is enabled. Can differ per website or store view.</p>]]></usage>
+    <summary>Maximum order attempts a single guest may make per period.</summary>
+    <usage><![CDATA[<p>The number of order-placement requests allowed from one guest within each counter window (set by <em>Counter resets in a…</em>). Guests are identified by IP address.</p>]]></usage>
     <technical>
       <config_path>sales/backpressure/guest_limit</config_path>
       <default_value>50</default_value>
@@ -95605,8 +95605,8 @@
     </technical>
   </field>
   <field id="sales_backpressure_limit" module="Magento_Quote" path="sales/backpressure/limit">
-    <summary>Maximum order-placement requests allowed per authenticated customer in the period.</summary>
-    <usage><![CDATA[<p>The cap on how many order-placement requests a single signed-in customer may make within the configured reset period. Applies only when rate limiting is enabled. Can differ per website or store view.</p>]]></usage>
+    <summary>Maximum order attempts a signed-in customer may make per period.</summary>
+    <usage><![CDATA[<p>The number of order-placement requests allowed from one authenticated customer within each counter window.</p>]]></usage>
     <technical>
       <config_path>sales/backpressure/limit</config_path>
       <default_value>10</default_value>
@@ -95616,8 +95616,8 @@
     </technical>
   </field>
   <field id="sales_backpressure_period" module="Magento_Quote" path="sales/backpressure/period">
-    <summary>The length of the time window after which the request counter resets.</summary>
-    <usage><![CDATA[<p>Selects the time period over which order-placement requests are counted before the per-customer and per-guest limits reset. Applies only when rate limiting is enabled. Can differ per website or store view.</p>]]></usage>
+    <summary>The window over which order-placement attempts are counted.</summary>
+    <usage><![CDATA[<p>How often the rate-limit counter resets. A shorter window allows fewer attempts before the limit takes effect.</p>]]></usage>
     <values>
       <value id="60" label="Minute">Measure the request limit per minute.</value>
       <value id="3600" label="Hour">Measure the request limit per hour.</value>
@@ -95633,8 +95633,8 @@
     </technical>
   </field>
   <field id="sales_cancellation_enabled" module="Magento_OrderCancellation" path="sales/cancellation/enabled">
-    <summary>Whether customers can cancel their own orders through GraphQL.</summary>
-    <usage><![CDATA[<p>When <strong>Yes</strong>, customers can cancel eligible orders through the GraphQL API. Can be set per website or store view.</p>]]></usage>
+    <summary>Let customers cancel their own orders through the GraphQL API.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, storefront (headless / PWA) customers can cancel eligible orders through GraphQL, choosing one of the reasons below. When <strong>No</strong>, self-service cancellation is off.</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -95647,8 +95647,8 @@
     </technical>
   </field>
   <field id="sales_cancellation_reasons" module="Magento_OrderCancellation" path="sales/cancellation/reasons">
-    <summary>The list of reasons a customer can choose from when cancelling an order.</summary>
-    <usage><![CDATA[<p>Defines the selectable reasons offered to customers when they cancel an order. Can be set per website or store view.</p>]]></usage>
+    <summary>The list of reasons a customer can pick when cancelling an order.</summary>
+    <usage><![CDATA[<p>Defines the selectable cancellation reasons offered to customers when they cancel an order from the storefront.</p>]]></usage>
     <technical>
       <config_path>sales/cancellation/reasons</config_path>
       <scope>Store View</scope>
@@ -95657,8 +95657,8 @@
     </technical>
   </field>
   <field id="sales_dashboard_use_aggregated_data" module="Magento_Sales" section="Sales" path="sales/dashboard/use_aggregated_data">
-    <summary>Yes reads the dashboard from aggregated tables (fast, not realtime); No uses live data (slower).</summary>
-    <usage><![CDATA[<p><strong>Yes</strong> draws the admin dashboard from pre-aggregated report tables, which is fast but only as current as the last report aggregation (cron). <strong>No</strong> queries live sales data: accurate but slower on busy stores.</p>]]></usage>
+    <summary>Use pre-aggregated statistics for the admin dashboard charts.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, the dashboard reads from aggregated report tables — much faster, but the figures are only as fresh as the last statistics refresh. When <strong>No</strong>, it queries live data, which is accurate but slower on large stores.</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -96402,8 +96402,8 @@
     </technical>
   </field>
   <field id="sales_general_hide_customer_ip" module="Magento_Sales" section="Sales" path="sales/general/hide_customer_ip">
-    <summary>Yes hides the customer IP on orders, invoices, shipments and credit memos (privacy/GDPR).</summary>
-    <usage><![CDATA[<p><strong>Yes</strong> stops the stored customer IP address from appearing on orders, invoices, shipments and credit memos, which helps with privacy and GDPR obligations. It affects what is shown, not whether the IP was recorded. Can differ per website or store view.</p>]]></usage>
+    <summary>Hide the customer's IP address on order documents.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, the customer IP is not shown on orders, invoices, shipments or credit memos — useful for privacy and GDPR. When <strong>No</strong>, the IP is recorded and visible to admins.</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -96416,8 +96416,8 @@
     </technical>
   </field>
   <field id="sales_gift_options_allow_items" module="Magento_GiftMessage" path="sales/gift_options/allow_items">
-    <summary>Whether shoppers can add a gift message to individual order items.</summary>
-    <usage><![CDATA[<p>When <strong>Yes</strong>, customers can attach a separate gift message to each item in the order during checkout. Can differ per website.</p>]]></usage>
+    <summary>Let shoppers add a gift message to individual order items.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, customers can attach a gift message to each item in the order.</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -96429,8 +96429,8 @@
     </technical>
   </field>
   <field id="sales_gift_options_allow_order" module="Magento_GiftMessage" path="sales/gift_options/allow_order">
-    <summary>Whether shoppers can add a single gift message to the whole order.</summary>
-    <usage><![CDATA[<p>When <strong>Yes</strong>, customers can attach one gift message at the order level during checkout. Can differ per website.</p>]]></usage>
+    <summary>Let shoppers add a single gift message to the whole order.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, customers can attach one gift message that covers the entire order.</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -96442,16 +96442,16 @@
     </technical>
   </field>
   <field id="sales_identity_address" module="Magento_Sales" section="Sales" path="sales/identity/address">
-    <summary>The store address printed on invoices and packing slips.</summary>
-    <usage><![CDATA[<p>The address block shown in the header of printed invoices and packing slips. Can differ per website or store view.</p>]]></usage>
+    <summary>The store address printed on invoices, shipments and credit memos.</summary>
+    <usage><![CDATA[<p>The address block shown on PDF and HTML sales documents. Leave blank to omit it.</p>]]></usage>
     <technical>
       <config_path>sales/identity/address</config_path>
       <scope>Store View</scope>
     </technical>
   </field>
   <field id="sales_identity_logo" module="Magento_Sales" section="Sales" path="sales/identity/logo">
-    <summary>Logo image used on PDF invoices and packing slips; can differ per store view.</summary>
-    <usage><![CDATA[<p>The logo placed on printed PDF invoices and packing slips. As the field note says, it accepts jpeg/tiff/png and a larger file helps if the PDF image looks distorted. Scoped to website/store, so each store view can print its own branding.</p>]]></usage>
+    <summary>The logo printed on PDF sales documents.</summary>
+    <usage><![CDATA[<p>The logo used on PDF invoices, shipments and credit memos. Accepts JPEG, TIFF or PNG; use a high-resolution image for crisp print output.</p>]]></usage>
     <technical>
       <config_path>sales/identity/logo</config_path>
       <scope>Store View</scope>
@@ -96459,8 +96459,8 @@
     </technical>
   </field>
   <field id="sales_identity_logo_html" module="Magento_Sales" section="Sales" path="sales/identity/logo_html">
-    <summary>Logo shown on HTML (on-screen) invoice and packing-slip views, not the PDF versions; blank uses the default. Per website/store.</summary>
-    <usage><![CDATA[<p>The logo used on the HTML print view of invoices and packing slips, not the PDF documents, which take a separate logo. Accepts jpeg/gif/png; leave it empty to fall back to the default. Settable per website/store so each brand can show its own.</p>]]></usage>
+    <summary>The logo shown on the HTML (on-screen) print view.</summary>
+    <usage><![CDATA[<p>The logo used for the HTML print view only. If left empty, the PDF logo is used. Accepts JPEG, GIF or PNG.</p>]]></usage>
     <technical>
       <config_path>sales/identity/logo_html</config_path>
       <scope>Store View</scope>
@@ -96468,8 +96468,8 @@
     </technical>
   </field>
   <field id="sales_instant_purchase_active" module="Magento_InstantPurchase" path="sales/instant_purchase/active">
-    <summary>Yes shows the one-click Instant Purchase button using a customer's stored card and address; needs a vault-capable payment method.</summary>
-    <usage><![CDATA[<p>When Yes, logged-in customers get a one-click Instant Purchase button that checks out with their saved (vaulted) payment token and default addresses. As the native note says, a payment method supporting vault and instant purchase must be enabled first. Can differ per website/store view.</p>]]></usage>
+    <summary>Offer one-click Instant Purchase using a stored payment method.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, customers with a saved (vaulted) payment method and address see an Instant Purchase button that places the order in a single step. Requires a payment method that supports vault and instant purchase.</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -96483,7 +96483,7 @@
   </field>
   <field id="sales_instant_purchase_button_text" module="Magento_InstantPurchase" path="sales/instant_purchase/button_text">
     <summary>The label shown on the Instant Purchase button.</summary>
-    <usage><![CDATA[<p>The text displayed on the Instant Purchase button that lets customers check out in one click. Applies only when <strong>Instant Purchase</strong> is enabled. Can be set per store view for localised wording.</p>]]></usage>
+    <usage><![CDATA[<p>The call-to-action text for the Instant Purchase button on the storefront.</p>]]></usage>
     <technical>
       <config_path>sales/instant_purchase/button_text</config_path>
       <default_value>Instant Purchase</default_value>
@@ -96492,8 +96492,8 @@
     </technical>
   </field>
   <field id="sales_minimum_order_active" module="Magento_Sales" section="Sales" path="sales/minimum_order/active">
-    <summary>Whether a minimum order amount is required before checkout.</summary>
-    <usage><![CDATA[<p>When Yes, orders whose total is below the configured minimum amount cannot be placed. Can differ per website.</p>]]></usage>
+    <summary>Require orders to reach a minimum amount before checkout.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, customers cannot place an order below the <em>Minimum Amount</em> set below.</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -96505,8 +96505,8 @@
     </technical>
   </field>
   <field id="sales_minimum_order_amount" module="Magento_Sales" section="Sales" path="sales/minimum_order/amount">
-    <summary>Smallest order subtotal (after discount) allowed through checkout.</summary>
-    <usage><![CDATA[<p>The minimum order value required to place an order, measured on the subtotal after discounts per the native note. Carts below it are blocked at checkout. Website scoped, so the threshold can differ per store.</p>]]></usage>
+    <summary>The smallest order value a customer may check out with.</summary>
+    <usage><![CDATA[<p>The minimum order value required to place an order, measured as the subtotal after discount. Applies only when the minimum-order rule is enabled.</p>]]></usage>
     <technical>
       <config_path>sales/minimum_order/amount</config_path>
       <scope>Website</scope>
@@ -96514,24 +96514,24 @@
     </technical>
   </field>
   <field id="sales_minimum_order_description" module="Magento_Sales" section="Sales" path="sales/minimum_order/description">
-    <summary>Message shown in the cart when the discounted subtotal is below the minimum order amount; can be localized per store view.</summary>
-    <usage><![CDATA[<p>The text displayed in the shopping cart when the subtotal after discount falls below the minimum allowed order amount (native note). Because it&#039;s store-view scoped, you can tailor or translate it per store view. Can differ per website/store view.</p>]]></usage>
+    <summary>The cart message shown while an order is below the minimum.</summary>
+    <usage><![CDATA[<p>Shown in the shopping cart when the subtotal is still below the minimum, prompting the shopper to add more.</p>]]></usage>
     <technical>
       <config_path>sales/minimum_order/description</config_path>
       <scope>Store View</scope>
     </technical>
   </field>
   <field id="sales_minimum_order_error_message" module="Magento_Sales" section="Sales" path="sales/minimum_order/error_message">
-    <summary>The message shown in the cart when the order is below the minimum amount.</summary>
-    <usage><![CDATA[<p>The error text displayed in the shopping cart when the order total is below the minimum order amount. Can differ per store view.</p>]]></usage>
+    <summary>The error shown when a below-minimum order is attempted.</summary>
+    <usage><![CDATA[<p>The message displayed in the cart when a customer tries to proceed with an order under the minimum.</p>]]></usage>
     <technical>
       <config_path>sales/minimum_order/error_message</config_path>
       <scope>Store View</scope>
     </technical>
   </field>
   <field id="sales_minimum_order_include_discount_amount" module="Magento_Sales" section="Sales" path="sales/minimum_order/include_discount_amount">
-    <summary>Yes measures the minimum order amount after discounts; discounted carts can then fall below the threshold.</summary>
-    <usage><![CDATA[<p>Decides whether the minimum order amount is checked against the subtotal <strong>after</strong> discount (<strong>Yes</strong>) or the plain subtotal (<strong>No</strong>), per the note. With Yes, a discount can pull a cart under the minimum and block checkout. Set per website.</p>]]></usage>
+    <summary>Measure the minimum against the subtotal after discounts.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, the minimum is checked against the subtotal <em>after</em> discounts. When <strong>No</strong>, it is checked against the subtotal before discounts.</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -96544,8 +96544,8 @@
     </technical>
   </field>
   <field id="sales_minimum_order_multi_address" module="Magento_Sales" section="Sales" path="sales/minimum_order/multi_address">
-    <summary>Whether each address must meet the minimum order amount in multi-address checkout.</summary>
-    <usage><![CDATA[<p>When Yes, the minimum order amount is validated for each shipping address separately during multi-address checkout, rather than against the order as a whole. Can differ per website.</p>]]></usage>
+    <summary>Apply the minimum to each address in multi-address checkout.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, each shipping address in a multi-address order must meet the minimum on its own. When <strong>No</strong>, the minimum applies to the order as a whole.</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -96557,16 +96557,16 @@
     </technical>
   </field>
   <field id="sales_minimum_order_multi_address_description" module="Magento_Sales" section="Sales" path="sales/minimum_order/multi_address_description">
-    <summary>Overrides the default minimum-order message on multi-address checkout; leave empty to use the default.</summary>
-    <usage><![CDATA[<p>Custom message shown for the minimum order amount during multi-address checkout. Leave it empty to fall back to the default description configured above. Can differ per website/store.</p>]]></usage>
+    <summary>The cart message for below-minimum multi-address orders.</summary>
+    <usage><![CDATA[<p>Shown in the cart for multi-address checkout when an address is below the minimum. Leave empty to reuse the standard description above.</p>]]></usage>
     <technical>
       <config_path>sales/minimum_order/multi_address_description</config_path>
       <scope>Store View</scope>
     </technical>
   </field>
   <field id="sales_minimum_order_multi_address_error_message" module="Magento_Sales" section="Sales" path="sales/minimum_order/multi_address_error_message">
-    <summary>Custom message shown when a multi-address order is below the minimum order amount.</summary>
-    <usage><![CDATA[<p>The error shown in the cart when an order shipped to multiple addresses falls below the minimum order amount. Leave it empty to reuse the default minimum-order error. Can differ per website/store view.</p>]]></usage>
+    <summary>The error for below-minimum multi-address orders.</summary>
+    <usage><![CDATA[<p>The error shown for multi-address checkout when an address is below the minimum. Leave empty to reuse the standard error above.</p>]]></usage>
     <technical>
       <config_path>sales/minimum_order/multi_address_error_message</config_path>
       <default_value>The current cart does not match multi shipping criteria, please review or contact the store administrator</default_value>
@@ -96574,8 +96574,8 @@
     </technical>
   </field>
   <field id="sales_minimum_order_tax_including" module="Magento_Sales" section="Sales" path="sales/minimum_order/tax_including">
-    <summary>Whether the minimum order amount is compared with tax included.</summary>
-    <usage><![CDATA[<p>Chooses whether the order total is checked against the minimum amount including tax or excluding it. Can differ per website.</p>]]></usage>
+    <summary>Count tax toward the minimum order amount.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, tax is included when checking the minimum order amount. When <strong>No</strong>, only the pre-tax subtotal counts.</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -96588,8 +96588,8 @@
     </technical>
   </field>
   <field id="sales_msrp_display_price_type" module="Magento_Msrp" path="sales/msrp/display_price_type">
-    <summary>When the actual price is revealed for products using a Minimum Advertised Price.</summary>
-    <usage><![CDATA[<p>Chooses where the real price is shown instead of the MAP: <strong>On Gesture</strong> (after a click/popup), <strong>In Cart</strong>, or <strong>Before Order Confirmation</strong>. Can differ per website.</p>]]></usage>
+    <summary>When to reveal the actual price on products that use MAP.</summary>
+    <usage><![CDATA[<p>Controls where a product's real price appears when Minimum Advertised Price hides it — on a shopper gesture, once it is in the cart, or just before order confirmation.</p>]]></usage>
     <values>
       <value id="1" label="On Gesture">Reveal the price when the shopper acts (hover/click gesture).</value>
       <value id="2" label="In Cart">Reveal the price only once the product is in the cart.</value>
@@ -96603,8 +96603,8 @@
     </technical>
   </field>
   <field id="sales_msrp_enabled" module="Magento_Msrp" path="sales/msrp/enabled">
-    <summary>Yes turns on Minimum Advertised Price store-wide &#x2014; and, per the warning, hides all storefront prices until a MAP action.</summary>
-    <usage><![CDATA[<p>Enables Minimum Advertised Price (MAP) handling as the store default. The native warning is key: turning it <strong>Yes</strong> hides product prices on the storefront until the configured action (such as adding to cart) reveals them. Set per website.</p>]]></usage>
+    <summary>Turn on Minimum Advertised Price handling store-wide.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, products can hide their price under MAP rules and reveal it later. <strong>Warning:</strong> enabling MAP by default hides every storefront price until each product is configured.</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -96617,8 +96617,8 @@
     </technical>
   </field>
   <field id="sales_msrp_explanation_message" module="Magento_Msrp" path="sales/msrp/explanation_message">
-    <summary>The default text shown in the MAP price popup.</summary>
-    <usage><![CDATA[<p>The message displayed in the popup that explains why the actual price is hidden for Minimum Advertised Price products. Can differ per website or store view.</p>]]></usage>
+    <summary>The popup text explaining why a price is hidden.</summary>
+    <usage><![CDATA[<p>The message shown in the MAP popup that explains why the price is not displayed.</p>]]></usage>
     <technical>
       <config_path>sales/msrp/explanation_message</config_path>
       <default_value>Our price is lower than the manufacturer's "minimum advertised price." As a result, we cannot show you the price in catalog or the product page. &lt;br /&gt;&lt;br /&gt; You have no obligation to purchase the product once you know the price. You can simply remove the item from your cart.</default_value>
@@ -96626,8 +96626,8 @@
     </technical>
   </field>
   <field id="sales_msrp_explanation_message_whats_this" module="Magento_Msrp" path="sales/msrp/explanation_message_whats_this">
-    <summary>The default text shown in the MAP "What's This" popup.</summary>
-    <usage><![CDATA[<p>The message displayed in the &quot;What&#039;s This&quot; popup linked from Minimum Advertised Price products. Can differ per website or store view.</p>]]></usage>
+    <summary>The text behind the MAP "What's this?" link.</summary>
+    <usage><![CDATA[<p>The explanatory text revealed by the <em>What's this?</em> link next to a MAP-hidden price.</p>]]></usage>
     <technical>
       <config_path>sales/msrp/explanation_message_whats_this</config_path>
       <default_value>Our price is lower than the manufacturer's "minimum advertised price." As a result, we cannot show you the price in catalog or the product page. &lt;br /&gt;&lt;br /&gt; You have no obligation to purchase the product once you know the price. You can simply remove the item from your cart.</default_value>
@@ -96635,8 +96635,8 @@
     </technical>
   </field>
   <field id="sales_orders_delete_pending_after" module="Magento_Sales" section="Sales" path="sales/orders/delete_pending_after">
-    <summary>How long, in minutes, a pending-payment order is kept before it is cancelled.</summary>
-    <usage><![CDATA[<p>The lifetime in minutes for orders awaiting payment; a scheduled job cancels orders older than this. Can differ per website.</p>]]></usage>
+    <summary>How long an unpaid pending order survives before cancellation.</summary>
+    <usage><![CDATA[<p>The number of minutes a pending-payment order is kept before the cron job cancels it and releases its reserved stock.</p>]]></usage>
     <technical>
       <config_path>sales/orders/delete_pending_after</config_path>
       <default_value>480</default_value>
@@ -96687,8 +96687,8 @@
     </technical>
   </field>
   <field id="sales_reorder_allow" module="Magento_Sales" section="Sales" path="sales/reorder/allow">
-    <summary>Whether customers can reorder a previous order from their account.</summary>
-    <usage><![CDATA[<p>When Yes, the Reorder action is available in the customer account and order history, letting shoppers place a new order based on a past one. Can differ per store view.</p>]]></usage>
+    <summary>Let customers reorder a past order from their account.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, a Reorder button appears in the customer account, adding a previous order's items back to the cart.</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -96701,8 +96701,8 @@
     </technical>
   </field>
   <field id="sales_totals_sort_discount" module="Magento_Sales" section="Sales" path="sales/totals_sort/discount">
-    <summary>The position of the Discount line among the cart and checkout totals, as a sort order number.</summary>
-    <usage><![CDATA[<p>A numeric sort order that sets where the Discount line appears in the totals block of the cart and checkout. Lower numbers appear higher. Can differ per website.</p>]]></usage>
+    <summary>The position of the Discount line in the totals block.</summary>
+    <usage><![CDATA[<p>Sort order of the <em>Discount</em> row among the totals. Lower numbers appear higher in the list.</p>]]></usage>
     <technical>
       <config_path>sales/totals_sort/discount</config_path>
       <default_value>20</default_value>
@@ -96711,8 +96711,8 @@
     </technical>
   </field>
   <field id="sales_totals_sort_grand_total" module="Magento_Sales" section="Sales" path="sales/totals_sort/grand_total">
-    <summary>The position of the Grand Total line among the cart and checkout totals, as a sort order number.</summary>
-    <usage><![CDATA[<p>A numeric sort order that sets where the Grand Total line appears in the totals block of the cart and checkout. Lower numbers appear higher. Can differ per website.</p>]]></usage>
+    <summary>The position of the Grand Total line in the totals block.</summary>
+    <usage><![CDATA[<p>Sort order of the <em>Grand Total</em> row among the totals. Lower numbers appear higher in the list.</p>]]></usage>
     <technical>
       <config_path>sales/totals_sort/grand_total</config_path>
       <default_value>100</default_value>
@@ -96721,8 +96721,8 @@
     </technical>
   </field>
   <field id="sales_totals_sort_shipping" module="Magento_Sales" section="Sales" path="sales/totals_sort/shipping">
-    <summary>The position of the Shipping line among the cart and checkout totals, as a sort order number.</summary>
-    <usage><![CDATA[<p>A numeric sort order that sets where the Shipping line appears in the totals block of the cart and checkout. Lower numbers appear higher. Can differ per website.</p>]]></usage>
+    <summary>The position of the Shipping line in the totals block.</summary>
+    <usage><![CDATA[<p>Sort order of the <em>Shipping</em> row among the totals. Lower numbers appear higher in the list.</p>]]></usage>
     <technical>
       <config_path>sales/totals_sort/shipping</config_path>
       <default_value>30</default_value>
@@ -96731,8 +96731,8 @@
     </technical>
   </field>
   <field id="sales_totals_sort_subtotal" module="Magento_Sales" section="Sales" path="sales/totals_sort/subtotal">
-    <summary>The position of the Subtotal line among the cart and checkout totals, as a sort order number.</summary>
-    <usage><![CDATA[<p>A numeric sort order that sets where the Subtotal line appears in the totals block of the cart and checkout. Lower numbers appear higher. Can differ per website.</p>]]></usage>
+    <summary>The position of the Subtotal line in the totals block.</summary>
+    <usage><![CDATA[<p>Sort order of the <em>Subtotal</em> row among the cart and checkout totals. Lower numbers appear higher in the list.</p>]]></usage>
     <technical>
       <config_path>sales/totals_sort/subtotal</config_path>
       <default_value>10</default_value>
@@ -96741,8 +96741,8 @@
     </technical>
   </field>
   <field id="sales_totals_sort_tax" module="Magento_Sales" section="Sales" path="sales/totals_sort/tax">
-    <summary>The position of the Tax line among the cart and checkout totals, as a sort order number.</summary>
-    <usage><![CDATA[<p>A numeric sort order that sets where the Tax line appears in the totals block of the cart and checkout. Lower numbers appear higher. Can differ per website.</p>]]></usage>
+    <summary>The position of the Tax line in the totals block.</summary>
+    <usage><![CDATA[<p>Sort order of the <em>Tax</em> row among the totals. Lower numbers appear higher in the list.</p>]]></usage>
     <technical>
       <config_path>sales/totals_sort/tax</config_path>
       <default_value>40</default_value>
@@ -96751,8 +96751,8 @@
     </technical>
   </field>
   <field id="sales_totals_sort_weee" module="Magento_Weee" path="sales/totals_sort/weee">
-    <summary>The position of the Fixed Product Tax line among the order totals.</summary>
-    <usage><![CDATA[<p>A sort-order number that sets where the Fixed Product Tax line appears relative to the other totals (subtotal, shipping, tax, etc.). Can differ per website.</p>]]></usage>
+    <summary>The position of the Fixed Product Tax line in the totals block.</summary>
+    <usage><![CDATA[<p>Sort order of the <em>Fixed Product Tax</em> (FPT / WEEE) row among the totals. Lower numbers appear higher in the list.</p>]]></usage>
     <technical>
       <config_path>sales/totals_sort/weee</config_path>
       <default_value>35</default_value>
@@ -96761,8 +96761,8 @@
     </technical>
   </field>
   <field id="sales_zerograndtotal_creditmemo_allow_zero_grandtotal" module="Magento_Sales" section="Sales" path="sales/zerograndtotal_creditmemo/allow_zero_grandtotal">
-    <summary>Whether a credit memo with a zero grand total can be created.</summary>
-    <usage><![CDATA[<p>When Yes, a credit memo can be issued even when its grand total comes to zero. Can differ per store view.</p>]]></usage>
+    <summary>Allow credit memos whose total is zero.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, a credit memo can be created even when its total is zero — for example when refunding only non-monetary items. When <strong>No</strong>, zero-total credit memos are blocked.</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
