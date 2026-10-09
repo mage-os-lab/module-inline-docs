@@ -4,7 +4,9 @@ In-admin documentation for **Magento / Mage-OS**: a small marker next to a
 **Stores → Configuration** field opens a card explaining what that setting
 actually does — the whole note shown at once, with the parent section named below.
 
-<img width="1077" height="482" alt="inline_docs" src="https://github.com/user-attachments/assets/c48b7726-4f70-42c9-9eac-9b9ebf3464df" />
+<img width="1077" height="782" alt="inline_docs_v2" src="https://github.com/user-attachments/assets/6c78bae5-b0be-4550-877e-f57213a6e979" />
+
+
 
 The notes **ship inside the module** and are served locally. There is no external
 documentation service, no API token, and no HTTP call on page load — so it is safe
@@ -98,3 +100,9 @@ the screen it decorates.
 ## License
 
 MIT — see [LICENSE](LICENSE).
+
+
+
+## Previous Version UI
+
+<img width="1077" height="482" alt="inline_docs" src="https://github.com/user-attachments/assets/c48b7726-4f70-42c9-9eac-9b9ebf3464df" />
