@@ -5,6 +5,12 @@
  * Magento installation. One <field> per admin configuration field, matched to
  * the page by its DOM element id (section_group_field). Content is served
  * locally by MageOS_InlineDocs — no external documentation host.
+ *
+ * A field renders as a small documentation card: the field's own label as the
+ * heading (read from the page, not duplicated here), the admin path as a pill,
+ * a one-sentence <summary>, a longer <usage> body, an "Accepted values" list,
+ * and a "Technical details" block. Everything below <summary> is optional, so a
+ * field may carry just a one-liner or a full card.
  */
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
@@ -24,19 +30,59 @@
 
     <xs:complexType name="fieldType">
         <xs:sequence>
-            <!-- Short one-sentence note shown in the popover (also a candidate <comment>). -->
-            <xs:element name="comment" type="xs:string" minOccurs="1" maxOccurs="1"/>
-            <!-- Optional longer Markdown explanation shown when the reader expands "more". -->
-            <xs:element name="modal" type="xs:string" minOccurs="0" maxOccurs="1"/>
+            <!-- One-sentence plain-text lead, shown bold at the top of the card.
+                 Also the best candidate for the field's own native <comment>. -->
+            <xs:element name="summary" type="xs:string" minOccurs="1" maxOccurs="1"/>
+            <!-- Longer explanation. May carry a restricted set of inline HTML
+                 (p, ul/ol/li, code, strong, em, a, br) authored in CDATA. -->
+            <xs:element name="usage" type="xs:string" minOccurs="0" maxOccurs="1"/>
+            <!-- Per-option meaning for select/multiselect fields. -->
+            <xs:element name="values" type="valuesType" minOccurs="0" maxOccurs="1"/>
+            <!-- Extracted facts about the field (all optional, fixed order). -->
+            <xs:element name="technical" type="technicalType" minOccurs="0" maxOccurs="1"/>
         </xs:sequence>
         <!-- Admin DOM id: str_replace('/', '_', section/group/field). The join key. -->
         <xs:attribute name="id" type="xs:string" use="required"/>
-        <!-- Owning module, e.g. Magento_Catalog (for the card footer / provenance). -->
+        <!-- Owning module, e.g. Magento_Catalog (shown in the card footer). -->
         <xs:attribute name="module" type="xs:string" use="optional"/>
-        <!-- Section label, e.g. "Catalog" (shown in the card footer). -->
+        <!-- Section label, e.g. "Catalog" (provenance / fallback footer). -->
         <xs:attribute name="section" type="xs:string" use="optional"/>
-        <!-- Optional "Full documentation" URL; shown only when the feature's link
-             toggle is enabled. -->
+        <!-- Admin path section/group/field, shown as the card's pill. -->
+        <xs:attribute name="path" type="xs:string" use="optional"/>
+        <!-- Optional "Full documentation" URL; shown only when the feature's
+             link toggle is enabled. -->
         <xs:attribute name="url" type="xs:string" use="optional"/>
+    </xs:complexType>
+
+    <xs:complexType name="valuesType">
+        <xs:sequence>
+            <xs:element name="value" minOccurs="1" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:simpleContent>
+                        <xs:extension base="xs:string">
+                            <!-- Stored option value, e.g. "1". -->
+                            <xs:attribute name="id" type="xs:string" use="required"/>
+                            <!-- Human label as shown in the dropdown, e.g. "Yes". -->
+                            <xs:attribute name="label" type="xs:string" use="required"/>
+                        </xs:extension>
+                    </xs:simpleContent>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- xs:all so order of authored nodes is free; the reader fixes presentation order. -->
+    <xs:complexType name="technicalType">
+        <xs:all>
+            <xs:element name="config_path"    type="xs:string" minOccurs="0"/>
+            <xs:element name="default_value"  type="xs:string" minOccurs="0"/>
+            <xs:element name="scope"          type="xs:string" minOccurs="0"/>
+            <xs:element name="source_model"   type="xs:string" minOccurs="0"/>
+            <xs:element name="backend_model"  type="xs:string" minOccurs="0"/>
+            <xs:element name="frontend_model" type="xs:string" minOccurs="0"/>
+            <xs:element name="validation"     type="xs:string" minOccurs="0"/>
+            <xs:element name="depends"        type="xs:string" minOccurs="0"/>
+            <xs:element name="consumed_by"    type="xs:string" minOccurs="0"/>
+        </xs:all>
     </xs:complexType>
 </xs:schema>
