@@ -7265,8 +7265,8 @@
     </technical>
   </field>
   <field id="payment_account_merchant_country" section="Payment Methods" path="payment/account/merchant_country">
-    <summary>Sets the merchant's country, which determines the PayPal solutions available to configure.</summary>
-    <usage><![CDATA[<p>The merchant&#039;s country of operation. PayPal offers country-specific payment solutions, so this controls which PayPal methods appear and can be configured. If left unset, the Default Country from General config is used. Website scope.</p>]]></usage>
+    <summary>The merchant country used to decide which payment solutions are offered.</summary>
+    <usage><![CDATA[<p>Your business's country. Payment providers such as PayPal use it to decide which solutions are available. Defaults to the store's general country when left unset.</p>]]></usage>
     <technical>
       <config_path>paypal/general/merchant_country</config_path>
       <scope>Website</scope>
@@ -25110,8 +25110,8 @@
     </technical>
   </field>
   <field id="payment_banktransfer_active" module="Magento_OfflinePayments" path="payment/banktransfer/active">
-    <summary>Turns the Bank Transfer offline payment method on or off.</summary>
-    <usage><![CDATA[<p>Controls whether <strong>Bank Transfer Payment</strong> is offered at checkout. Set to <strong>Yes</strong> to make it available, <strong>No</strong> to hide it. Can be set per website.</p>]]></usage>
+    <summary>Offer Bank Transfer as a payment option at checkout.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, Bank Transfer is available to customers at checkout.</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -25124,8 +25124,8 @@
     </technical>
   </field>
   <field id="payment_banktransfer_allowspecific" module="Magento_OfflinePayments" path="payment/banktransfer/allowspecific">
-    <summary>Whether Bank Transfer is offered in all countries or only selected ones.</summary>
-    <usage><![CDATA[<p>Chooses between <strong>All Allowed Countries</strong> and <strong>Specific Countries</strong> for where this method is available. When set to specific countries, the list is chosen in <em>Payment from Specific Countries</em>.</p>]]></usage>
+    <summary>Whether Bank Transfer is limited to specific countries.</summary>
+    <usage><![CDATA[<p>Offer Bank Transfer in all allowed countries, or restrict it to the specific countries chosen below.</p>]]></usage>
     <values>
       <value id="0" label="All Allowed Countries">Offer this method in every country your store already allows.</value>
       <value id="1" label="Specific Countries">Limit this method to the specific countries you pick below.</value>
@@ -25138,16 +25138,16 @@
     </technical>
   </field>
   <field id="payment_banktransfer_instructions" module="Magento_OfflinePayments" path="payment/banktransfer/instructions">
-    <summary>The payment instructions shown to customers who choose Bank Transfer.</summary>
-    <usage><![CDATA[<p>Free-text instructions (such as the bank account details) displayed to the customer when they select Bank Transfer. Can differ per website or store view.</p>]]></usage>
+    <summary>Payment instructions shown for Bank Transfer.</summary>
+    <usage><![CDATA[<p>The instructions displayed to the shopper who chooses Bank Transfer — typically the bank account details to send payment to.</p>]]></usage>
     <technical>
       <config_path>payment/banktransfer/instructions</config_path>
       <scope>Store View</scope>
     </technical>
   </field>
   <field id="payment_banktransfer_max_order_total" module="Magento_OfflinePayments" path="payment/banktransfer/max_order_total">
-    <summary>The largest order total for which Bank Transfer is offered.</summary>
-    <usage><![CDATA[<p>The maximum order total for which this method appears at checkout. Orders above this amount cannot use it.</p>]]></usage>
+    <summary>Largest order total that can use Bank Transfer.</summary>
+    <usage><![CDATA[<p>Orders above this total cannot use Bank Transfer.</p>]]></usage>
     <technical>
       <config_path>payment/banktransfer/max_order_total</config_path>
       <scope>Website</scope>
@@ -25155,8 +25155,8 @@
     </technical>
   </field>
   <field id="payment_banktransfer_min_order_total" module="Magento_OfflinePayments" path="payment/banktransfer/min_order_total">
-    <summary>The smallest order total for which Bank Transfer is offered.</summary>
-    <usage><![CDATA[<p>The minimum order total required for this method to appear at checkout. Orders below this amount cannot use it.</p>]]></usage>
+    <summary>Smallest order total that can use Bank Transfer.</summary>
+    <usage><![CDATA[<p>Orders below this total cannot use Bank Transfer.</p>]]></usage>
     <technical>
       <config_path>payment/banktransfer/min_order_total</config_path>
       <scope>Website</scope>
@@ -25164,8 +25164,8 @@
     </technical>
   </field>
   <field id="payment_banktransfer_order_status" module="Magento_OfflinePayments" path="payment/banktransfer/order_status">
-    <summary>The status assigned to new orders paid by Bank Transfer.</summary>
-    <usage><![CDATA[<p>The order status applied when an order is placed with <strong>Bank Transfer Payment</strong>, chosen from the statuses mapped to the New order state. Can be set per website.</p>]]></usage>
+    <summary>The status new Bank Transfer orders are set to.</summary>
+    <usage><![CDATA[<p>The order status applied when an order is placed with Bank Transfer.</p>]]></usage>
     <technical>
       <config_path>payment/banktransfer/order_status</config_path>
       <default_value>pending</default_value>
@@ -25174,8 +25174,8 @@
     </technical>
   </field>
   <field id="payment_banktransfer_sort_order" module="Magento_OfflinePayments" path="payment/banktransfer/sort_order">
-    <summary>The position of Bank Transfer in the list of payment methods at checkout.</summary>
-    <usage><![CDATA[<p>A numeric sort value that sets where <strong>Bank Transfer Payment</strong> appears relative to other payment methods; lower numbers show first.</p>]]></usage>
+    <summary>The position of Bank Transfer among payment methods.</summary>
+    <usage><![CDATA[<p>Controls where Bank Transfer appears in the list of payment options. Lower numbers appear first.</p>]]></usage>
     <technical>
       <config_path>payment/banktransfer/sort_order</config_path>
       <scope>Website</scope>
@@ -25183,8 +25183,8 @@
     </technical>
   </field>
   <field id="payment_banktransfer_specificcountry" module="Magento_OfflinePayments" path="payment/banktransfer/specificcountry">
-    <summary>The countries that can use Bank Transfer when payment is limited to specific countries.</summary>
-    <usage><![CDATA[<p>The billing countries allowed to use this method. Applies only when <strong>Payment from Applicable Countries</strong> is set to Specific Countries.</p>]]></usage>
+    <summary>The countries Bank Transfer is offered in.</summary>
+    <usage><![CDATA[<p>The countries where Bank Transfer is available, used when it is limited to specific countries.</p>]]></usage>
     <technical>
       <config_path>payment/banktransfer/specificcountry</config_path>
       <scope>Website</scope>
@@ -25192,8 +25192,8 @@
     </technical>
   </field>
   <field id="payment_banktransfer_title" module="Magento_OfflinePayments" path="payment/banktransfer/title">
-    <summary>The name shown for the Bank Transfer method at checkout.</summary>
-    <usage><![CDATA[<p>The label customers see for this payment method during checkout. Can differ per website or store view.</p>]]></usage>
+    <summary>The name shown to shoppers for Bank Transfer.</summary>
+    <usage><![CDATA[<p>The label customers see for this method at checkout.</p>]]></usage>
     <technical>
       <config_path>payment/banktransfer/title</config_path>
       <default_value>Bank Transfer Payment</default_value>
@@ -33761,8 +33761,8 @@
     </technical>
   </field>
   <field id="payment_cashondelivery_active" module="Magento_OfflinePayments" path="payment/cashondelivery/active">
-    <summary>Turns the Cash On Delivery offline payment method on or off.</summary>
-    <usage><![CDATA[<p>Controls whether <strong>Cash On Delivery Payment</strong> is offered at checkout. Set to <strong>Yes</strong> to make it available, <strong>No</strong> to hide it. Can be set per website.</p>]]></usage>
+    <summary>Offer Cash On Delivery as a payment option at checkout.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, Cash On Delivery is available to customers at checkout.</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -33775,8 +33775,8 @@
     </technical>
   </field>
   <field id="payment_cashondelivery_allowspecific" module="Magento_OfflinePayments" path="payment/cashondelivery/allowspecific">
-    <summary>Whether Cash On Delivery is offered in all countries or only selected ones.</summary>
-    <usage><![CDATA[<p>Chooses between <strong>All Allowed Countries</strong> and <strong>Specific Countries</strong> for where this method is available. When set to specific countries, the list is chosen in <em>Payment from Specific Countries</em>.</p>]]></usage>
+    <summary>Whether Cash On Delivery is limited to specific countries.</summary>
+    <usage><![CDATA[<p>Offer Cash On Delivery in all allowed countries, or restrict it to the specific countries chosen below.</p>]]></usage>
     <values>
       <value id="0" label="All Allowed Countries">Offer this method in every country your store already allows.</value>
       <value id="1" label="Specific Countries">Limit this method to the specific countries you pick below.</value>
@@ -33789,16 +33789,16 @@
     </technical>
   </field>
   <field id="payment_cashondelivery_instructions" module="Magento_OfflinePayments" path="payment/cashondelivery/instructions">
-    <summary>The payment instructions shown to customers who choose Cash On Delivery.</summary>
-    <usage><![CDATA[<p>Free-text instructions displayed to the customer when they select Cash On Delivery. Can differ per website or store view.</p>]]></usage>
+    <summary>Payment instructions shown for Cash On Delivery.</summary>
+    <usage><![CDATA[<p>The instructions displayed to the shopper who chooses Cash On Delivery.</p>]]></usage>
     <technical>
       <config_path>payment/cashondelivery/instructions</config_path>
       <scope>Store View</scope>
     </technical>
   </field>
   <field id="payment_cashondelivery_max_order_total" module="Magento_OfflinePayments" path="payment/cashondelivery/max_order_total">
-    <summary>The largest order total for which Cash On Delivery is offered.</summary>
-    <usage><![CDATA[<p>The maximum order total for which this method appears at checkout. Orders above this amount cannot use it.</p>]]></usage>
+    <summary>Largest order total that can use Cash On Delivery.</summary>
+    <usage><![CDATA[<p>Orders above this total cannot use Cash On Delivery.</p>]]></usage>
     <technical>
       <config_path>payment/cashondelivery/max_order_total</config_path>
       <scope>Website</scope>
@@ -33806,8 +33806,8 @@
     </technical>
   </field>
   <field id="payment_cashondelivery_min_order_total" module="Magento_OfflinePayments" path="payment/cashondelivery/min_order_total">
-    <summary>The smallest order total for which Cash On Delivery is offered.</summary>
-    <usage><![CDATA[<p>The minimum order total required for this method to appear at checkout. Orders below this amount cannot use it.</p>]]></usage>
+    <summary>Smallest order total that can use Cash On Delivery.</summary>
+    <usage><![CDATA[<p>Orders below this total cannot use Cash On Delivery.</p>]]></usage>
     <technical>
       <config_path>payment/cashondelivery/min_order_total</config_path>
       <scope>Website</scope>
@@ -33815,8 +33815,8 @@
     </technical>
   </field>
   <field id="payment_cashondelivery_order_status" module="Magento_OfflinePayments" path="payment/cashondelivery/order_status">
-    <summary>The status assigned to new orders paid by Cash On Delivery.</summary>
-    <usage><![CDATA[<p>The order status applied when an order is placed with <strong>Cash On Delivery</strong>, chosen from the statuses mapped to the New order state. Can be set per website.</p>]]></usage>
+    <summary>The status new Cash On Delivery orders are set to.</summary>
+    <usage><![CDATA[<p>The order status applied when an order is placed with Cash On Delivery.</p>]]></usage>
     <technical>
       <config_path>payment/cashondelivery/order_status</config_path>
       <default_value>pending</default_value>
@@ -33825,8 +33825,8 @@
     </technical>
   </field>
   <field id="payment_cashondelivery_sort_order" module="Magento_OfflinePayments" path="payment/cashondelivery/sort_order">
-    <summary>The position of Cash On Delivery in the list of payment methods at checkout.</summary>
-    <usage><![CDATA[<p>A numeric sort value that sets where <strong>Cash On Delivery Payment</strong> appears relative to other payment methods; lower numbers show first.</p>]]></usage>
+    <summary>The position of Cash On Delivery among payment methods.</summary>
+    <usage><![CDATA[<p>Controls where Cash On Delivery appears in the list of payment options. Lower numbers appear first.</p>]]></usage>
     <technical>
       <config_path>payment/cashondelivery/sort_order</config_path>
       <scope>Website</scope>
@@ -33834,8 +33834,8 @@
     </technical>
   </field>
   <field id="payment_cashondelivery_specificcountry" module="Magento_OfflinePayments" path="payment/cashondelivery/specificcountry">
-    <summary>The countries that can use Cash On Delivery when payment is limited to specific countries.</summary>
-    <usage><![CDATA[<p>The billing countries allowed to use this method. Applies only when <strong>Payment from Applicable Countries</strong> is set to Specific Countries.</p>]]></usage>
+    <summary>The countries Cash On Delivery is offered in.</summary>
+    <usage><![CDATA[<p>The countries where Cash On Delivery is available, used when it is limited to specific countries.</p>]]></usage>
     <technical>
       <config_path>payment/cashondelivery/specificcountry</config_path>
       <scope>Website</scope>
@@ -33843,8 +33843,8 @@
     </technical>
   </field>
   <field id="payment_cashondelivery_title" module="Magento_OfflinePayments" path="payment/cashondelivery/title">
-    <summary>The name shown for the Cash On Delivery method at checkout.</summary>
-    <usage><![CDATA[<p>The label customers see for this payment method during checkout. Can differ per website or store view.</p>]]></usage>
+    <summary>The name shown to shoppers for Cash On Delivery.</summary>
+    <usage><![CDATA[<p>The label customers see for this method at checkout.</p>]]></usage>
     <technical>
       <config_path>payment/cashondelivery/title</config_path>
       <default_value>Cash On Delivery</default_value>
@@ -33852,8 +33852,8 @@
     </technical>
   </field>
   <field id="payment_checkmo_active" module="Magento_OfflinePayments" path="payment/checkmo/active">
-    <summary>Turns the Check / Money Order offline payment method on or off.</summary>
-    <usage><![CDATA[<p>Controls whether <strong>Check / Money Order</strong> is offered as a payment option at checkout. Set to <strong>Yes</strong> to make it available, <strong>No</strong> to hide it. Can be set per website.</p>]]></usage>
+    <summary>Offer Check / Money Order as a payment option at checkout.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, Check / Money Order is available to customers at checkout.</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -33866,8 +33866,8 @@
     </technical>
   </field>
   <field id="payment_checkmo_allowspecific" module="Magento_OfflinePayments" path="payment/checkmo/allowspecific">
-    <summary>Whether Check / Money Order is offered in all countries or only selected ones.</summary>
-    <usage><![CDATA[<p>Chooses between <strong>All Allowed Countries</strong> and <strong>Specific Countries</strong> for where this method is available. When set to specific countries, the list is chosen in <em>Payment from Specific Countries</em>.</p>]]></usage>
+    <summary>Whether Check / Money Order is limited to specific countries.</summary>
+    <usage><![CDATA[<p>Offer Check / Money Order in all allowed countries, or restrict it to the specific countries chosen below.</p>]]></usage>
     <values>
       <value id="0" label="All Allowed Countries">Offer this method in every country your store already allows.</value>
       <value id="1" label="Specific Countries">Limit this method to the specific countries you pick below.</value>
@@ -33880,16 +33880,16 @@
     </technical>
   </field>
   <field id="payment_checkmo_mailing_address" module="Magento_OfflinePayments" path="payment/checkmo/mailing_address">
-    <summary>The address customers should mail their check or money order to.</summary>
-    <usage><![CDATA[<p>The postal address displayed to the customer for sending the check or money order. Can differ per website or store view.</p>]]></usage>
+    <summary>The address customers mail their check to.</summary>
+    <usage><![CDATA[<p>The mailing address shown to customers paying by check or money order.</p>]]></usage>
     <technical>
       <config_path>payment/checkmo/mailing_address</config_path>
       <scope>Store View</scope>
     </technical>
   </field>
   <field id="payment_checkmo_max_order_total" module="Magento_OfflinePayments" path="payment/checkmo/max_order_total">
-    <summary>The largest order total for which Check / Money Order is offered.</summary>
-    <usage><![CDATA[<p>The maximum order total for which this method appears at checkout. Orders above this amount cannot use it.</p>]]></usage>
+    <summary>Largest order total that can use Check / Money Order.</summary>
+    <usage><![CDATA[<p>Orders above this total cannot use Check / Money Order.</p>]]></usage>
     <technical>
       <config_path>payment/checkmo/max_order_total</config_path>
       <scope>Website</scope>
@@ -33897,8 +33897,8 @@
     </technical>
   </field>
   <field id="payment_checkmo_min_order_total" module="Magento_OfflinePayments" path="payment/checkmo/min_order_total">
-    <summary>The smallest order total for which Check / Money Order is offered.</summary>
-    <usage><![CDATA[<p>The minimum order total required for this method to appear at checkout. Orders below this amount cannot use it.</p>]]></usage>
+    <summary>Smallest order total that can use Check / Money Order.</summary>
+    <usage><![CDATA[<p>Orders below this total cannot use Check / Money Order.</p>]]></usage>
     <technical>
       <config_path>payment/checkmo/min_order_total</config_path>
       <scope>Website</scope>
@@ -33906,8 +33906,8 @@
     </technical>
   </field>
   <field id="payment_checkmo_order_status" module="Magento_OfflinePayments" path="payment/checkmo/order_status">
-    <summary>The status assigned to new orders paid by Check / Money Order.</summary>
-    <usage><![CDATA[<p>The order status applied when an order is placed with <strong>Check / Money Order</strong>, chosen from the statuses mapped to the New order state. Can be set per website.</p>]]></usage>
+    <summary>The status new Check / Money Order orders are set to.</summary>
+    <usage><![CDATA[<p>The order status applied when an order is placed with Check / Money Order.</p>]]></usage>
     <technical>
       <config_path>payment/checkmo/order_status</config_path>
       <default_value>pending</default_value>
@@ -33916,24 +33916,24 @@
     </technical>
   </field>
   <field id="payment_checkmo_payable_to" module="Magento_OfflinePayments" path="payment/checkmo/payable_to">
-    <summary>The payee name customers should make the check out to.</summary>
-    <usage><![CDATA[<p>The name shown to the customer as the party the check or money order should be made payable to. Can differ per website or store view.</p>]]></usage>
+    <summary>Who customers should make the check payable to.</summary>
+    <usage><![CDATA[<p>The payee name shown to customers paying by check or money order.</p>]]></usage>
     <technical>
       <config_path>payment/checkmo/payable_to</config_path>
       <scope>Store View</scope>
     </technical>
   </field>
   <field id="payment_checkmo_sort_order" module="Magento_OfflinePayments" path="payment/checkmo/sort_order">
-    <summary>The position of Check / Money Order in the list of payment methods at checkout.</summary>
-    <usage><![CDATA[<p>A numeric sort value that sets where <strong>Check / Money Order</strong> appears relative to other payment methods; lower numbers show first.</p>]]></usage>
+    <summary>The position of Check / Money Order among payment methods.</summary>
+    <usage><![CDATA[<p>Controls where Check / Money Order appears in the list of payment options. Lower numbers appear first.</p>]]></usage>
     <technical>
       <config_path>payment/checkmo/sort_order</config_path>
       <scope>Website</scope>
     </technical>
   </field>
   <field id="payment_checkmo_specificcountry" module="Magento_OfflinePayments" path="payment/checkmo/specificcountry">
-    <summary>The countries that can use Check / Money Order when payment is limited to specific countries.</summary>
-    <usage><![CDATA[<p>The billing countries allowed to use this method. Applies only when <strong>Payment from Applicable Countries</strong> is set to Specific Countries.</p>]]></usage>
+    <summary>The countries Check / Money Order is offered in.</summary>
+    <usage><![CDATA[<p>The countries where Check / Money Order is available, used when it is limited to specific countries.</p>]]></usage>
     <technical>
       <config_path>payment/checkmo/specificcountry</config_path>
       <scope>Website</scope>
@@ -33941,8 +33941,8 @@
     </technical>
   </field>
   <field id="payment_checkmo_title" module="Magento_OfflinePayments" path="payment/checkmo/title">
-    <summary>The name shown for the Check / Money Order method at checkout.</summary>
-    <usage><![CDATA[<p>The label customers see for this payment method during checkout. Can differ per website or store view, so each store can word it in its own language.</p>]]></usage>
+    <summary>The name shown to shoppers for Check / Money Order.</summary>
+    <usage><![CDATA[<p>The label customers see for this method at checkout.</p>]]></usage>
     <technical>
       <config_path>payment/checkmo/title</config_path>
       <default_value>Check / Money order</default_value>
@@ -48419,8 +48419,8 @@
     </technical>
   </field>
   <field id="payment_free_active" module="Magento_Payment" section="Payment Methods" path="payment/free/active">
-    <summary>Enables the Zero Subtotal Checkout method for orders whose total is zero.</summary>
-    <usage><![CDATA[<p>When <strong>Yes</strong>, the Zero Subtotal Checkout payment method is offered for orders that come to zero (for example fully covered by a discount or store credit). Can differ per website.</p>]]></usage>
+    <summary>Enable Zero Subtotal Checkout for free orders.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, orders whose total comes to zero — fully discounted or free — can be placed without a paid payment method.</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -48433,8 +48433,8 @@
     </technical>
   </field>
   <field id="payment_free_allowspecific" module="Magento_Payment" section="Payment Methods" path="payment/free/allowspecific">
-    <summary>Whether this method is offered in all allowed countries or only specific ones.</summary>
-    <usage><![CDATA[<p>Chooses between <strong>All Allowed Countries</strong> and <strong>Specific Countries</strong> for where Zero Subtotal Checkout is available; the latter uses the Payment from Specific Countries list. Can differ per website.</p>]]></usage>
+    <summary>Whether Zero Subtotal Checkout is limited to specific countries.</summary>
+    <usage><![CDATA[<p>Offer Zero Subtotal Checkout in all allowed countries, or restrict it to the specific countries chosen below.</p>]]></usage>
     <values>
       <value id="0" label="All Allowed Countries">Offer this method in every country your store already allows.</value>
       <value id="1" label="Specific Countries">Limit this method to the specific countries you pick below.</value>
@@ -48447,8 +48447,8 @@
     </technical>
   </field>
   <field id="payment_free_order_status" module="Magento_Payment" section="Payment Methods" path="payment/free/order_status">
-    <summary>The order status assigned to new zero-total orders placed with this method.</summary>
-    <usage><![CDATA[<p>The status given to a newly placed Zero Subtotal Checkout order — a status in the <strong>New</strong> or <strong>Processing</strong> state. Can differ per website.</p>]]></usage>
+    <summary>The status new zero-total orders are set to.</summary>
+    <usage><![CDATA[<p>The order status applied when an order is placed through Zero Subtotal Checkout.</p>]]></usage>
     <values>
       <value id="pending" label="Pending">Place new orders in the Pending status.</value>
       <value id="processing" label="Processing">Place new orders straight into Processing.</value>
@@ -48462,8 +48462,8 @@
     </technical>
   </field>
   <field id="payment_free_payment_action" module="Magento_Payment" section="Payment Methods" path="payment/free/payment_action">
-    <summary>For zero-total orders, whether to auto-invoice the items; when Yes the order goes straight to Processing, skipping manual invoicing. Per website.</summary>
-    <usage><![CDATA[<p>For Zero Subtotal Checkout (fully discounted/free) orders, chooses whether Magento auto-invoices all items. As the native note says, Yes places the order directly in Processing and skips the manual invoice step, while No leaves it pending for manual handling. Scoped per website.</p>]]></usage>
+    <summary>How payment is handled for zero-total orders.</summary>
+    <usage><![CDATA[<p>With a zero total there is nothing to charge, so the order is authorized and captured automatically.</p>]]></usage>
     <technical>
       <config_path>payment/free/payment_action</config_path>
       <default_value>authorize_capture</default_value>
@@ -48472,8 +48472,8 @@
     </technical>
   </field>
   <field id="payment_free_sort_order" module="Magento_Payment" section="Payment Methods" path="payment/free/sort_order">
-    <summary>The position of this payment method relative to others at checkout.</summary>
-    <usage><![CDATA[<p>A numeric sort order that controls where Zero Subtotal Checkout appears in the list of payment methods. Can differ per website.</p>]]></usage>
+    <summary>The position of Zero Subtotal Checkout among payment methods.</summary>
+    <usage><![CDATA[<p>Controls where Zero Subtotal Checkout appears in the list of payment options. Lower numbers appear first.</p>]]></usage>
     <technical>
       <config_path>payment/free/sort_order</config_path>
       <default_value>1</default_value>
@@ -48481,8 +48481,8 @@
     </technical>
   </field>
   <field id="payment_free_specificcountry" module="Magento_Payment" section="Payment Methods" path="payment/free/specificcountry">
-    <summary>The countries where this method is offered when restricted to specific countries.</summary>
-    <usage><![CDATA[<p>The billing countries in which Zero Subtotal Checkout is available when <strong>Payment from Applicable Countries</strong> is set to Specific Countries. Can differ per website.</p>]]></usage>
+    <summary>The countries Zero Subtotal Checkout is offered in.</summary>
+    <usage><![CDATA[<p>The countries where Zero Subtotal Checkout is available, used when it is limited to specific countries.</p>]]></usage>
     <technical>
       <config_path>payment/free/specificcountry</config_path>
       <scope>Website</scope>
@@ -48490,8 +48490,8 @@
     </technical>
   </field>
   <field id="payment_free_title" module="Magento_Payment" section="Payment Methods" path="payment/free/title">
-    <summary>The name shown to customers for this payment method at checkout.</summary>
-    <usage><![CDATA[<p>The label displayed for the Zero Subtotal Checkout method during checkout. Can differ per website or store view.</p>]]></usage>
+    <summary>The name shown to shoppers for Zero Subtotal Checkout.</summary>
+    <usage><![CDATA[<p>The label customers see for this method when the order total is zero.</p>]]></usage>
     <technical>
       <config_path>payment/free/title</config_path>
       <default_value>No Payment Information Required</default_value>
@@ -83273,8 +83273,8 @@
     </technical>
   </field>
   <field id="payment_purchaseorder_active" module="Magento_OfflinePayments" path="payment/purchaseorder/active">
-    <summary>Turns the Purchase Order offline payment method on or off.</summary>
-    <usage><![CDATA[<p>Controls whether <strong>Purchase Order</strong> is offered as a payment option at checkout. Set to <strong>Yes</strong> to make it available, <strong>No</strong> to hide it. Can be set per website.</p>]]></usage>
+    <summary>Offer Purchase Order as a payment option at checkout.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, Purchase Order is available to customers at checkout — typically for B2B buyers paying against a PO number.</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -83287,8 +83287,8 @@
     </technical>
   </field>
   <field id="payment_purchaseorder_allowspecific" module="Magento_OfflinePayments" path="payment/purchaseorder/allowspecific">
-    <summary>Whether Purchase Order is offered in all countries or only selected ones.</summary>
-    <usage><![CDATA[<p>Chooses between <strong>All Allowed Countries</strong> and <strong>Specific Countries</strong> for where this method is available. When set to specific countries, the list is chosen in <em>Payment from Specific Countries</em>.</p>]]></usage>
+    <summary>Whether Purchase Order is limited to specific countries.</summary>
+    <usage><![CDATA[<p>Offer Purchase Order in all allowed countries, or restrict it to the specific countries chosen below.</p>]]></usage>
     <values>
       <value id="0" label="All Allowed Countries">Offer this method in every country your store already allows.</value>
       <value id="1" label="Specific Countries">Limit this method to the specific countries you pick below.</value>
@@ -83301,8 +83301,8 @@
     </technical>
   </field>
   <field id="payment_purchaseorder_max_order_total" module="Magento_OfflinePayments" path="payment/purchaseorder/max_order_total">
-    <summary>The largest order total for which Purchase Order is offered.</summary>
-    <usage><![CDATA[<p>The maximum order total for which this method appears at checkout. Orders above this amount cannot use it.</p>]]></usage>
+    <summary>Largest order total that can use Purchase Order.</summary>
+    <usage><![CDATA[<p>Orders above this total cannot use Purchase Order.</p>]]></usage>
     <technical>
       <config_path>payment/purchaseorder/max_order_total</config_path>
       <scope>Website</scope>
@@ -83310,8 +83310,8 @@
     </technical>
   </field>
   <field id="payment_purchaseorder_min_order_total" module="Magento_OfflinePayments" path="payment/purchaseorder/min_order_total">
-    <summary>The smallest order total for which Purchase Order is offered.</summary>
-    <usage><![CDATA[<p>The minimum order total required for this method to appear at checkout. Orders below this amount cannot use it.</p>]]></usage>
+    <summary>Smallest order total that can use Purchase Order.</summary>
+    <usage><![CDATA[<p>Orders below this total cannot use Purchase Order.</p>]]></usage>
     <technical>
       <config_path>payment/purchaseorder/min_order_total</config_path>
       <scope>Website</scope>
@@ -83319,8 +83319,8 @@
     </technical>
   </field>
   <field id="payment_purchaseorder_order_status" module="Magento_OfflinePayments" path="payment/purchaseorder/order_status">
-    <summary>The status assigned to new orders paid by Purchase Order.</summary>
-    <usage><![CDATA[<p>The order status applied when an order is placed with <strong>Purchase Order</strong>, chosen from the statuses mapped to the New order state. Can be set per website.</p>]]></usage>
+    <summary>The status new Purchase Order orders are set to.</summary>
+    <usage><![CDATA[<p>The order status applied when an order is placed with Purchase Order.</p>]]></usage>
     <technical>
       <config_path>payment/purchaseorder/order_status</config_path>
       <default_value>pending</default_value>
@@ -83329,16 +83329,16 @@
     </technical>
   </field>
   <field id="payment_purchaseorder_sort_order" module="Magento_OfflinePayments" path="payment/purchaseorder/sort_order">
-    <summary>The position of Purchase Order in the list of payment methods at checkout.</summary>
-    <usage><![CDATA[<p>A numeric sort value that sets where <strong>Purchase Order</strong> appears relative to other payment methods; lower numbers show first.</p>]]></usage>
+    <summary>The position of Purchase Order among payment methods.</summary>
+    <usage><![CDATA[<p>Controls where Purchase Order appears in the list of payment options. Lower numbers appear first.</p>]]></usage>
     <technical>
       <config_path>payment/purchaseorder/sort_order</config_path>
       <scope>Website</scope>
     </technical>
   </field>
   <field id="payment_purchaseorder_specificcountry" module="Magento_OfflinePayments" path="payment/purchaseorder/specificcountry">
-    <summary>The countries that can use Purchase Order when payment is limited to specific countries.</summary>
-    <usage><![CDATA[<p>The billing countries allowed to use this method. Applies only when <strong>Payment from Applicable Countries</strong> is set to Specific Countries.</p>]]></usage>
+    <summary>The countries Purchase Order is offered in.</summary>
+    <usage><![CDATA[<p>The countries where Purchase Order is available, used when it is limited to specific countries.</p>]]></usage>
     <technical>
       <config_path>payment/purchaseorder/specificcountry</config_path>
       <scope>Website</scope>
@@ -83346,8 +83346,8 @@
     </technical>
   </field>
   <field id="payment_purchaseorder_title" module="Magento_OfflinePayments" path="payment/purchaseorder/title">
-    <summary>The name shown for the Purchase Order method at checkout.</summary>
-    <usage><![CDATA[<p>The label customers see for this payment method during checkout. Can differ per website or store view.</p>]]></usage>
+    <summary>The name shown to shoppers for Purchase Order.</summary>
+    <usage><![CDATA[<p>The label customers see for this method at checkout.</p>]]></usage>
     <technical>
       <config_path>payment/purchaseorder/title</config_path>
       <default_value>Purchase Order</default_value>
