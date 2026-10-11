@@ -697,16 +697,16 @@
     </technical>
   </field>
   <field id="carriers_dhl_account" module="Magento_Dhl" path="carriers/dhl/account">
-    <summary>The DHL account number used for rating and shipping.</summary>
-    <usage><![CDATA[<p>The DHL account number sent with rate and label requests. Can be set per website.</p>]]></usage>
+    <summary>Your DHL account number.</summary>
+    <usage><![CDATA[<p>The DHL account used for rating and shipping.</p>]]></usage>
     <technical>
       <config_path>carriers/dhl/account</config_path>
       <scope>Website</scope>
     </technical>
   </field>
   <field id="carriers_dhl_active" module="Magento_Dhl" path="carriers/dhl/active">
-    <summary>Turns the DHL shipping method on or off at checkout.</summary>
-    <usage><![CDATA[<p>When <strong>Yes</strong>, DHL rates are offered to shoppers during checkout; <strong>No</strong> hides the carrier. Can be set per website.</p>]]></usage>
+    <summary>Offer live DHL rates at checkout.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, DHL shipping rates are requested and offered to customers.</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -719,8 +719,8 @@
     </technical>
   </field>
   <field id="carriers_dhl_api_key" module="Magento_Dhl" path="carriers/dhl/api_key">
-    <summary>The DHL REST API key used to authenticate requests.</summary>
-    <usage><![CDATA[<p>Key used to authenticate requests to the DHL REST API. Stored encrypted and can be set per website.</p>]]></usage>
+    <summary>Your DHL REST API key.</summary>
+    <usage><![CDATA[<p>Credential for the DHL REST API.</p>]]></usage>
     <technical>
       <config_path>carriers/dhl/api_key</config_path>
       <scope>Website</scope>
@@ -728,8 +728,8 @@
     </technical>
   </field>
   <field id="carriers_dhl_api_secret" module="Magento_Dhl" path="carriers/dhl/api_secret">
-    <summary>The DHL REST API secret used to authenticate requests.</summary>
-    <usage><![CDATA[<p>Secret paired with the API key to authenticate requests to the DHL REST API. Stored encrypted and can be set per website.</p>]]></usage>
+    <summary>Your DHL REST API secret.</summary>
+    <usage><![CDATA[<p>Credential paired with the API key for the DHL REST API.</p>]]></usage>
     <technical>
       <config_path>carriers/dhl/api_secret</config_path>
       <scope>Website</scope>
@@ -737,8 +737,8 @@
     </technical>
   </field>
   <field id="carriers_dhl_content_type" module="Magento_Dhl" path="carriers/dhl/content_type">
-    <summary>Picks Documents vs Non-Documents service for international DHL shipments, which determines the rates quoted.</summary>
-    <usage><![CDATA[<p>Selects which DHL service — Documents or Non-Documents (per the note) — is used for non-domestic shipments, with EU shipments counted as domestic. The choice drives which rate set DHL returns, so the wrong type can produce wrong or missing rates. Set per website.</p>]]></usage>
+    <summary>Whether shipments are documents or goods.</summary>
+    <usage><![CDATA[<p>Classifies DHL shipments as documents or non-document goods, which changes the services available.</p>]]></usage>
     <values>
       <value id="D" label="Documents"/>
       <value id="N" label="Non documents"/>
@@ -751,8 +751,8 @@
     </technical>
   </field>
   <field id="carriers_dhl_debug" module="Magento_Dhl" path="carriers/dhl/debug">
-    <summary>Whether DHL request and response data is logged for troubleshooting.</summary>
-    <usage><![CDATA[<p>When <strong>Yes</strong>, DHL API requests and responses are written to the debug log. Can be set per website.</p>]]></usage>
+    <summary>Log DHL API requests and responses.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, DHL API traffic is written to the debug log for troubleshooting.</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -764,8 +764,8 @@
     </technical>
   </field>
   <field id="carriers_dhl_depth" module="Magento_Dhl" path="carriers/dhl/depth">
-    <summary>The parcel depth sent to DHL for rating.</summary>
-    <usage><![CDATA[<p>The package depth used for DHL quotes. Applies only when <strong>Size</strong> is set to the regular/custom size. Can differ per store view.</p>]]></usage>
+    <summary>Default package depth sent to DHL.</summary>
+    <usage><![CDATA[<p>The package depth used in DHL rate requests when specific dimensions are enabled.</p>]]></usage>
     <technical>
       <config_path>carriers/dhl/depth</config_path>
       <scope>Store View</scope>
@@ -773,8 +773,8 @@
     </technical>
   </field>
   <field id="carriers_dhl_divide_order_weight" module="Magento_Dhl" path="carriers/dhl/divide_order_weight">
-    <summary>Only matters for orders over DHL's 70 kg limit; Yes gets rates by splitting them into multiple packages.</summary>
-    <usage><![CDATA[<p>When <strong>Yes</strong>, DHL may split an order exceeding 70 kg into multiple packages to optimise shipping charges. Has no effect on orders under that weight. Can differ per website/store.</p>]]></usage>
+    <summary>Split heavy orders into multiple packages.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, orders over DHL's weight limit are divided into several packages for rating.</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -787,8 +787,8 @@
     </technical>
   </field>
   <field id="carriers_dhl_doc_methods" module="Magento_Dhl" path="carriers/dhl/doc_methods">
-    <summary>Which DHL document (paperwork) shipping services are offered.</summary>
-    <usage><![CDATA[<p>Selects the DHL services available for document shipments. Can be set per website.</p>]]></usage>
+    <summary>DHL document services offered.</summary>
+    <usage><![CDATA[<p>The DHL services available for document shipments.</p>]]></usage>
     <technical>
       <config_path>carriers/dhl/doc_methods</config_path>
       <default_value>2,5,6,7,9,B,C,D,U,K,L,G,W,I,N,O,R,S,T,X</default_value>
@@ -797,8 +797,8 @@
     </technical>
   </field>
   <field id="carriers_dhl_free_method_doc" module="Magento_Dhl" path="carriers/dhl/free_method_doc">
-    <summary>The DHL service used for free shipping on document shipments.</summary>
-    <usage><![CDATA[<p>The DHL document service applied when an order qualifies for free shipping. Applies when the content type is Documents. Can be set per website.</p>]]></usage>
+    <summary>DHL document service used for free shipping.</summary>
+    <usage><![CDATA[<p>The document service applied when an order qualifies for free shipping.</p>]]></usage>
     <technical>
       <config_path>carriers/dhl/free_method_doc</config_path>
       <scope>Website</scope>
@@ -807,8 +807,8 @@
     </technical>
   </field>
   <field id="carriers_dhl_free_method_nondoc" module="Magento_Dhl" path="carriers/dhl/free_method_nondoc">
-    <summary>The DHL service used for free shipping on non-document shipments.</summary>
-    <usage><![CDATA[<p>The DHL parcel service applied when an order qualifies for free shipping. Applies when the content type is Non Documents. Can be set per website.</p>]]></usage>
+    <summary>DHL non-document service used for free shipping.</summary>
+    <usage><![CDATA[<p>The goods service applied when an order qualifies for free shipping.</p>]]></usage>
     <technical>
       <config_path>carriers/dhl/free_method_nondoc</config_path>
       <scope>Website</scope>
@@ -817,8 +817,8 @@
     </technical>
   </field>
   <field id="carriers_dhl_free_shipping_enable" module="Magento_Dhl" path="carriers/dhl/free_shipping_enable">
-    <summary>Enables free DHL shipping once the order subtotal reaches a threshold.</summary>
-    <usage><![CDATA[<p>When enabled, DHL shipping is free for orders whose subtotal meets the Free Shipping Amount Threshold. Can be set per website.</p>]]></usage>
+    <summary>Offer free DHL shipping above a subtotal.</summary>
+    <usage><![CDATA[<p>When enabled, DHL shipping is free once the order meets the subtotal below.</p>]]></usage>
     <values>
       <value id="1" label="Enable"/>
       <value id="0" label="Disable"/>
@@ -830,8 +830,8 @@
     </technical>
   </field>
   <field id="carriers_dhl_free_shipping_subtotal" module="Magento_Dhl" path="carriers/dhl/free_shipping_subtotal">
-    <summary>The order subtotal at which DHL shipping becomes free.</summary>
-    <usage><![CDATA[<p>Minimum order subtotal that qualifies for free DHL shipping. Applies only when Enable Free Shipping Threshold is enabled. Can be set per website.</p>]]></usage>
+    <summary>Order subtotal that qualifies for free DHL shipping.</summary>
+    <usage><![CDATA[<p>Orders at or above this subtotal ship free via the chosen DHL free method.</p>]]></usage>
     <technical>
       <config_path>carriers/dhl/free_shipping_subtotal</config_path>
       <scope>Website</scope>
@@ -840,8 +840,8 @@
     </technical>
   </field>
   <field id="carriers_dhl_handling_action" module="Magento_Dhl" path="carriers/dhl/handling_action">
-    <summary>Whether the DHL handling fee applies once per order or once per package, which changes the total on multi-package shipments.</summary>
-    <usage><![CDATA[<p>Per Order charges one handling fee for the whole order; Per Package charges the fee for each package (native note). The choice changes total handling cost whenever a shipment splits into multiple packages. Can differ per website.</p>]]></usage>
+    <summary>Whether DHL handling applies per order or per package.</summary>
+    <usage><![CDATA[<p>Whether the handling fee is charged once per order or for each package.</p>]]></usage>
     <values>
       <value id="O" label="Per Order">Apply the handling fee once per order.</value>
       <value id="P" label="Per Package">Apply the handling fee to each package.</value>
@@ -854,8 +854,8 @@
     </technical>
   </field>
   <field id="carriers_dhl_handling_fee" module="Magento_Dhl" path="carriers/dhl/handling_fee">
-    <summary>The handling fee added to DHL shipping charges.</summary>
-    <usage><![CDATA[<p>The amount or percentage added to each DHL quote, depending on how Calculate Handling Fee is set. Can be set per website.</p>]]></usage>
+    <summary>A handling fee added to DHL rates.</summary>
+    <usage><![CDATA[<p>An extra amount added on top of DHL's returned rate.</p>]]></usage>
     <technical>
       <config_path>carriers/dhl/handling_fee</config_path>
       <scope>Website</scope>
@@ -863,8 +863,8 @@
     </technical>
   </field>
   <field id="carriers_dhl_handling_type" module="Magento_Dhl" path="carriers/dhl/handling_type">
-    <summary>Whether the DHL handling fee is a fixed amount or a percentage.</summary>
-    <usage><![CDATA[<p>Sets how the handling fee is calculated — as a fixed amount or as a percentage of the shipping cost. Can be set per website.</p>]]></usage>
+    <summary>Whether the DHL handling fee is fixed or a percentage.</summary>
+    <usage><![CDATA[<p>Whether the handling fee is a fixed amount or a percentage of the rate.</p>]]></usage>
     <values>
       <value id="F" label="Fixed">Add a fixed handling amount.</value>
       <value id="P" label="Percent">Add handling as a percentage of the rate.</value>
@@ -877,8 +877,8 @@
     </technical>
   </field>
   <field id="carriers_dhl_height" module="Magento_Dhl" path="carriers/dhl/height">
-    <summary>The parcel height sent to DHL for rating.</summary>
-    <usage><![CDATA[<p>The package height used for DHL quotes. Applies only when <strong>Size</strong> is set to the regular/custom size. Can differ per store view.</p>]]></usage>
+    <summary>Default package height sent to DHL.</summary>
+    <usage><![CDATA[<p>The package height used in DHL rate requests when specific dimensions are enabled.</p>]]></usage>
     <technical>
       <config_path>carriers/dhl/height</config_path>
       <scope>Store View</scope>
@@ -886,8 +886,8 @@
     </technical>
   </field>
   <field id="carriers_dhl_id" module="Magento_Dhl" path="carriers/dhl/id">
-    <summary>The DHL Access ID used to authenticate API requests.</summary>
-    <usage><![CDATA[<p>Credential issued by DHL to authenticate rate and label requests. Stored encrypted and can be set per website.</p>]]></usage>
+    <summary>Your DHL API site/user ID.</summary>
+    <usage><![CDATA[<p>Credential identifying your account to the DHL API.</p>]]></usage>
     <technical>
       <config_path>carriers/dhl/id</config_path>
       <scope>Website</scope>
@@ -895,8 +895,8 @@
     </technical>
   </field>
   <field id="carriers_dhl_nondoc_methods" module="Magento_Dhl" path="carriers/dhl/nondoc_methods">
-    <summary>Which DHL non-document (parcel) shipping services are offered.</summary>
-    <usage><![CDATA[<p>Selects the DHL services available for non-document (parcel) shipments. Can be set per website.</p>]]></usage>
+    <summary>DHL non-document services offered.</summary>
+    <usage><![CDATA[<p>The DHL services available for non-document (goods) shipments.</p>]]></usage>
     <technical>
       <config_path>carriers/dhl/nondoc_methods</config_path>
       <default_value>1,3,4,8,P,Q,E,F,H,J,M,N,V,Y</default_value>
@@ -905,8 +905,8 @@
     </technical>
   </field>
   <field id="carriers_dhl_password" module="Magento_Dhl" path="carriers/dhl/password">
-    <summary>The DHL API password used to authenticate requests.</summary>
-    <usage><![CDATA[<p>Password paired with the DHL Access ID to authenticate API requests. Stored encrypted and can be set per website.</p>]]></usage>
+    <summary>Your DHL API password.</summary>
+    <usage><![CDATA[<p>Credential used to authenticate to the DHL API.</p>]]></usage>
     <technical>
       <config_path>carriers/dhl/password</config_path>
       <scope>Website</scope>
@@ -914,16 +914,16 @@
     </technical>
   </field>
   <field id="carriers_dhl_ready_time" module="Magento_Dhl" path="carriers/dhl/ready_time">
-    <summary>Hours after order submission before a DHL package is ready; feeds DHL rate and transit quotes.</summary>
-    <usage><![CDATA[<p>Lead time in hours between order submission and the package being ready for DHL pickup. It shifts the ship date DHL uses when returning rate and transit-time quotes. Can differ per website.</p>]]></usage>
+    <summary>Hours until the shipment is ready for pickup.</summary>
+    <usage><![CDATA[<p>How long after an order DHL should expect the package to be ready.</p>]]></usage>
     <technical>
       <config_path>carriers/dhl/ready_time</config_path>
       <scope>Website</scope>
     </technical>
   </field>
   <field id="carriers_dhl_sallowspecific" module="Magento_Dhl" path="carriers/dhl/sallowspecific">
-    <summary>Whether DHL is offered to all allowed countries or only specific ones.</summary>
-    <usage><![CDATA[<p>Chooses between offering DHL to all allowed countries or to the specific list set in Ship to Specific Countries. Can be set per website.</p>]]></usage>
+    <summary>Whether DHL is limited to specific countries.</summary>
+    <usage><![CDATA[<p>Offer DHL in all allowed countries, or restrict it to the countries chosen below.</p>]]></usage>
     <values>
       <value id="0" label="All Allowed Countries">Offer this method in every country your store already allows.</value>
       <value id="1" label="Specific Countries">Limit this method to the specific countries you pick below.</value>
@@ -936,8 +936,8 @@
     </technical>
   </field>
   <field id="carriers_dhl_sandbox_mode" module="Magento_Dhl" path="carriers/dhl/sandbox_mode">
-    <summary>Whether DHL requests use the test (sandbox) environment instead of production.</summary>
-    <usage><![CDATA[<p>When <strong>Yes</strong>, DHL API calls use the sandbox/test endpoint for safe testing; <strong>No</strong> uses production. Can be set per website.</p>]]></usage>
+    <summary>Use the DHL test environment.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, requests go to DHL's sandbox instead of production.</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -949,8 +949,8 @@
     </technical>
   </field>
   <field id="carriers_dhl_showmethod" module="Magento_Dhl" path="carriers/dhl/showmethod">
-    <summary>Whether to still show DHL at checkout when it returns no rates.</summary>
-    <usage><![CDATA[<p>When <strong>Yes</strong>, DHL is shown with its error message even if no rates apply; <strong>No</strong> hides it. Can be set per website.</p>]]></usage>
+    <summary>Show DHL even when it returns no rates.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, DHL is shown (with its error message) instead of being hidden when it can't return rates.</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -962,8 +962,8 @@
     </technical>
   </field>
   <field id="carriers_dhl_size" module="Magento_Dhl" path="carriers/dhl/size">
-    <summary>Selects a regular or custom parcel size for DHL shipments.</summary>
-    <usage><![CDATA[<p>Chooses the parcel size sent to DHL; selecting the regular/custom option enables the Height, Depth and Width fields. Can be set per store view.</p>]]></usage>
+    <summary>Whether to send specific package dimensions.</summary>
+    <usage><![CDATA[<p>Whether DHL rates use a regular package or the specific height/width/depth entered above.</p>]]></usage>
     <values>
       <value id="0" label="Regular"/>
       <value id="1" label="Specific"/>
@@ -976,8 +976,8 @@
     </technical>
   </field>
   <field id="carriers_dhl_sort_order" module="Magento_Dhl" path="carriers/dhl/sort_order">
-    <summary>The position of DHL in the list of shipping methods at checkout.</summary>
-    <usage><![CDATA[<p>Controls where DHL appears relative to other carriers; lower numbers sort first. Can be set per website.</p>]]></usage>
+    <summary>Position of DHL among shipping methods.</summary>
+    <usage><![CDATA[<p>Controls where DHL appears in the list of shipping options. Lower numbers appear first.</p>]]></usage>
     <technical>
       <config_path>carriers/dhl/sort_order</config_path>
       <scope>Website</scope>
@@ -985,8 +985,8 @@
     </technical>
   </field>
   <field id="carriers_dhl_specificcountry" module="Magento_Dhl" path="carriers/dhl/specificcountry">
-    <summary>The countries DHL is offered to when limited to specific countries.</summary>
-    <usage><![CDATA[<p>The destination countries where DHL is available, used when Ship to Applicable Countries is set to specific countries. Can be set per website.</p>]]></usage>
+    <summary>The countries DHL ships to.</summary>
+    <usage><![CDATA[<p>The countries where DHL is offered, used when it is limited to specific countries.</p>]]></usage>
     <technical>
       <config_path>carriers/dhl/specificcountry</config_path>
       <scope>Website</scope>
@@ -994,8 +994,8 @@
     </technical>
   </field>
   <field id="carriers_dhl_specificerrmsg" module="Magento_Dhl" path="carriers/dhl/specificerrmsg">
-    <summary>The message shown to shoppers when DHL rates can't be retrieved.</summary>
-    <usage><![CDATA[<p>Text displayed at checkout when DHL returns no rates or an error. Can differ per store view.</p>]]></usage>
+    <summary>Message shown when DHL is unavailable.</summary>
+    <usage><![CDATA[<p>The text shown to customers when DHL can't return a rate.</p>]]></usage>
     <technical>
       <config_path>carriers/dhl/specificerrmsg</config_path>
       <default_value>This shipping method is currently unavailable. If you would like to ship using this shipping method, please contact us.</default_value>
@@ -1003,8 +1003,8 @@
     </technical>
   </field>
   <field id="carriers_dhl_title" module="Magento_Dhl" path="carriers/dhl/title">
-    <summary>The carrier name shown to shoppers for DHL at checkout.</summary>
-    <usage><![CDATA[<p>The label displayed for this shipping method in the cart and checkout. Can differ per store view.</p>]]></usage>
+    <summary>The carrier heading shown for DHL.</summary>
+    <usage><![CDATA[<p>The group title shown above DHL's rates at checkout.</p>]]></usage>
     <technical>
       <config_path>carriers/dhl/title</config_path>
       <default_value>DHL</default_value>
@@ -1012,8 +1012,8 @@
     </technical>
   </field>
   <field id="carriers_dhl_type" module="Magento_Dhl" path="carriers/dhl/type">
-    <summary>Selects which DHL web-service API is used to request rates and labels.</summary>
-    <usage><![CDATA[<p>Chooses the DHL integration used for quoting and shipping — the <strong>DHL XML</strong> or <strong>DHL REST</strong> API. Can be set per website.</p>]]></usage>
+    <summary>Which DHL API to use.</summary>
+    <usage><![CDATA[<p>Whether rates are fetched through DHL's XML or REST API.</p>]]></usage>
     <values>
       <value id="DHL_XML" label="DHL XML"/>
       <value id="DHL_REST" label="DHL REST"/>
@@ -1026,8 +1026,8 @@
     </technical>
   </field>
   <field id="carriers_dhl_unit_of_measure" module="Magento_Dhl" path="carriers/dhl/unit_of_measure">
-    <summary>The weight unit used for package weights sent to DHL.</summary>
-    <usage><![CDATA[<p>The unit of measure applied when sending package weights to DHL. Can differ per store view.</p>]]></usage>
+    <summary>Weight unit sent to DHL.</summary>
+    <usage><![CDATA[<p>Whether package weights are sent to DHL in pounds or kilograms.</p>]]></usage>
     <values>
       <value id="L" label="Pounds"/>
       <value id="K" label="Kilograms"/>
@@ -1041,8 +1041,8 @@
     </technical>
   </field>
   <field id="carriers_dhl_width" module="Magento_Dhl" path="carriers/dhl/width">
-    <summary>The parcel width sent to DHL for rating.</summary>
-    <usage><![CDATA[<p>The package width used for DHL quotes. Applies only when <strong>Size</strong> is set to the regular/custom size. Can differ per store view.</p>]]></usage>
+    <summary>Default package width sent to DHL.</summary>
+    <usage><![CDATA[<p>The package width used in DHL rate requests when specific dimensions are enabled.</p>]]></usage>
     <technical>
       <config_path>carriers/dhl/width</config_path>
       <scope>Store View</scope>
@@ -1050,8 +1050,8 @@
     </technical>
   </field>
   <field id="carriers_fedex_account" module="Magento_Fedex" path="carriers/fedex/account">
-    <summary>Your FedEx account for rate requests; stored encrypted. Use digits only, no dashes, or lookups fail.</summary>
-    <usage><![CDATA[<p>FedEx account ID used to authenticate rate requests, stored encrypted. Enter digits only with no dashes; a wrongly formatted value causes FedEx rate lookups to fail. Can differ per website.</p>]]></usage>
+    <summary>Your FedEx account number.</summary>
+    <usage><![CDATA[<p>The FedEx account used for rating and shipping.</p>]]></usage>
     <technical>
       <config_path>carriers/fedex/account</config_path>
       <scope>Website</scope>
@@ -1059,8 +1059,8 @@
     </technical>
   </field>
   <field id="carriers_fedex_active" module="Magento_Fedex" path="carriers/fedex/active">
-    <summary>Whether FedEx shipping rates are offered to customers at checkout.</summary>
-    <usage><![CDATA[<p>When <strong>Yes</strong>, FedEx shipping methods are available as options during checkout. Can be set per website.</p>]]></usage>
+    <summary>Offer live FedEx rates at checkout.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, FedEx shipping rates are requested and offered to customers.</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -1073,8 +1073,8 @@
     </technical>
   </field>
   <field id="carriers_fedex_allowed_methods" module="Magento_Fedex" path="carriers/fedex/allowed_methods">
-    <summary>Which FedEx shipping methods are offered to customers.</summary>
-    <usage><![CDATA[<p>Selects which FedEx shipping services are offered as options at checkout. Can be set per website.</p>]]></usage>
+    <summary>Which FedEx services are offered.</summary>
+    <usage><![CDATA[<p>The FedEx services customers can choose from at checkout.</p>]]></usage>
     <technical>
       <config_path>carriers/fedex/allowed_methods</config_path>
       <default_value>EUROPE_FIRST_INTERNATIONAL_PRIORITY,FEDEX_1_DAY_FREIGHT,FEDEX_2_DAY_FREIGHT,FEDEX_2_DAY,FEDEX_2_DAY_AM,FEDEX_3_DAY_FREIGHT,FEDEX_EXPRESS_SAVER,FEDEX_GROUND,FIRST_OVERNIGHT,GROUND_HOME_DELIVERY,INTERNATIONAL_ECONOMY,INTERNATIONAL_ECONOMY_FREIGHT,INTERNATIONAL_FIRST,INTERNATIONAL_GROUND,FEDEX_INTERNATIONAL_PRIORITY,FEDEX_INTERNATIONAL_PRIORITY_EXPRESS,FEDEX_FIRST,FEDEX_PRIORITY,FEDEX_PRIORITY_EXPRESS,FEDEX_PRIORITY_EXPRESS_FREIGHT,FEDEX_PRIORITY_FREIGHT,FEDEX_ECONOMY_SELECT,INTERNATIONAL_PRIORITY_FREIGHT,PRIORITY_OVERNIGHT,SMART_POST,STANDARD_OVERNIGHT,FEDEX_FREIGHT,FEDEX_NATIONAL_FREIGHT</default_value>
@@ -1083,8 +1083,8 @@
     </technical>
   </field>
   <field id="carriers_fedex_api_key" module="Magento_Fedex" path="carriers/fedex/api_key">
-    <summary>The FedEx API key used to authenticate rate and shipping requests.</summary>
-    <usage><![CDATA[<p>The API key from your FedEx developer account, used to authenticate requests to the FedEx web services. Stored encrypted. Can be set per website.</p>]]></usage>
+    <summary>Your FedEx API key.</summary>
+    <usage><![CDATA[<p>Credential for the FedEx rating API.</p>]]></usage>
     <technical>
       <config_path>carriers/fedex/api_key</config_path>
       <scope>Website</scope>
@@ -1092,8 +1092,8 @@
     </technical>
   </field>
   <field id="carriers_fedex_debug" module="Magento_Fedex" path="carriers/fedex/debug">
-    <summary>Whether FedEx request and response data is logged for debugging.</summary>
-    <usage><![CDATA[<p>When <strong>Yes</strong>, FedEx API requests and responses are written to the debug log for troubleshooting. Can be set per website.</p>]]></usage>
+    <summary>Log FedEx API requests and responses.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, FedEx API traffic is written to the debug log.</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -1105,8 +1105,8 @@
     </technical>
   </field>
   <field id="carriers_fedex_enabled_tracking_api" module="Magento_Fedex" path="carriers/fedex/enabled_tracking_api">
-    <summary>Whether a separate set of credentials is used for the FedEx tracking API.</summary>
-    <usage><![CDATA[<p>When <strong>Yes</strong>, a separate set of FedEx tracking API credentials is used for shipment tracking requests, enabling the Tracking API Key and Secret fields. Can be set per website.</p>]]></usage>
+    <summary>Use the FedEx tracking API.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, shipment tracking is retrieved via the FedEx tracking API, using its own credentials.</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -1118,8 +1118,8 @@
     </technical>
   </field>
   <field id="carriers_fedex_free_method" module="Magento_Fedex" path="carriers/fedex/free_method">
-    <summary>The FedEx method used when an order qualifies for free shipping.</summary>
-    <usage><![CDATA[<p>Selects which FedEx shipping method is used when an order qualifies for free shipping. Can be set per website.</p>]]></usage>
+    <summary>FedEx service used for free shipping.</summary>
+    <usage><![CDATA[<p>The FedEx service applied when an order qualifies for free shipping.</p>]]></usage>
     <technical>
       <config_path>carriers/fedex/free_method</config_path>
       <default_value>FEDEX_GROUND</default_value>
@@ -1128,8 +1128,8 @@
     </technical>
   </field>
   <field id="carriers_fedex_free_shipping_enable" module="Magento_Fedex" path="carriers/fedex/free_shipping_enable">
-    <summary>Whether free shipping is offered once an order subtotal threshold is met.</summary>
-    <usage><![CDATA[<p>Set to <strong>Enable</strong> to offer FedEx free shipping for orders whose subtotal reaches the configured threshold. Can be set per website.</p>]]></usage>
+    <summary>Offer free FedEx shipping above a subtotal.</summary>
+    <usage><![CDATA[<p>When enabled, FedEx shipping is free once the order meets the subtotal below.</p>]]></usage>
     <values>
       <value id="1" label="Enable"/>
       <value id="0" label="Disable"/>
@@ -1141,8 +1141,8 @@
     </technical>
   </field>
   <field id="carriers_fedex_free_shipping_subtotal" module="Magento_Fedex" path="carriers/fedex/free_shipping_subtotal">
-    <summary>The order subtotal required to qualify for free FedEx shipping.</summary>
-    <usage><![CDATA[<p>The minimum order subtotal at which FedEx free shipping becomes available. Applies only when <strong>Enable Free Shipping Threshold</strong> is enabled. Can be set per website.</p>]]></usage>
+    <summary>Order subtotal that qualifies for free FedEx shipping.</summary>
+    <usage><![CDATA[<p>Orders at or above this subtotal ship free via the chosen FedEx free method.</p>]]></usage>
     <technical>
       <config_path>carriers/fedex/free_shipping_subtotal</config_path>
       <scope>Website</scope>
@@ -1151,8 +1151,8 @@
     </technical>
   </field>
   <field id="carriers_fedex_handling_action" module="Magento_Fedex" path="carriers/fedex/handling_action">
-    <summary>Whether the handling fee is applied per order or per package.</summary>
-    <usage><![CDATA[<p>Chooses whether the handling fee is applied once per order or to each package. Can be set per website.</p>]]></usage>
+    <summary>Whether FedEx handling applies per order or per package.</summary>
+    <usage><![CDATA[<p>Whether the handling fee is charged once per order or for each package.</p>]]></usage>
     <values>
       <value id="O" label="Per Order">Apply the handling fee once per order.</value>
       <value id="P" label="Per Package">Apply the handling fee to each package.</value>
@@ -1165,8 +1165,8 @@
     </technical>
   </field>
   <field id="carriers_fedex_handling_fee" module="Magento_Fedex" path="carriers/fedex/handling_fee">
-    <summary>The handling fee amount or percentage added to FedEx rates.</summary>
-    <usage><![CDATA[<p>The handling fee value added to FedEx shipping rates, interpreted as a fixed amount or percentage per the Calculate Handling Fee setting. Can be set per website.</p>]]></usage>
+    <summary>A handling fee added to FedEx rates.</summary>
+    <usage><![CDATA[<p>An extra amount added on top of FedEx's returned rate.</p>]]></usage>
     <technical>
       <config_path>carriers/fedex/handling_fee</config_path>
       <scope>Website</scope>
@@ -1174,8 +1174,8 @@
     </technical>
   </field>
   <field id="carriers_fedex_handling_type" module="Magento_Fedex" path="carriers/fedex/handling_type">
-    <summary>Whether the handling fee is a fixed amount or a percentage.</summary>
-    <usage><![CDATA[<p>Chooses whether the handling fee added to FedEx rates is calculated as a fixed amount or as a percentage. Can be set per website.</p>]]></usage>
+    <summary>Whether the FedEx handling fee is fixed or a percentage.</summary>
+    <usage><![CDATA[<p>Whether the handling fee is a fixed amount or a percentage of the rate.</p>]]></usage>
     <values>
       <value id="F" label="Fixed">Add a fixed handling amount.</value>
       <value id="P" label="Percent">Add handling as a percentage of the rate.</value>
@@ -1188,8 +1188,8 @@
     </technical>
   </field>
   <field id="carriers_fedex_max_package_weight" module="Magento_Fedex" path="carriers/fedex/max_package_weight">
-    <summary>The maximum weight allowed for a single FedEx package.</summary>
-    <usage><![CDATA[<p>The maximum weight of a single package for FedEx shipments; heavier orders are split across packages. Consult FedEx for the maximum supported weight. Can be set per website.</p>]]></usage>
+    <summary>Heaviest package FedEx will rate.</summary>
+    <usage><![CDATA[<p>Orders over this weight are split into multiple packages for rating.</p>]]></usage>
     <technical>
       <config_path>carriers/fedex/max_package_weight</config_path>
       <default_value>150</default_value>
@@ -1198,8 +1198,8 @@
     </technical>
   </field>
   <field id="carriers_fedex_packaging" module="Magento_Fedex" path="carriers/fedex/packaging">
-    <summary>The default FedEx packaging type assumed for rate requests.</summary>
-    <usage><![CDATA[<p>Selects the FedEx packaging type assumed when requesting shipping rates. Can be set per website.</p>]]></usage>
+    <summary>The default FedEx packaging type.</summary>
+    <usage><![CDATA[<p>The package type assumed when requesting FedEx rates.</p>]]></usage>
     <values>
       <value id="FEDEX_ENVELOPE" label="FedEx Envelope"/>
       <value id="FEDEX_PAK" label="FedEx Pak"/>
@@ -1217,8 +1217,8 @@
     </technical>
   </field>
   <field id="carriers_fedex_pickup_type" module="Magento_Fedex" path="carriers/fedex/pickup_type">
-    <summary>The FedEx pickup method used when requesting rates.</summary>
-    <usage><![CDATA[<p>Selects the FedEx pickup type, i.e. how packages are handed to FedEx, used when requesting shipping rates. Can be set per website.</p>]]></usage>
+    <summary>How packages are handed to FedEx.</summary>
+    <usage><![CDATA[<p>The drop-off or pickup arrangement used, which can affect rates.</p>]]></usage>
     <values>
       <value id="CONTACT_FEDEX_TO_SCHEDULE" label="Contact Fedex to Schedule"/>
       <value id="DROPOFF_AT_FEDEX_LOCATION" label="DropOff at Fedex Location"/>
@@ -1236,8 +1236,8 @@
     </technical>
   </field>
   <field id="carriers_fedex_production_webservices_url" module="Magento_Fedex" path="carriers/fedex/production_webservices_url">
-    <summary>The FedEx production web-services endpoint URL.</summary>
-    <usage><![CDATA[<p>The endpoint URL for the FedEx production web services. Applies only when <strong>Sandbox Mode</strong> is set to No. Can be set per website.</p>]]></usage>
+    <summary>FedEx production API endpoint.</summary>
+    <usage><![CDATA[<p>The live FedEx web-services URL rates are requested from.</p>]]></usage>
     <technical>
       <config_path>carriers/fedex/production_webservices_url</config_path>
       <default_value>https://apis.fedex.com/</default_value>
@@ -1247,8 +1247,8 @@
     </technical>
   </field>
   <field id="carriers_fedex_residence_delivery" module="Magento_Fedex" path="carriers/fedex/residence_delivery">
-    <summary>Whether shipments are rated as residential deliveries.</summary>
-    <usage><![CDATA[<p>When <strong>Yes</strong>, FedEx rates are requested for residential delivery, which may change the price. Can be set per website.</p>]]></usage>
+    <summary>Rate as residential delivery.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, FedEx rates assume delivery to a residential address.</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -1260,8 +1260,8 @@
     </technical>
   </field>
   <field id="carriers_fedex_sallowspecific" module="Magento_Fedex" path="carriers/fedex/sallowspecific">
-    <summary>Whether FedEx ships to all allowed countries or only selected ones.</summary>
-    <usage><![CDATA[<p>Chooses whether FedEx shipping is offered to all allowed countries or only to a specific list set in Ship to Specific Countries. Can be set per website.</p>]]></usage>
+    <summary>Whether FedEx is limited to specific countries.</summary>
+    <usage><![CDATA[<p>Offer FedEx in all allowed countries, or restrict it to the countries chosen below.</p>]]></usage>
     <values>
       <value id="0" label="All Allowed Countries">Offer this method in every country your store already allows.</value>
       <value id="1" label="Specific Countries">Limit this method to the specific countries you pick below.</value>
@@ -1274,8 +1274,8 @@
     </technical>
   </field>
   <field id="carriers_fedex_sandbox_mode" module="Magento_Fedex" path="carriers/fedex/sandbox_mode">
-    <summary>Whether requests use the FedEx sandbox (test) environment instead of production.</summary>
-    <usage><![CDATA[<p>When <strong>Yes</strong>, FedEx requests are sent to the sandbox (test) environment rather than production. Can be set per website.</p>]]></usage>
+    <summary>Use the FedEx test environment.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, requests go to FedEx's sandbox instead of production.</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -1288,8 +1288,8 @@
     </technical>
   </field>
   <field id="carriers_fedex_sandbox_webservices_url" module="Magento_Fedex" path="carriers/fedex/sandbox_webservices_url">
-    <summary>The FedEx sandbox (test) web-services endpoint URL.</summary>
-    <usage><![CDATA[<p>The endpoint URL for the FedEx sandbox (test) web services. Applies only when <strong>Sandbox Mode</strong> is set to Yes. Can be set per website.</p>]]></usage>
+    <summary>FedEx sandbox API endpoint.</summary>
+    <usage><![CDATA[<p>The test FedEx web-services URL used in sandbox mode.</p>]]></usage>
     <technical>
       <config_path>carriers/fedex/sandbox_webservices_url</config_path>
       <default_value>https://apis-sandbox.fedex.com/</default_value>
@@ -1299,8 +1299,8 @@
     </technical>
   </field>
   <field id="carriers_fedex_secret_key" module="Magento_Fedex" path="carriers/fedex/secret_key">
-    <summary>The FedEx API secret key used with the API key to authenticate requests.</summary>
-    <usage><![CDATA[<p>The API secret associated with your FedEx API key, used to authenticate requests to the FedEx web services. Stored encrypted. Can be set per website.</p>]]></usage>
+    <summary>Your FedEx API secret key.</summary>
+    <usage><![CDATA[<p>Credential paired with the API key for the FedEx rating API.</p>]]></usage>
     <technical>
       <config_path>carriers/fedex/secret_key</config_path>
       <scope>Website</scope>
@@ -1308,8 +1308,8 @@
     </technical>
   </field>
   <field id="carriers_fedex_shipment_requesttype" module="Magento_Fedex" path="carriers/fedex/shipment_requesttype">
-    <summary>Whether rates are requested per package or for all packages together.</summary>
-    <usage><![CDATA[<p>Chooses how package data is sent to FedEx when requesting rates — divided into separate packages or as a single combined request. Can be set per website.</p>]]></usage>
+    <summary>How multi-package orders are requested.</summary>
+    <usage><![CDATA[<p>Whether the order is divided into equal weights (one request) or rated from the origin weight.</p>]]></usage>
     <values>
       <value id="0" label="Divide to equal weight (one request)">Split the cart into equal weights and send one rate request.</value>
       <value id="1" label="Use origin weight (few requests)">Use the real package weight and send a request per package.</value>
@@ -1322,8 +1322,8 @@
     </technical>
   </field>
   <field id="carriers_fedex_showmethod" module="Magento_Fedex" path="carriers/fedex/showmethod">
-    <summary>Whether the FedEx method is still shown when it is not available for an order.</summary>
-    <usage><![CDATA[<p>When <strong>Yes</strong>, the FedEx shipping method is displayed at checkout even when it is not applicable, shown with the error message. Can be set per website.</p>]]></usage>
+    <summary>Show FedEx even when it returns no rates.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, FedEx is shown (with its error message) instead of being hidden when it can't return rates.</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -1335,16 +1335,16 @@
     </technical>
   </field>
   <field id="carriers_fedex_smartpost_hubid" module="Magento_Fedex" path="carriers/fedex/smartpost_hubid">
-    <summary>FedEx-assigned SmartPost hub ID; required for SmartPost shipments.</summary>
-    <usage><![CDATA[<p>The FedEx-assigned hub ID used for SmartPost shipments. Only relevant when the SmartPost method is selected; without a valid hub ID, SmartPost rate requests and labels fail. Can differ per website.</p>]]></usage>
+    <summary>Your FedEx SmartPost hub ID.</summary>
+    <usage><![CDATA[<p>The SmartPost hub identifier required for SmartPost services.</p>]]></usage>
     <technical>
       <config_path>carriers/fedex/smartpost_hubid</config_path>
       <scope>Website</scope>
     </technical>
   </field>
   <field id="carriers_fedex_sort_order" module="Magento_Fedex" path="carriers/fedex/sort_order">
-    <summary>The position of FedEx among shipping methods at checkout.</summary>
-    <usage><![CDATA[<p>A numeric value controlling where FedEx appears relative to other carriers in the checkout list; lower values appear first. Can be set per website.</p>]]></usage>
+    <summary>Position of FedEx among shipping methods.</summary>
+    <usage><![CDATA[<p>Controls where FedEx appears in the list of shipping options. Lower numbers appear first.</p>]]></usage>
     <technical>
       <config_path>carriers/fedex/sort_order</config_path>
       <scope>Website</scope>
@@ -1352,8 +1352,8 @@
     </technical>
   </field>
   <field id="carriers_fedex_specificcountry" module="Magento_Fedex" path="carriers/fedex/specificcountry">
-    <summary>The specific countries FedEx shipping is offered to.</summary>
-    <usage><![CDATA[<p>Selects the countries to which FedEx shipping is offered when Ship to Applicable Countries is limited to specific countries. Can be set per website.</p>]]></usage>
+    <summary>The countries FedEx ships to.</summary>
+    <usage><![CDATA[<p>The countries where FedEx is offered, used when it is limited to specific countries.</p>]]></usage>
     <technical>
       <config_path>carriers/fedex/specificcountry</config_path>
       <scope>Website</scope>
@@ -1361,8 +1361,8 @@
     </technical>
   </field>
   <field id="carriers_fedex_specificerrmsg" module="Magento_Fedex" path="carriers/fedex/specificerrmsg">
-    <summary>The message shown to customers when FedEx rates cannot be retrieved.</summary>
-    <usage><![CDATA[<p>The error message displayed at checkout when FedEx shipping rates are unavailable. Can be set per website or store view.</p>]]></usage>
+    <summary>Message shown when FedEx is unavailable.</summary>
+    <usage><![CDATA[<p>The text shown to customers when FedEx can't return a rate.</p>]]></usage>
     <technical>
       <config_path>carriers/fedex/specificerrmsg</config_path>
       <default_value>This shipping method is currently unavailable. If you would like to ship using this shipping method, please contact us.</default_value>
@@ -1370,8 +1370,8 @@
     </technical>
   </field>
   <field id="carriers_fedex_title" module="Magento_Fedex" path="carriers/fedex/title">
-    <summary>The carrier name shown to customers for FedEx shipping at checkout.</summary>
-    <usage><![CDATA[<p>The label displayed to customers for the FedEx carrier group at checkout. Can be set per website or store view.</p>]]></usage>
+    <summary>The carrier heading shown for FedEx.</summary>
+    <usage><![CDATA[<p>The group title shown above FedEx's rates at checkout.</p>]]></usage>
     <technical>
       <config_path>carriers/fedex/title</config_path>
       <default_value>Federal Express</default_value>
@@ -1379,8 +1379,8 @@
     </technical>
   </field>
   <field id="carriers_fedex_tracking_api_key" module="Magento_Fedex" path="carriers/fedex/tracking_api_key">
-    <summary>The FedEx API key used for shipment tracking requests.</summary>
-    <usage><![CDATA[<p>The API key used to authenticate FedEx shipment tracking requests. Applies only when <strong>Enable Tracking API credentials</strong> is set to Yes. Stored encrypted.</p>]]></usage>
+    <summary>Your FedEx tracking API key.</summary>
+    <usage><![CDATA[<p>Credential for the FedEx tracking API.</p>]]></usage>
     <technical>
       <config_path>carriers/fedex/tracking_api_key</config_path>
       <scope>Website</scope>
@@ -1389,8 +1389,8 @@
     </technical>
   </field>
   <field id="carriers_fedex_tracking_api_secret_key" module="Magento_Fedex" path="carriers/fedex/tracking_api_secret_key">
-    <summary>The FedEx API secret used for shipment tracking requests.</summary>
-    <usage><![CDATA[<p>The API secret used with the tracking API key to authenticate FedEx tracking requests. Applies only when <strong>Enable Tracking API credentials</strong> is Yes. Stored encrypted.</p>]]></usage>
+    <summary>Your FedEx tracking API secret.</summary>
+    <usage><![CDATA[<p>Credential paired with the tracking API key.</p>]]></usage>
     <technical>
       <config_path>carriers/fedex/tracking_api_secret_key</config_path>
       <scope>Website</scope>
@@ -1399,8 +1399,8 @@
     </technical>
   </field>
   <field id="carriers_fedex_unit_of_measure" module="Magento_Fedex" path="carriers/fedex/unit_of_measure">
-    <summary>The weight unit used for package weights sent to FedEx.</summary>
-    <usage><![CDATA[<p>Selects the weight unit used for package weights in FedEx rate requests. Can be set per website.</p>]]></usage>
+    <summary>Weight unit sent to FedEx.</summary>
+    <usage><![CDATA[<p>Whether package weights are sent to FedEx in pounds or kilograms.</p>]]></usage>
     <values>
       <value id="LB" label="Pounds"/>
       <value id="KG" label="Kilograms"/>
@@ -1413,8 +1413,8 @@
     </technical>
   </field>
   <field id="carriers_flatrate_active" module="Magento_OfflineShipping" path="carriers/flatrate/active">
-    <summary>Turns the Flat Rate shipping method on or off at checkout.</summary>
-    <usage><![CDATA[<p>When set to <strong>Yes</strong>, the Flat Rate carrier is offered at checkout. Can be set per website.</p>]]></usage>
+    <summary>Offer a single flat shipping rate.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, Flat Rate shipping is available at checkout.</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -1427,8 +1427,8 @@
     </technical>
   </field>
   <field id="carriers_flatrate_handling_fee" module="Magento_OfflineShipping" path="carriers/flatrate/handling_fee">
-    <summary>The handling fee added to the Flat Rate shipping charge.</summary>
-    <usage><![CDATA[<p>The handling fee amount added to Flat Rate shipping, applied according to <strong>Calculate Handling Fee</strong>. Can be set per website.</p>]]></usage>
+    <summary>A handling fee added to the Flat Rate price.</summary>
+    <usage><![CDATA[<p>An extra amount added on top of the flat shipping price.</p>]]></usage>
     <technical>
       <config_path>carriers/flatrate/handling_fee</config_path>
       <scope>Website</scope>
@@ -1436,8 +1436,8 @@
     </technical>
   </field>
   <field id="carriers_flatrate_handling_type" module="Magento_OfflineShipping" path="carriers/flatrate/handling_type">
-    <summary>How the Flat Rate handling fee is calculated.</summary>
-    <usage><![CDATA[<p>Sets the basis for the handling fee added to Flat Rate shipping — for example a fixed amount or a proportion of the rate. Works together with <strong>Handling Fee</strong>. Can be set per website.</p>]]></usage>
+    <summary>Whether the Flat Rate handling fee is fixed or a percentage.</summary>
+    <usage><![CDATA[<p>Whether the handling fee is a fixed amount or a percentage of the rate.</p>]]></usage>
     <values>
       <value id="F" label="Fixed">Add a fixed handling amount.</value>
       <value id="P" label="Percent">Add handling as a percentage of the rate.</value>
@@ -1450,8 +1450,8 @@
     </technical>
   </field>
   <field id="carriers_flatrate_name" module="Magento_OfflineShipping" path="carriers/flatrate/name">
-    <summary>The Flat Rate method name shown to customers at checkout.</summary>
-    <usage><![CDATA[<p>The label shown next to the Flat Rate price in the list of shipping methods at checkout. Can differ per store view.</p>]]></usage>
+    <summary>The method name shown for Flat Rate.</summary>
+    <usage><![CDATA[<p>The shipping method label customers see, for example "Fixed".</p>]]></usage>
     <technical>
       <config_path>carriers/flatrate/name</config_path>
       <default_value>Fixed</default_value>
@@ -1459,8 +1459,8 @@
     </technical>
   </field>
   <field id="carriers_flatrate_price" module="Magento_OfflineShipping" path="carriers/flatrate/price">
-    <summary>The flat shipping amount charged by the Flat Rate method.</summary>
-    <usage><![CDATA[<p>The fixed shipping charge applied by the Flat Rate carrier. Can be set per website.</p>]]></usage>
+    <summary>The flat shipping amount charged.</summary>
+    <usage><![CDATA[<p>The fixed shipping price, applied per order or per item depending on the type below.</p>]]></usage>
     <technical>
       <config_path>carriers/flatrate/price</config_path>
       <default_value>5.00</default_value>
@@ -1469,8 +1469,8 @@
     </technical>
   </field>
   <field id="carriers_flatrate_sallowspecific" module="Magento_OfflineShipping" path="carriers/flatrate/sallowspecific">
-    <summary>Whether Flat Rate is offered to all countries or only selected ones.</summary>
-    <usage><![CDATA[<p>Chooses whether Flat Rate is available for all allowed countries or only for the countries chosen in <strong>Ship to Specific Countries</strong>. Can be set per website.</p>]]></usage>
+    <summary>Whether Flat Rate is limited to specific countries.</summary>
+    <usage><![CDATA[<p>Offer Flat Rate in all allowed countries, or restrict it to the countries chosen below.</p>]]></usage>
     <values>
       <value id="0" label="All Allowed Countries">Offer this method in every country your store already allows.</value>
       <value id="1" label="Specific Countries">Limit this method to the specific countries you pick below.</value>
@@ -1483,8 +1483,8 @@
     </technical>
   </field>
   <field id="carriers_flatrate_showmethod" module="Magento_OfflineShipping" path="carriers/flatrate/showmethod">
-    <summary>Whether Flat Rate still appears at checkout when it is not available for the order.</summary>
-    <usage><![CDATA[<p>When <strong>Yes</strong>, the Flat Rate method is still listed (shown as unavailable) when it does not apply to the order, rather than being hidden. Can be set per website.</p>]]></usage>
+    <summary>Show Flat Rate even when it doesn't apply.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, the method is shown (with its error message) instead of being hidden when unavailable.</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -1496,8 +1496,8 @@
     </technical>
   </field>
   <field id="carriers_flatrate_sort_order" module="Magento_OfflineShipping" path="carriers/flatrate/sort_order">
-    <summary>The position of Flat Rate among the shipping methods at checkout.</summary>
-    <usage><![CDATA[<p>A sort-order number controlling where Flat Rate appears relative to other carriers in the checkout shipping list. Can be set per website.</p>]]></usage>
+    <summary>Position of Flat Rate among shipping methods.</summary>
+    <usage><![CDATA[<p>Controls where Flat Rate appears in the list of shipping options. Lower numbers appear first.</p>]]></usage>
     <technical>
       <config_path>carriers/flatrate/sort_order</config_path>
       <scope>Website</scope>
@@ -1505,8 +1505,8 @@
     </technical>
   </field>
   <field id="carriers_flatrate_specificcountry" module="Magento_OfflineShipping" path="carriers/flatrate/specificcountry">
-    <summary>The countries Flat Rate is offered to when limited to specific countries.</summary>
-    <usage><![CDATA[<p>The set of destination countries for which Flat Rate is available. Applies when <strong>Ship to Applicable Countries</strong> is set to specific countries. Can be set per website.</p>]]></usage>
+    <summary>The countries Flat Rate ships to.</summary>
+    <usage><![CDATA[<p>The countries where Flat Rate is offered, used when it is limited to specific countries.</p>]]></usage>
     <technical>
       <config_path>carriers/flatrate/specificcountry</config_path>
       <scope>Website</scope>
@@ -1514,8 +1514,8 @@
     </technical>
   </field>
   <field id="carriers_flatrate_specificerrmsg" module="Magento_OfflineShipping" path="carriers/flatrate/specificerrmsg">
-    <summary>The message shown when Flat Rate shipping is unavailable for the order.</summary>
-    <usage><![CDATA[<p>The error text displayed to customers when Flat Rate cannot be offered for their order. Can differ per store view.</p>]]></usage>
+    <summary>Message shown when Flat Rate is unavailable.</summary>
+    <usage><![CDATA[<p>The text shown to customers when Flat Rate can't be offered for their order.</p>]]></usage>
     <technical>
       <config_path>carriers/flatrate/specificerrmsg</config_path>
       <default_value>This shipping method is not available. To use this shipping method, please contact us.</default_value>
@@ -1523,8 +1523,8 @@
     </technical>
   </field>
   <field id="carriers_flatrate_title" module="Magento_OfflineShipping" path="carriers/flatrate/title">
-    <summary>The heading shown for the Flat Rate carrier at checkout.</summary>
-    <usage><![CDATA[<p>The carrier title displayed above the Flat Rate method at checkout. Can differ per store view.</p>]]></usage>
+    <summary>The carrier heading shown for Flat Rate.</summary>
+    <usage><![CDATA[<p>The group title shown above the Flat Rate method at checkout.</p>]]></usage>
     <technical>
       <config_path>carriers/flatrate/title</config_path>
       <default_value>Flat Rate</default_value>
@@ -1532,8 +1532,8 @@
     </technical>
   </field>
   <field id="carriers_flatrate_type" module="Magento_OfflineShipping" path="carriers/flatrate/type">
-    <summary>The basis on which the flat rate is charged.</summary>
-    <usage><![CDATA[<p>Determines what the flat rate applies to — for example once per order or per item in the order. Can be set per website.</p>]]></usage>
+    <summary>Whether the flat rate is charged per order or per item.</summary>
+    <usage><![CDATA[<p>Whether the flat price is charged once per order or multiplied by the number of items.</p>]]></usage>
     <values>
       <value id="O" label="Per Order">Charge the flat rate once per order.</value>
       <value id="I" label="Per Item">Charge the flat rate for each item.</value>
@@ -1546,8 +1546,8 @@
     </technical>
   </field>
   <field id="carriers_freeshipping_active" module="Magento_OfflineShipping" path="carriers/freeshipping/active">
-    <summary>Turns the Free Shipping method on or off at checkout.</summary>
-    <usage><![CDATA[<p>When set to <strong>Yes</strong>, the Free Shipping carrier is offered at checkout for qualifying orders. Can be set per website.</p>]]></usage>
+    <summary>Offer free shipping above a subtotal.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, Free Shipping is available once the order meets the minimum subtotal below.</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -1560,8 +1560,8 @@
     </technical>
   </field>
   <field id="carriers_freeshipping_free_shipping_subtotal" module="Magento_OfflineShipping" path="carriers/freeshipping/free_shipping_subtotal">
-    <summary>The order subtotal a customer must reach to qualify for free shipping.</summary>
-    <usage><![CDATA[<p>The minimum order amount that makes an order eligible for Free Shipping. Can be set per website.</p>]]></usage>
+    <summary>Minimum order subtotal that qualifies for free shipping.</summary>
+    <usage><![CDATA[<p>Orders at or above this subtotal are eligible for Free Shipping.</p>]]></usage>
     <technical>
       <config_path>carriers/freeshipping/free_shipping_subtotal</config_path>
       <scope>Website</scope>
@@ -1569,8 +1569,8 @@
     </technical>
   </field>
   <field id="carriers_freeshipping_name" module="Magento_OfflineShipping" path="carriers/freeshipping/name">
-    <summary>The Free Shipping method name shown to customers at checkout.</summary>
-    <usage><![CDATA[<p>The label shown next to the Free Shipping option in the list of shipping methods at checkout. Can differ per store view.</p>]]></usage>
+    <summary>The method name shown for Free Shipping.</summary>
+    <usage><![CDATA[<p>The shipping method label customers see.</p>]]></usage>
     <technical>
       <config_path>carriers/freeshipping/name</config_path>
       <default_value>Free</default_value>
@@ -1578,8 +1578,8 @@
     </technical>
   </field>
   <field id="carriers_freeshipping_sallowspecific" module="Magento_OfflineShipping" path="carriers/freeshipping/sallowspecific">
-    <summary>Whether Free Shipping is offered to all countries or only selected ones.</summary>
-    <usage><![CDATA[<p>Chooses whether Free Shipping is available for all allowed countries or only for the countries chosen in <strong>Ship to Specific Countries</strong>. Can be set per website.</p>]]></usage>
+    <summary>Whether Free Shipping is limited to specific countries.</summary>
+    <usage><![CDATA[<p>Offer Free Shipping in all allowed countries, or restrict it to the countries chosen below.</p>]]></usage>
     <values>
       <value id="0" label="All Allowed Countries">Offer this method in every country your store already allows.</value>
       <value id="1" label="Specific Countries">Limit this method to the specific countries you pick below.</value>
@@ -1592,8 +1592,8 @@
     </technical>
   </field>
   <field id="carriers_freeshipping_showmethod" module="Magento_OfflineShipping" path="carriers/freeshipping/showmethod">
-    <summary>Whether Free Shipping still appears at checkout when it is not available for the order.</summary>
-    <usage><![CDATA[<p>When <strong>Yes</strong>, the Free Shipping method is still listed (shown as unavailable) when it does not apply to the order, rather than being hidden. Can be set per website.</p>]]></usage>
+    <summary>Show Free Shipping even when it doesn't apply.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, the method is shown (with its error message) instead of being hidden when unavailable.</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -1605,8 +1605,8 @@
     </technical>
   </field>
   <field id="carriers_freeshipping_sort_order" module="Magento_OfflineShipping" path="carriers/freeshipping/sort_order">
-    <summary>The position of Free Shipping among the shipping methods at checkout.</summary>
-    <usage><![CDATA[<p>A sort-order number controlling where Free Shipping appears relative to other carriers in the checkout shipping list. Can be set per website.</p>]]></usage>
+    <summary>Position of Free Shipping among shipping methods.</summary>
+    <usage><![CDATA[<p>Controls where Free Shipping appears in the list of shipping options. Lower numbers appear first.</p>]]></usage>
     <technical>
       <config_path>carriers/freeshipping/sort_order</config_path>
       <scope>Website</scope>
@@ -1614,8 +1614,8 @@
     </technical>
   </field>
   <field id="carriers_freeshipping_specificcountry" module="Magento_OfflineShipping" path="carriers/freeshipping/specificcountry">
-    <summary>The countries Free Shipping is offered to when limited to specific countries.</summary>
-    <usage><![CDATA[<p>The set of destination countries for which Free Shipping is available. Applies when <strong>Ship to Applicable Countries</strong> is set to specific countries. Can be set per website.</p>]]></usage>
+    <summary>The countries Free Shipping is offered in.</summary>
+    <usage><![CDATA[<p>The countries where Free Shipping is available, used when it is limited to specific countries.</p>]]></usage>
     <technical>
       <config_path>carriers/freeshipping/specificcountry</config_path>
       <scope>Website</scope>
@@ -1623,8 +1623,8 @@
     </technical>
   </field>
   <field id="carriers_freeshipping_specificerrmsg" module="Magento_OfflineShipping" path="carriers/freeshipping/specificerrmsg">
-    <summary>The message shown when Free Shipping is unavailable for the order.</summary>
-    <usage><![CDATA[<p>The error text displayed to customers when Free Shipping cannot be offered for their order. Can differ per store view.</p>]]></usage>
+    <summary>Message shown when Free Shipping is unavailable.</summary>
+    <usage><![CDATA[<p>The text shown to customers when Free Shipping can't be offered for their order.</p>]]></usage>
     <technical>
       <config_path>carriers/freeshipping/specificerrmsg</config_path>
       <default_value>This shipping method is not available. To use this shipping method, please contact us.</default_value>
@@ -1632,8 +1632,8 @@
     </technical>
   </field>
   <field id="carriers_freeshipping_tax_including" module="Magento_OfflineShipping" path="carriers/freeshipping/tax_including">
-    <summary>Whether the minimum order amount is compared against the subtotal including tax.</summary>
-    <usage><![CDATA[<p>When <strong>Yes</strong>, the <strong>Minimum Order Amount</strong> is checked against the subtotal with tax included rather than excluded. Can be set per website.</p>]]></usage>
+    <summary>Compare the subtotal including tax.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, tax is counted toward the free-shipping subtotal threshold.</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -1645,8 +1645,8 @@
     </technical>
   </field>
   <field id="carriers_freeshipping_title" module="Magento_OfflineShipping" path="carriers/freeshipping/title">
-    <summary>The heading shown for the Free Shipping carrier at checkout.</summary>
-    <usage><![CDATA[<p>The carrier title displayed above the Free Shipping method at checkout. Can differ per store view.</p>]]></usage>
+    <summary>The carrier heading shown for Free Shipping.</summary>
+    <usage><![CDATA[<p>The group title shown above the Free Shipping method at checkout.</p>]]></usage>
     <technical>
       <config_path>carriers/freeshipping/title</config_path>
       <default_value>Free Shipping</default_value>
@@ -1654,8 +1654,8 @@
     </technical>
   </field>
   <field id="carriers_instore_active" module="Magento_InventoryInStorePickupShippingAdminUi" section="Delivery Methods" path="carriers/instore/active">
-    <summary>Whether the In-Store Delivery (in-store pickup) shipping method is offered at checkout.</summary>
-    <usage><![CDATA[<p>When Yes, the In-Store Delivery method is available as a delivery option during checkout. Can differ per website.</p>]]></usage>
+    <summary>Offer in-store pickup as a shipping method.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, the In-Store Delivery method is available at checkout.</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -1668,8 +1668,8 @@
     </technical>
   </field>
   <field id="carriers_instore_name" module="Magento_InventoryInStorePickupShippingAdminUi" section="Delivery Methods" path="carriers/instore/name">
-    <summary>The method name shown to shoppers for the In-Store Delivery option.</summary>
-    <usage><![CDATA[<p>The label shown for this specific In-Store Delivery method in the checkout shipping options. Can differ per website or store view.</p>]]></usage>
+    <summary>The method name shown for In-Store Delivery.</summary>
+    <usage><![CDATA[<p>The shipping method label customers see.</p>]]></usage>
     <technical>
       <config_path>carriers/instore/name</config_path>
       <default_value>Pick in Store</default_value>
@@ -1677,8 +1677,8 @@
     </technical>
   </field>
   <field id="carriers_instore_price" module="Magento_InventoryInStorePickupShippingAdminUi" section="Delivery Methods" path="carriers/instore/price">
-    <summary>The price charged for the In-Store Delivery method.</summary>
-    <usage><![CDATA[<p>The amount charged to the shopper when they choose In-Store Delivery. Can differ per website.</p>]]></usage>
+    <summary>The amount charged for in-store delivery.</summary>
+    <usage><![CDATA[<p>The shipping price applied when the customer selects in-store pickup.</p>]]></usage>
     <technical>
       <config_path>carriers/instore/price</config_path>
       <default_value>0.00</default_value>
@@ -1687,8 +1687,8 @@
     </technical>
   </field>
   <field id="carriers_instore_search_radius" module="Magento_InventoryInStorePickupShippingAdminUi" section="Delivery Methods" path="carriers/instore/search_radius">
-    <summary>How far from the customer the storefront searches for pickup stores; larger finds more but less local.</summary>
-    <usage><![CDATA[<p>Radius, in kilometres, used to find in-store pickup locations during storefront checkout. A larger radius surfaces more stores but may list distant ones; a smaller radius keeps results local but may find none. Can differ per website.</p>]]></usage>
+    <summary>How far to search for pickup locations.</summary>
+    <usage><![CDATA[<p>The radius within which nearby pickup/source locations are offered to the customer.</p>]]></usage>
     <technical>
       <config_path>carriers/instore/search_radius</config_path>
       <default_value>200</default_value>
@@ -1697,8 +1697,8 @@
     </technical>
   </field>
   <field id="carriers_instore_specificerrmsg" module="Magento_InventoryInStorePickupShippingAdminUi" section="Delivery Methods" path="carriers/instore/specificerrmsg">
-    <summary>The message shown when the In-Store Delivery method is unavailable.</summary>
-    <usage><![CDATA[<p>The error text displayed to shoppers when In-Store Delivery cannot be offered for their cart. Can differ per website or store view.</p>]]></usage>
+    <summary>Message shown when In-Store Delivery is unavailable.</summary>
+    <usage><![CDATA[<p>The text shown to customers when in-store pickup can't be offered.</p>]]></usage>
     <technical>
       <config_path>carriers/instore/specificerrmsg</config_path>
       <default_value>In-Store Delivery is not available. To use this delivery method, please contact us.</default_value>
@@ -1706,8 +1706,8 @@
     </technical>
   </field>
   <field id="carriers_instore_title" module="Magento_InventoryInStorePickupShippingAdminUi" section="Delivery Methods" path="carriers/instore/title">
-    <summary>The title shown to shoppers for the In-Store Delivery carrier.</summary>
-    <usage><![CDATA[<p>The heading shown for the In-Store Delivery carrier above its method at checkout. Can differ per website or store view.</p>]]></usage>
+    <summary>The carrier heading shown for In-Store Delivery.</summary>
+    <usage><![CDATA[<p>The group title shown above the In-Store Delivery method at checkout.</p>]]></usage>
     <technical>
       <config_path>carriers/instore/title</config_path>
       <default_value>In-Store Pickup Delivery</default_value>
@@ -1715,8 +1715,8 @@
     </technical>
   </field>
   <field id="carriers_tablerate_active" module="Magento_OfflineShipping" path="carriers/tablerate/active">
-    <summary>Turns the Table Rates shipping method on or off at checkout.</summary>
-    <usage><![CDATA[<p>When set to <strong>Yes</strong>, the Table Rates carrier is offered at checkout, using the imported rate table. Can be set per website.</p>]]></usage>
+    <summary>Offer rates from an imported rate table.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, Table Rates shipping is available, pricing orders from the imported rate table.</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -1729,8 +1729,8 @@
     </technical>
   </field>
   <field id="carriers_tablerate_condition_name" module="Magento_OfflineShipping" path="carriers/tablerate/condition_name">
-    <summary>The order condition the rate table is looked up by.</summary>
-    <usage><![CDATA[<p>Selects which order measure the Table Rates lookup is based on, such as weight, price, or item count. The imported rate table must match the condition chosen here. Can be set per website.</p>]]></usage>
+    <summary>What the rate table is keyed on.</summary>
+    <usage><![CDATA[<p>Whether table rates are looked up by weight, order price, or item count — each versus destination.</p>]]></usage>
     <values>
       <value id="package_weight" label="Weight vs. Destination">Look up the rate by weight and destination.</value>
       <value id="package_value_with_discount" label="Price vs. Destination">Look up the rate by order value and destination.</value>
@@ -1744,16 +1744,16 @@
     </technical>
   </field>
   <field id="carriers_tablerate_export" module="Magento_OfflineShipping" path="carriers/tablerate/export">
-    <summary>Downloads the current table rate data as a CSV file.</summary>
-    <usage><![CDATA[<p>Exports this website&#039;s Table Rates to a CSV file for editing or backup. Operates at website scope.</p>]]></usage>
+    <summary>Download the current rate table as CSV.</summary>
+    <usage><![CDATA[<p>Exports the configured table rates for this scope to a CSV file.</p>]]></usage>
     <technical>
       <config_path>carriers/tablerate/export</config_path>
       <scope>Website</scope>
     </technical>
   </field>
   <field id="carriers_tablerate_handling_fee" module="Magento_OfflineShipping" path="carriers/tablerate/handling_fee">
-    <summary>The handling fee added to the Table Rates shipping charge.</summary>
-    <usage><![CDATA[<p>The handling fee amount added to Table Rate shipping, applied according to <strong>Calculate Handling Fee</strong>. Can be set per website.</p>]]></usage>
+    <summary>A handling fee added to table rates.</summary>
+    <usage><![CDATA[<p>An extra amount added on top of the looked-up table rate.</p>]]></usage>
     <technical>
       <config_path>carriers/tablerate/handling_fee</config_path>
       <scope>Website</scope>
@@ -1761,8 +1761,8 @@
     </technical>
   </field>
   <field id="carriers_tablerate_handling_type" module="Magento_OfflineShipping" path="carriers/tablerate/handling_type">
-    <summary>How the Table Rates handling fee is calculated.</summary>
-    <usage><![CDATA[<p>Sets the basis for the handling fee added to Table Rate shipping — for example a fixed amount or a proportion of the rate. Works together with <strong>Handling Fee</strong>. Can be set per website.</p>]]></usage>
+    <summary>Whether the Table Rates handling fee is fixed or a percentage.</summary>
+    <usage><![CDATA[<p>Whether the handling fee is a fixed amount or a percentage of the rate.</p>]]></usage>
     <values>
       <value id="F" label="Fixed">Add a fixed handling amount.</value>
       <value id="P" label="Percent">Add handling as a percentage of the rate.</value>
@@ -1775,8 +1775,8 @@
     </technical>
   </field>
   <field id="carriers_tablerate_import" module="Magento_OfflineShipping" path="carriers/tablerate/import">
-    <summary>Uploads a CSV file of table rates for this website.</summary>
-    <usage><![CDATA[<p>Imports a CSV file defining the Table Rates for this website, replacing the existing rate table. Operates at website scope.</p>]]></usage>
+    <summary>Upload a rate table from CSV.</summary>
+    <usage><![CDATA[<p>Imports table rates from a CSV file, replacing the current rates for this scope.</p>]]></usage>
     <technical>
       <config_path>carriers/tablerate/import</config_path>
       <scope>Website</scope>
@@ -1784,8 +1784,8 @@
     </technical>
   </field>
   <field id="carriers_tablerate_include_virtual_price" module="Magento_OfflineShipping" path="carriers/tablerate/include_virtual_price">
-    <summary>Whether virtual products count toward the value used to look up table rates.</summary>
-    <usage><![CDATA[<p>When <strong>Yes</strong>, virtual products are included in the order value used for the Table Rates lookup. Can be set per website.</p>]]></usage>
+    <summary>Count virtual products in the rate calculation.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, virtual products count toward the table-rate condition (price, weight, or quantity).</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -1798,8 +1798,8 @@
     </technical>
   </field>
   <field id="carriers_tablerate_name" module="Magento_OfflineShipping" path="carriers/tablerate/name">
-    <summary>The Table Rates method name shown to customers at checkout.</summary>
-    <usage><![CDATA[<p>The label shown next to the Table Rates price in the list of shipping methods at checkout. Can differ per store view.</p>]]></usage>
+    <summary>The method name shown for Table Rates.</summary>
+    <usage><![CDATA[<p>The shipping method label customers see.</p>]]></usage>
     <technical>
       <config_path>carriers/tablerate/name</config_path>
       <default_value>Table Rate</default_value>
@@ -1807,8 +1807,8 @@
     </technical>
   </field>
   <field id="carriers_tablerate_sallowspecific" module="Magento_OfflineShipping" path="carriers/tablerate/sallowspecific">
-    <summary>Whether Table Rates is offered to all countries or only selected ones.</summary>
-    <usage><![CDATA[<p>Chooses whether Table Rates is available for all allowed countries or only for the countries chosen in <strong>Ship to Specific Countries</strong>. Can be set per website.</p>]]></usage>
+    <summary>Whether Table Rates is limited to specific countries.</summary>
+    <usage><![CDATA[<p>Offer Table Rates in all allowed countries, or restrict it to the countries chosen below.</p>]]></usage>
     <values>
       <value id="0" label="All Allowed Countries">Offer this method in every country your store already allows.</value>
       <value id="1" label="Specific Countries">Limit this method to the specific countries you pick below.</value>
@@ -1821,8 +1821,8 @@
     </technical>
   </field>
   <field id="carriers_tablerate_showmethod" module="Magento_OfflineShipping" path="carriers/tablerate/showmethod">
-    <summary>Whether Table Rates still appears at checkout when it is not available for the order.</summary>
-    <usage><![CDATA[<p>When <strong>Yes</strong>, the Table Rates method is still listed (shown as unavailable) when it does not apply to the order, rather than being hidden. Can be set per website.</p>]]></usage>
+    <summary>Show Table Rates even when no rate matches.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, the method is shown (with its error message) instead of being hidden when no rate applies.</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -1834,8 +1834,8 @@
     </technical>
   </field>
   <field id="carriers_tablerate_sort_order" module="Magento_OfflineShipping" path="carriers/tablerate/sort_order">
-    <summary>The position of Table Rates among the shipping methods at checkout.</summary>
-    <usage><![CDATA[<p>A sort-order number controlling where Table Rates appears relative to other carriers in the checkout shipping list. Can be set per website.</p>]]></usage>
+    <summary>Position of Table Rates among shipping methods.</summary>
+    <usage><![CDATA[<p>Controls where Table Rates appears in the list of shipping options. Lower numbers appear first.</p>]]></usage>
     <technical>
       <config_path>carriers/tablerate/sort_order</config_path>
       <scope>Website</scope>
@@ -1843,8 +1843,8 @@
     </technical>
   </field>
   <field id="carriers_tablerate_specificcountry" module="Magento_OfflineShipping" path="carriers/tablerate/specificcountry">
-    <summary>The countries Table Rates is offered to when limited to specific countries.</summary>
-    <usage><![CDATA[<p>The set of destination countries for which Table Rates is available. Applies when <strong>Ship to Applicable Countries</strong> is set to specific countries. Can be set per website.</p>]]></usage>
+    <summary>The countries Table Rates ships to.</summary>
+    <usage><![CDATA[<p>The countries where Table Rates is offered, used when it is limited to specific countries.</p>]]></usage>
     <technical>
       <config_path>carriers/tablerate/specificcountry</config_path>
       <scope>Website</scope>
@@ -1852,8 +1852,8 @@
     </technical>
   </field>
   <field id="carriers_tablerate_specificerrmsg" module="Magento_OfflineShipping" path="carriers/tablerate/specificerrmsg">
-    <summary>The message shown when Table Rates shipping is unavailable for the order.</summary>
-    <usage><![CDATA[<p>The error text displayed to customers when Table Rates cannot be offered for their order. Can differ per store view.</p>]]></usage>
+    <summary>Message shown when Table Rates is unavailable.</summary>
+    <usage><![CDATA[<p>The text shown to customers when no table rate matches their order.</p>]]></usage>
     <technical>
       <config_path>carriers/tablerate/specificerrmsg</config_path>
       <default_value>This shipping method is not available. To use this shipping method, please contact us.</default_value>
@@ -1861,8 +1861,8 @@
     </technical>
   </field>
   <field id="carriers_tablerate_title" module="Magento_OfflineShipping" path="carriers/tablerate/title">
-    <summary>The heading shown for the Table Rates carrier at checkout.</summary>
-    <usage><![CDATA[<p>The carrier title displayed above the Table Rates method at checkout. Can differ per store view.</p>]]></usage>
+    <summary>The carrier heading shown for Table Rates.</summary>
+    <usage><![CDATA[<p>The group title shown above the Table Rates method at checkout.</p>]]></usage>
     <technical>
       <config_path>carriers/tablerate/title</config_path>
       <default_value>Best Way</default_value>
@@ -1870,8 +1870,8 @@
     </technical>
   </field>
   <field id="carriers_ups_access_license_number" module="Magento_Ups" path="carriers/ups/access_license_number">
-    <summary>The UPS Access License Number used to authenticate rate and label requests to UPS.</summary>
-    <usage><![CDATA[<p>The UPS-issued Access License Number that authorises this store&#039;s calls to the UPS API. Stored encrypted. Can be set per website, so separate UPS accounts can serve different websites.</p>]]></usage>
+    <summary>Your UPS access license (API) number.</summary>
+    <usage><![CDATA[<p>Credential issued by UPS for API access.</p>]]></usage>
     <technical>
       <config_path>carriers/ups/access_license_number</config_path>
       <scope>Website</scope>
@@ -1879,8 +1879,8 @@
     </technical>
   </field>
   <field id="carriers_ups_active" module="Magento_Ups" path="carriers/ups/active">
-    <summary>Enables UPS as a shipping method offered at checkout.</summary>
-    <usage><![CDATA[<p>When set to <strong>Yes</strong>, UPS rates are offered to customers at checkout. Set to <strong>No</strong> to hide UPS. Can be enabled per website.</p>]]></usage>
+    <summary>Offer live UPS rates at checkout.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, UPS shipping rates are requested and offered to customers.</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -1893,8 +1893,8 @@
     </technical>
   </field>
   <field id="carriers_ups_allowed_methods" module="Magento_Ups" path="carriers/ups/allowed_methods">
-    <summary>The UPS service levels offered to customers at checkout.</summary>
-    <usage><![CDATA[<p>Selects which UPS shipping services (service levels) are presented to customers. Only the methods chosen here are quoted. Can differ per website.</p>]]></usage>
+    <summary>Which UPS services are offered.</summary>
+    <usage><![CDATA[<p>The UPS services customers can choose from at checkout.</p>]]></usage>
     <technical>
       <config_path>carriers/ups/allowed_methods</config_path>
       <default_value>1DM,1DML,1DA,1DAL,1DAPI,1DP,1DPL,2DM,2DML,2DA,2DAL,3DS,GND,GNDCOM,GNDRES,STD,XPR,WXS,XPRL,XDM,XDML,XPD,01,02,03,07,08,11,12,14,54,59,65</default_value>
@@ -1903,8 +1903,8 @@
     </technical>
   </field>
   <field id="carriers_ups_container" module="Magento_Ups" path="carriers/ups/container">
-    <summary>The UPS packaging type used when requesting rates.</summary>
-    <usage><![CDATA[<p>The UPS container/packaging type assumed when quoting rates. Pick the packaging that matches how you ship. Can differ per website.</p>]]></usage>
+    <summary>The default UPS packaging type.</summary>
+    <usage><![CDATA[<p>The package type assumed when requesting UPS rates.</p>]]></usage>
     <technical>
       <config_path>carriers/ups/container</config_path>
       <default_value>CP</default_value>
@@ -1913,8 +1913,8 @@
     </technical>
   </field>
   <field id="carriers_ups_debug" module="Magento_Ups" path="carriers/ups/debug">
-    <summary>Whether to log UPS request and response data for troubleshooting.</summary>
-    <usage><![CDATA[<p>When <strong>Yes</strong>, UPS API requests and responses are written to the debug log to help diagnose rating issues. Can differ per website.</p>]]></usage>
+    <summary>Log UPS API requests and responses.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, UPS API traffic is written to the debug log.</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -1926,8 +1926,8 @@
     </technical>
   </field>
   <field id="carriers_ups_dest_type" module="Magento_Ups" path="carriers/ups/dest_type">
-    <summary>The destination type UPS uses when calculating rates.</summary>
-    <usage><![CDATA[<p>Selects the kind of delivery destination UPS assumes when quoting rates, which can change the returned prices. Can differ per website.</p>]]></usage>
+    <summary>Rate to a residential or commercial address.</summary>
+    <usage><![CDATA[<p>Whether UPS rates assume a residential or a commercial destination.</p>]]></usage>
     <values>
       <value id="RES" label="Residential"/>
       <value id="COM" label="Commercial"/>
@@ -1940,8 +1940,8 @@
     </technical>
   </field>
   <field id="carriers_ups_free_method" module="Magento_Ups" path="carriers/ups/free_method">
-    <summary>The UPS service level used for the free shipping option.</summary>
-    <usage><![CDATA[<p>The UPS service applied when an order qualifies for free shipping. Can differ per website.</p>]]></usage>
+    <summary>UPS service used for free shipping.</summary>
+    <usage><![CDATA[<p>The UPS service applied when an order qualifies for free shipping.</p>]]></usage>
     <technical>
       <config_path>carriers/ups/free_method</config_path>
       <default_value>GND</default_value>
@@ -1950,8 +1950,8 @@
     </technical>
   </field>
   <field id="carriers_ups_free_shipping_enable" module="Magento_Ups" path="carriers/ups/free_shipping_enable">
-    <summary>Enables a free-shipping threshold for UPS based on order subtotal.</summary>
-    <usage><![CDATA[<p>When enabled, orders at or above the configured subtotal qualify for free UPS shipping. Can differ per website.</p>]]></usage>
+    <summary>Offer free UPS shipping above a subtotal.</summary>
+    <usage><![CDATA[<p>When enabled, UPS shipping is free once the order meets the subtotal below.</p>]]></usage>
     <values>
       <value id="1" label="Enable"/>
       <value id="0" label="Disable"/>
@@ -1963,8 +1963,8 @@
     </technical>
   </field>
   <field id="carriers_ups_free_shipping_subtotal" module="Magento_Ups" path="carriers/ups/free_shipping_subtotal">
-    <summary>The order subtotal at which UPS shipping becomes free.</summary>
-    <usage><![CDATA[<p>The minimum order subtotal that qualifies for free UPS shipping. Applies only when <strong>Enable Free Shipping Threshold</strong> is enabled. Can differ per website.</p>]]></usage>
+    <summary>Order subtotal that qualifies for free UPS shipping.</summary>
+    <usage><![CDATA[<p>Orders at or above this subtotal ship free via the chosen UPS free method.</p>]]></usage>
     <technical>
       <config_path>carriers/ups/free_shipping_subtotal</config_path>
       <scope>Website</scope>
@@ -1973,8 +1973,8 @@
     </technical>
   </field>
   <field id="carriers_ups_gateway_rest_url" module="Magento_Ups" path="carriers/ups/gateway_rest_url">
-    <summary>The URL of the UPS REST API endpoint.</summary>
-    <usage><![CDATA[<p>The endpoint URL used when UPS requests go through the REST API. Change only if directed by UPS. Can differ per website.</p>]]></usage>
+    <summary>UPS REST rating endpoint.</summary>
+    <usage><![CDATA[<p>The UPS REST API URL used to request rates.</p>]]></usage>
     <technical>
       <config_path>carriers/ups/gateway_rest_url</config_path>
       <default_value>https://onlinetools.ups.com/api/rating/</default_value>
@@ -1983,8 +1983,8 @@
     </technical>
   </field>
   <field id="carriers_ups_gateway_url" module="Magento_Ups" path="carriers/ups/gateway_url">
-    <summary>The UPS gateway URL used for rate requests.</summary>
-    <usage><![CDATA[<p>The endpoint URL this store calls to request UPS rates. Change only if directed by UPS. Can differ per website.</p>]]></usage>
+    <summary>UPS rating endpoint (legacy XML).</summary>
+    <usage><![CDATA[<p>The UPS XML API URL used to request rates.</p>]]></usage>
     <technical>
       <config_path>carriers/ups/gateway_url</config_path>
       <default_value>https://www.ups.com/using/services/rave/qcostcgi.cgi</default_value>
@@ -1993,8 +1993,8 @@
     </technical>
   </field>
   <field id="carriers_ups_gateway_xml_url" module="Magento_Ups" path="carriers/ups/gateway_xml_url">
-    <summary>The URL of the UPS XML rate API endpoint.</summary>
-    <usage><![CDATA[<p>The endpoint URL used when UPS requests go through the legacy XML API. Change only if directed by UPS. Can differ per website.</p>]]></usage>
+    <summary>UPS XML rate gateway URL.</summary>
+    <usage><![CDATA[<p>The endpoint for legacy XML rate requests.</p>]]></usage>
     <technical>
       <config_path>carriers/ups/gateway_xml_url</config_path>
       <default_value>https://onlinetools.ups.com/ups.app/xml/Rate</default_value>
@@ -2003,8 +2003,8 @@
     </technical>
   </field>
   <field id="carriers_ups_handling_action" module="Magento_Ups" path="carriers/ups/handling_action">
-    <summary>Whether the handling fee is applied per order or per package.</summary>
-    <usage><![CDATA[<p>Chooses whether the UPS handling fee is charged once per order or for each package. Can differ per website.</p>]]></usage>
+    <summary>Whether UPS handling applies per order or per package.</summary>
+    <usage><![CDATA[<p>Whether the handling fee is charged once per order or for each package.</p>]]></usage>
     <values>
       <value id="O" label="Per Order">Apply the handling fee once per order.</value>
       <value id="P" label="Per Package">Apply the handling fee to each package.</value>
@@ -2017,8 +2017,8 @@
     </technical>
   </field>
   <field id="carriers_ups_handling_fee" module="Magento_Ups" path="carriers/ups/handling_fee">
-    <summary>The handling fee added to UPS shipping rates.</summary>
-    <usage><![CDATA[<p>The handling amount added to quoted UPS rates, interpreted as a fixed value or percentage per the <strong>Calculate Handling Fee</strong> setting. Can differ per website.</p>]]></usage>
+    <summary>A handling fee added to UPS rates.</summary>
+    <usage><![CDATA[<p>An extra amount added on top of UPS's returned rate.</p>]]></usage>
     <technical>
       <config_path>carriers/ups/handling_fee</config_path>
       <scope>Website</scope>
@@ -2026,8 +2026,8 @@
     </technical>
   </field>
   <field id="carriers_ups_handling_type" module="Magento_Ups" path="carriers/ups/handling_type">
-    <summary>Whether the handling fee is a fixed amount or a percentage.</summary>
-    <usage><![CDATA[<p>Chooses whether the UPS handling fee is applied as a fixed amount or as a percentage of the shipping rate. Can differ per website.</p>]]></usage>
+    <summary>Whether the UPS handling fee is fixed or a percentage.</summary>
+    <usage><![CDATA[<p>Whether the handling fee is a fixed amount or a percentage of the rate.</p>]]></usage>
     <values>
       <value id="F" label="Fixed">Add a fixed handling amount.</value>
       <value id="P" label="Percent">Add handling as a percentage of the rate.</value>
@@ -2040,8 +2040,8 @@
     </technical>
   </field>
   <field id="carriers_ups_include_taxes" module="Magento_Ups" path="carriers/ups/include_taxes">
-    <summary>Requests tax-inclusive shipping rates from UPS, changing the quoted shipping cost.</summary>
-    <usage><![CDATA[<p>When <strong>Yes</strong>, UPS rate requests ask for tax-inclusive rates, so applicable taxes (sales tax, VAT) are folded into the quoted shipping price. Affects what customers see at checkout where UPS applies. Website scoped.</p>]]></usage>
+    <summary>Include taxes in UPS rates.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, any taxes UPS returns are included in the quoted rate.</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -2054,8 +2054,8 @@
     </technical>
   </field>
   <field id="carriers_ups_is_account_live" module="Magento_Ups" path="carriers/ups/is_account_live">
-    <summary>Whether the UPS account runs against the live production API rather than a test environment.</summary>
-    <usage><![CDATA[<p>When <strong>Yes</strong>, requests go to the live UPS production environment; <strong>No</strong> targets the test environment. Can differ per website.</p>]]></usage>
+    <summary>Use the live UPS account.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, the production UPS account is used instead of a test account.</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -2068,8 +2068,8 @@
     </technical>
   </field>
   <field id="carriers_ups_max_package_weight" module="Magento_Ups" path="carriers/ups/max_package_weight">
-    <summary>The maximum package weight UPS will quote.</summary>
-    <usage><![CDATA[<p>The heaviest single package UPS will rate; consult UPS for the supported maximum. Orders above this may be split or return no rate. Can differ per website.</p>]]></usage>
+    <summary>Heaviest package UPS will rate.</summary>
+    <usage><![CDATA[<p>Orders over this weight are split into multiple packages for rating.</p>]]></usage>
     <technical>
       <config_path>carriers/ups/max_package_weight</config_path>
       <default_value>150</default_value>
@@ -2078,8 +2078,8 @@
     </technical>
   </field>
   <field id="carriers_ups_min_package_weight" module="Magento_Ups" path="carriers/ups/min_package_weight">
-    <summary>The minimum package weight UPS will quote.</summary>
-    <usage><![CDATA[<p>The lightest single package UPS will rate; consult UPS for the supported minimum. Can differ per website.</p>]]></usage>
+    <summary>Lightest package UPS will rate.</summary>
+    <usage><![CDATA[<p>The minimum weight sent to UPS for a package.</p>]]></usage>
     <technical>
       <config_path>carriers/ups/min_package_weight</config_path>
       <default_value>0.1</default_value>
@@ -2088,8 +2088,8 @@
     </technical>
   </field>
   <field id="carriers_ups_mode_xml" path="carriers/ups/mode_xml">
-    <summary>Operating mode Magento uses when calling the UPS API.</summary>
-    <usage><![CDATA[<p>Selects the mode for the UPS integration; per the field this governs SSL verification of your Magento server by UPS when rates and labels are requested. Set per website, so different sites can use different UPS connection settings.</p>]]></usage>
+    <summary>Use the UPS development or live endpoint.</summary>
+    <usage><![CDATA[<p>Whether the legacy XML API talks to UPS's development or live servers.</p>]]></usage>
     <values>
       <value id="0" label="Development"/>
       <value id="1" label="Live"/>
@@ -2102,8 +2102,8 @@
     </technical>
   </field>
   <field id="carriers_ups_negotiated_active" module="Magento_Ups" path="carriers/ups/negotiated_active">
-    <summary>Whether to request UPS negotiated (account-specific) rates instead of published rates.</summary>
-    <usage><![CDATA[<p>When <strong>Yes</strong>, UPS returns the negotiated rates tied to your account rather than standard published rates. Requires a UPS account that is enabled for negotiated rates. Can differ per website.</p>]]></usage>
+    <summary>Use your negotiated UPS rates.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, UPS returns your account's negotiated rates instead of published rates (requires a shipper number).</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -2116,8 +2116,8 @@
     </technical>
   </field>
   <field id="carriers_ups_origin_shipment" module="Magento_Ups" path="carriers/ups/origin_shipment">
-    <summary>The UPS origin region that determines which shipping methods are available.</summary>
-    <usage><![CDATA[<p>The region the shipment originates from, which governs the set of UPS services that can be offered. Can differ per website.</p>]]></usage>
+    <summary>The UPS origin/shipment region.</summary>
+    <usage><![CDATA[<p>The region your shipments originate from, which determines the available UPS services.</p>]]></usage>
     <values>
       <value id="United States Domestic Shipments" label="United States Domestic Shipments"/>
       <value id="Shipments Originating in United States" label="Shipments Originating in United States"/>
@@ -2136,8 +2136,8 @@
     </technical>
   </field>
   <field id="carriers_ups_password" module="Magento_Ups" path="carriers/ups/password">
-    <summary>The password for the UPS account used to authenticate API requests.</summary>
-    <usage><![CDATA[<p>The password paired with the UPS user ID to authenticate API calls. Stored encrypted. Can be set per website.</p>]]></usage>
+    <summary>Your UPS API password.</summary>
+    <usage><![CDATA[<p>Credential used to authenticate to the UPS API.</p>]]></usage>
     <technical>
       <config_path>carriers/ups/password</config_path>
       <scope>Website</scope>
@@ -2145,8 +2145,8 @@
     </technical>
   </field>
   <field id="carriers_ups_pickup" module="Magento_Ups" path="carriers/ups/pickup">
-    <summary>How packages are handed to UPS, which affects the rates returned.</summary>
-    <usage><![CDATA[<p>The pickup method describing how packages reach UPS (for example scheduled pickup or drop-off). The choice can change the rates UPS quotes. Can differ per website.</p>]]></usage>
+    <summary>How packages are given to UPS.</summary>
+    <usage><![CDATA[<p>The pickup arrangement used, which can affect the rates returned.</p>]]></usage>
     <values>
       <value id="RDP" label="Regular Daily Pickup"/>
       <value id="OCA" label="On Call Air"/>
@@ -2162,8 +2162,8 @@
     </technical>
   </field>
   <field id="carriers_ups_sallowspecific" module="Magento_Ups" path="carriers/ups/sallowspecific">
-    <summary>Whether UPS is offered to all countries or only to selected ones.</summary>
-    <usage><![CDATA[<p>Chooses between offering UPS to all allowed countries or restricting it to the countries chosen in <strong>Ship to Specific Countries</strong>. Can differ per website.</p>]]></usage>
+    <summary>Whether UPS is limited to specific countries.</summary>
+    <usage><![CDATA[<p>Offer UPS in all allowed countries, or restrict it to the countries chosen below.</p>]]></usage>
     <values>
       <value id="0" label="All Allowed Countries">Offer this method in every country your store already allows.</value>
       <value id="1" label="Specific Countries">Limit this method to the specific countries you pick below.</value>
@@ -2176,8 +2176,8 @@
     </technical>
   </field>
   <field id="carriers_ups_shipment_requesttype" module="Magento_Ups" path="carriers/ups/shipment_requesttype">
-    <summary>How package weights are packaged into UPS rate requests.</summary>
-    <usage><![CDATA[<p>Chooses how the cart&#039;s weight is sent to UPS when requesting rates — as a single combined request or split across packages. Affects how multi-item orders are quoted. Can differ per website.</p>]]></usage>
+    <summary>How multi-package orders are requested.</summary>
+    <usage><![CDATA[<p>Whether the order is divided into equal weights (one request) or rated from the origin weight.</p>]]></usage>
     <values>
       <value id="0" label="Divide to equal weight (one request)">Split the cart into equal weights and send one rate request.</value>
       <value id="1" label="Use origin weight (few requests)">Use the real package weight and send a request per package.</value>
@@ -2190,16 +2190,16 @@
     </technical>
   </field>
   <field id="carriers_ups_shipper_number" module="Magento_Ups" path="carriers/ups/shipper_number">
-    <summary>Your 6-character UPS account number; required to return your negotiated rates instead of published ones.</summary>
-    <usage><![CDATA[<p>Your UPS shipper (account) number — 6 characters, per the note. It is required for UPS to return your contracted/negotiated rates rather than standard published rates. Set per website.</p>]]></usage>
+    <summary>Your UPS shipper (account) number.</summary>
+    <usage><![CDATA[<p>The UPS account number, required for negotiated rates.</p>]]></usage>
     <technical>
       <config_path>carriers/ups/shipper_number</config_path>
       <scope>Website</scope>
     </technical>
   </field>
   <field id="carriers_ups_showmethod" module="Magento_Ups" path="carriers/ups/showmethod">
-    <summary>Whether to still show UPS at checkout when it returns no applicable rates.</summary>
-    <usage><![CDATA[<p>When <strong>Yes</strong>, UPS remains visible at checkout even when no rate is available, showing the configured error message instead of hiding the method. Can differ per website.</p>]]></usage>
+    <summary>Show UPS even when it returns no rates.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, UPS is shown (with its error message) instead of being hidden when it can't return rates.</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -2211,8 +2211,8 @@
     </technical>
   </field>
   <field id="carriers_ups_sort_order" module="Magento_Ups" path="carriers/ups/sort_order">
-    <summary>The position of UPS relative to other shipping methods at checkout.</summary>
-    <usage><![CDATA[<p>Controls where UPS appears in the list of shipping methods; lower numbers sort higher. Can differ per website.</p>]]></usage>
+    <summary>Position of UPS among shipping methods.</summary>
+    <usage><![CDATA[<p>Controls where UPS appears in the list of shipping options. Lower numbers appear first.</p>]]></usage>
     <technical>
       <config_path>carriers/ups/sort_order</config_path>
       <scope>Website</scope>
@@ -2220,8 +2220,8 @@
     </technical>
   </field>
   <field id="carriers_ups_specificcountry" module="Magento_Ups" path="carriers/ups/specificcountry">
-    <summary>The countries UPS can ship to when limited to specific countries.</summary>
-    <usage><![CDATA[<p>The set of destination countries for which UPS is offered. Applies when <strong>Ship to Applicable Countries</strong> is set to specific countries. Can differ per website.</p>]]></usage>
+    <summary>The countries UPS ships to.</summary>
+    <usage><![CDATA[<p>The countries where UPS is offered, used when it is limited to specific countries.</p>]]></usage>
     <technical>
       <config_path>carriers/ups/specificcountry</config_path>
       <scope>Website</scope>
@@ -2229,8 +2229,8 @@
     </technical>
   </field>
   <field id="carriers_ups_specificerrmsg" module="Magento_Ups" path="carriers/ups/specificerrmsg">
-    <summary>The message shown to customers when UPS returns no available rates.</summary>
-    <usage><![CDATA[<p>The text displayed at checkout when UPS cannot provide a rate. Can be set per store view for localised messaging.</p>]]></usage>
+    <summary>Message shown when UPS is unavailable.</summary>
+    <usage><![CDATA[<p>The text shown to customers when UPS can't return a rate.</p>]]></usage>
     <technical>
       <config_path>carriers/ups/specificerrmsg</config_path>
       <default_value>This shipping method is currently unavailable. If you would like to ship using this shipping method, please contact us.</default_value>
@@ -2238,8 +2238,8 @@
     </technical>
   </field>
   <field id="carriers_ups_title" module="Magento_Ups" path="carriers/ups/title">
-    <summary>The carrier name shown to customers at checkout for UPS.</summary>
-    <usage><![CDATA[<p>The heading customers see above the UPS shipping options at checkout. Can be set per store view, so each store can show a localised name.</p>]]></usage>
+    <summary>The carrier heading shown for UPS.</summary>
+    <usage><![CDATA[<p>The group title shown above UPS's rates at checkout.</p>]]></usage>
     <technical>
       <config_path>carriers/ups/title</config_path>
       <default_value>United Parcel Service</default_value>
@@ -2247,8 +2247,8 @@
     </technical>
   </field>
   <field id="carriers_ups_tracking_rest_url" module="Magento_Ups" path="carriers/ups/tracking_rest_url">
-    <summary>The URL of the UPS tracking REST endpoint.</summary>
-    <usage><![CDATA[<p>The endpoint URL used to retrieve UPS tracking information via the REST API. Change only if directed by UPS. Can differ per website.</p>]]></usage>
+    <summary>UPS REST tracking endpoint.</summary>
+    <usage><![CDATA[<p>The UPS REST API URL used to track shipments.</p>]]></usage>
     <technical>
       <config_path>carriers/ups/tracking_rest_url</config_path>
       <default_value>https://onlinetools.ups.com/api/track/</default_value>
@@ -2257,8 +2257,8 @@
     </technical>
   </field>
   <field id="carriers_ups_tracking_url" module="Magento_Ups" path="carriers/ups/tracking_url">
-    <summary>The URL of the UPS tracking XML endpoint.</summary>
-    <usage><![CDATA[<p>The endpoint URL used to retrieve UPS tracking information via the XML API. Change only if directed by UPS. Can differ per website.</p>]]></usage>
+    <summary>UPS tracking endpoint (legacy XML).</summary>
+    <usage><![CDATA[<p>The UPS XML API URL used to track shipments.</p>]]></usage>
     <technical>
       <config_path>carriers/ups/tracking_url</config_path>
       <default_value>https://onlinetools.ups.com/ups.app/xml/Track</default_value>
@@ -2267,8 +2267,8 @@
     </technical>
   </field>
   <field id="carriers_ups_type" module="Magento_Ups" path="carriers/ups/type">
-    <summary>The UPS integration/account type used for rate requests.</summary>
-    <usage><![CDATA[<p>Selects which UPS integration this store uses when authenticating and requesting rates. Match it to the account type UPS provisioned. Can differ per website.</p>]]></usage>
+    <summary>Which UPS API to use.</summary>
+    <usage><![CDATA[<p>Selects the UPS integration — the modern REST API or the legacy XML API.</p>]]></usage>
     <values>
       <value id="UPS" label="United Parcel Service"/>
       <value id="UPS_XML" label="United Parcel Service XML"/>
@@ -2282,8 +2282,8 @@
     </technical>
   </field>
   <field id="carriers_ups_unit_of_measure" module="Magento_Ups" path="carriers/ups/unit_of_measure">
-    <summary>The weight unit used in UPS rate requests.</summary>
-    <usage><![CDATA[<p>The unit of weight sent to UPS when quoting rates. Set it to match how product weights are recorded in your catalog. Can differ per website.</p>]]></usage>
+    <summary>Weight unit sent to UPS.</summary>
+    <usage><![CDATA[<p>Whether package weights are sent to UPS in pounds or kilograms.</p>]]></usage>
     <values>
       <value id="LBS" label="LBS"/>
       <value id="KGS" label="KGS"/>
@@ -2296,8 +2296,8 @@
     </technical>
   </field>
   <field id="carriers_ups_username" module="Magento_Ups" path="carriers/ups/username">
-    <summary>The UPS user ID used to authenticate API requests.</summary>
-    <usage><![CDATA[<p>The UPS account user ID, paired with the password, used to authenticate API calls. Stored encrypted. Can be set per website.</p>]]></usage>
+    <summary>Your UPS API username.</summary>
+    <usage><![CDATA[<p>Credential used to authenticate to the UPS API.</p>]]></usage>
     <technical>
       <config_path>carriers/ups/username</config_path>
       <scope>Website</scope>
@@ -2305,8 +2305,8 @@
     </technical>
   </field>
   <field id="carriers_usps_account_number" module="Magento_Usps" path="carriers/usps/account_number">
-    <summary>The USPS account number used with the REST API.</summary>
-    <usage><![CDATA[<p>The USPS account number associated with your REST API credentials. Applies only when <strong>USPS Type</strong> is REST. Can differ per store view.</p>]]></usage>
+    <summary>Your USPS payment account number.</summary>
+    <usage><![CDATA[<p>The USPS account used to pay for labels.</p>]]></usage>
     <technical>
       <config_path>carriers/usps/account_number</config_path>
       <scope>Store View</scope>
@@ -2315,8 +2315,8 @@
     </technical>
   </field>
   <field id="carriers_usps_account_type" module="Magento_Usps" path="carriers/usps/account_type">
-    <summary>The kind of USPS account used for REST pricing.</summary>
-    <usage><![CDATA[<p>Selects the type of USPS account used with the REST API, which affects the pricing available. Applies only when <strong>USPS Type</strong> is REST.</p>]]></usage>
+    <summary>The type of USPS payment account.</summary>
+    <usage><![CDATA[<p>Whether the account is an EPS or PERMIT account.</p>]]></usage>
     <values>
       <value id="EPS" label="EPS"/>
       <value id="PERMIT" label="PERMIT"/>
@@ -2329,8 +2329,8 @@
     </technical>
   </field>
   <field id="carriers_usps_active" module="Magento_Usps" path="carriers/usps/active">
-    <summary>Turns the USPS shipping method on or off at checkout.</summary>
-    <usage><![CDATA[<p>Controls whether USPS shipping rates are offered to customers during checkout. Can be set per website.</p>]]></usage>
+    <summary>Offer live USPS rates at checkout.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, USPS shipping rates are requested and offered to customers.</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -2343,8 +2343,8 @@
     </technical>
   </field>
   <field id="carriers_usps_aesitn" module="Magento_Usps" path="carriers/usps/aesitn">
-    <summary>AES/ITN export number for international USPS shipments outside the US; applies only when the USPS REST type is selected. Per website/store.</summary>
-    <usage><![CDATA[<p>The Automated Export System / International Transaction Number declared on qualifying international USPS shipments for customs and export compliance. Applies only when the USPS REST API type is selected, and is relevant only for shipments leaving the US. Per website/store.</p>]]></usage>
+    <summary>AES / ITN exemption code for customs.</summary>
+    <usage><![CDATA[<p>The AES Internal Transaction Number or exemption code sent on international shipments.</p>]]></usage>
     <technical>
       <config_path>carriers/usps/aesitn</config_path>
       <scope>Store View</scope>
@@ -2352,8 +2352,8 @@
     </technical>
   </field>
   <field id="carriers_usps_allowed_methods" module="Magento_Usps" path="carriers/usps/allowed_methods">
-    <summary>Which USPS (XML Web Tools) shipping methods are offered to customers at checkout.</summary>
-    <usage><![CDATA[<p>Selects which USPS services returned by the XML Web Tools API are offered to shoppers at checkout; unselected services are hidden. Applies only when <strong>USPS Type</strong> is the XML Web Tools. Can be set per website.</p>]]></usage>
+    <summary>Which USPS services are offered (legacy API).</summary>
+    <usage><![CDATA[<p>The USPS services customers can choose from when using the Web Tools API.</p>]]></usage>
     <technical>
       <config_path>carriers/usps/allowed_methods</config_path>
       <default_value>0_FCLE,0_FCL,0_FCP,1,2,3,4,6,7,13,16,17,22,23,25,27,28,33,34,35,36,37,42,43,53,57,61,INT_1,INT_2,INT_4,INT_6,INT_7,INT_8,INT_9,INT_10,INT_11,INT_12,INT_13,INT_14,INT_15,INT_16,INT_20,1058,4058,6058,2058,4096,1096,2096,6096</default_value>
@@ -2364,8 +2364,8 @@
     </technical>
   </field>
   <field id="carriers_usps_client_id" module="Magento_Usps" path="carriers/usps/client_id">
-    <summary>The consumer key (client ID) for the USPS REST API account.</summary>
-    <usage><![CDATA[<p>The OAuth consumer key issued by USPS for the REST API, used to obtain access tokens. Stored encrypted. Applies only when <strong>USPS Type</strong> is REST.</p>]]></usage>
+    <summary>Your USPS REST client ID.</summary>
+    <usage><![CDATA[<p>Credential for the USPS REST API.</p>]]></usage>
     <technical>
       <config_path>carriers/usps/client_id</config_path>
       <scope>Website</scope>
@@ -2374,8 +2374,8 @@
     </technical>
   </field>
   <field id="carriers_usps_client_secret" module="Magento_Usps" path="carriers/usps/client_secret">
-    <summary>The consumer secret (client secret) for the USPS REST API account.</summary>
-    <usage><![CDATA[<p>The OAuth consumer secret paired with the USPS REST consumer key. Stored encrypted; keep it confidential. Applies only when <strong>USPS Type</strong> is REST.</p>]]></usage>
+    <summary>Your USPS REST client secret.</summary>
+    <usage><![CDATA[<p>Credential paired with the client ID for the USPS REST API.</p>]]></usage>
     <technical>
       <config_path>carriers/usps/client_secret</config_path>
       <scope>Website</scope>
@@ -2384,8 +2384,8 @@
     </technical>
   </field>
   <field id="carriers_usps_container" module="Magento_Usps" path="carriers/usps/container">
-    <summary>The USPS package/container type reported when requesting XML rates.</summary>
-    <usage><![CDATA[<p>The packaging/container type reported to USPS when requesting rates, which affects eligible services and prices. Applies only when <strong>USPS Type</strong> is the XML Web Tools. Can be set per website.</p>]]></usage>
+    <summary>The default USPS container type.</summary>
+    <usage><![CDATA[<p>The package/container type assumed when requesting USPS rates.</p>]]></usage>
     <technical>
       <config_path>carriers/usps/container</config_path>
       <default_value>VARIABLE</default_value>
@@ -2395,8 +2395,8 @@
     </technical>
   </field>
   <field id="carriers_usps_crid" module="Magento_Usps" path="carriers/usps/crid">
-    <summary>The USPS Customer Registration ID (CRID) tied to your account.</summary>
-    <usage><![CDATA[<p>Your USPS Customer Registration ID (CRID), identifying your business to USPS. Applies only when <strong>USPS Type</strong> is REST.</p>]]></usage>
+    <summary>Your USPS Customer Registration ID (CRID).</summary>
+    <usage><![CDATA[<p>The USPS CRID tied to your business account.</p>]]></usage>
     <technical>
       <config_path>carriers/usps/crid</config_path>
       <scope>Store View</scope>
@@ -2405,8 +2405,8 @@
     </technical>
   </field>
   <field id="carriers_usps_debug" module="Magento_Usps" path="carriers/usps/debug">
-    <summary>Whether USPS request and response details are logged for troubleshooting.</summary>
-    <usage><![CDATA[<p>When <strong>Yes</strong>, USPS API requests and responses are written to the debug log to help diagnose rating problems. Can be set per website.</p>]]></usage>
+    <summary>Log USPS API requests and responses.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, USPS API traffic is written to the debug log.</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -2418,8 +2418,8 @@
     </technical>
   </field>
   <field id="carriers_usps_free_method" module="Magento_Usps" path="carriers/usps/free_method">
-    <summary>Which USPS method is used for orders that qualify for free shipping.</summary>
-    <usage><![CDATA[<p>The USPS service used to fulfil orders that qualify for free shipping. Can be set per website.</p>]]></usage>
+    <summary>USPS service used for free shipping.</summary>
+    <usage><![CDATA[<p>The USPS service applied when an order qualifies for free shipping.</p>]]></usage>
     <technical>
       <config_path>carriers/usps/free_method</config_path>
       <scope>Website</scope>
@@ -2427,8 +2427,8 @@
     </technical>
   </field>
   <field id="carriers_usps_free_shipping_enable" module="Magento_Usps" path="carriers/usps/free_shipping_enable">
-    <summary>Whether reaching a minimum order subtotal unlocks free USPS shipping.</summary>
-    <usage><![CDATA[<p>Enables or disables a free-shipping threshold for USPS: when set to <strong>Enable</strong>, orders reaching the subtotal set below ship free. Can be set per website.</p>]]></usage>
+    <summary>Offer free USPS shipping above a subtotal.</summary>
+    <usage><![CDATA[<p>When enabled, USPS shipping is free once the order meets the subtotal below.</p>]]></usage>
     <values>
       <value id="1" label="Enable"/>
       <value id="0" label="Disable"/>
@@ -2440,8 +2440,8 @@
     </technical>
   </field>
   <field id="carriers_usps_free_shipping_subtotal" module="Magento_Usps" path="carriers/usps/free_shipping_subtotal">
-    <summary>The order subtotal at which USPS shipping becomes free.</summary>
-    <usage><![CDATA[<p>The minimum order subtotal that qualifies for free USPS shipping. Applies only when the free-shipping threshold is enabled. Can be set per website.</p>]]></usage>
+    <summary>Order subtotal that qualifies for free USPS shipping.</summary>
+    <usage><![CDATA[<p>Orders at or above this subtotal ship free via the chosen USPS free method.</p>]]></usage>
     <technical>
       <config_path>carriers/usps/free_shipping_subtotal</config_path>
       <scope>Website</scope>
@@ -2450,8 +2450,8 @@
     </technical>
   </field>
   <field id="carriers_usps_gateway_rest_dev_url" module="Magento_Usps" path="carriers/usps/gateway_rest_dev_url">
-    <summary>The USPS REST API test endpoint URL used when not in production mode.</summary>
-    <usage><![CDATA[<p>The USPS REST API endpoint used for rate requests in development/test mode. Applies only when <strong>USPS Type</strong> is REST and <strong>Mode</strong> is set to development. Can be set per website.</p>]]></usage>
+    <summary>USPS REST development endpoint.</summary>
+    <usage><![CDATA[<p>The USPS REST API URL used in development mode.</p>]]></usage>
     <technical>
       <config_path>carriers/usps/gateway_rest_dev_url</config_path>
       <default_value>https://apis-tem.usps.com/</default_value>
@@ -2461,8 +2461,8 @@
     </technical>
   </field>
   <field id="carriers_usps_gateway_rest_prod_url" module="Magento_Usps" path="carriers/usps/gateway_rest_prod_url">
-    <summary>The USPS REST API production endpoint URL used for live rate requests.</summary>
-    <usage><![CDATA[<p>The USPS REST API endpoint used for rate requests in production. Applies only when <strong>USPS Type</strong> is REST and <strong>Mode</strong> is set to live/production. Can be set per website.</p>]]></usage>
+    <summary>USPS REST production endpoint.</summary>
+    <usage><![CDATA[<p>The USPS REST API URL used in production.</p>]]></usage>
     <technical>
       <config_path>carriers/usps/gateway_rest_prod_url</config_path>
       <default_value>https://apis.usps.com/</default_value>
@@ -2472,8 +2472,8 @@
     </technical>
   </field>
   <field id="carriers_usps_gateway_secure_url" module="Magento_Usps" path="carriers/usps/gateway_secure_url">
-    <summary>The secure (HTTPS) USPS Web Tools endpoint used for requests that require it.</summary>
-    <usage><![CDATA[<p>The secure USPS Web Tools (XML) gateway URL, used for requests that require HTTPS. Applies only when <strong>USPS Type</strong> is the XML Web Tools. Can be set per website.</p>]]></usage>
+    <summary>USPS secure endpoint (legacy Web Tools).</summary>
+    <usage><![CDATA[<p>The secure USPS Web Tools URL used for authenticated requests.</p>]]></usage>
     <technical>
       <config_path>carriers/usps/gateway_secure_url</config_path>
       <default_value>https://secure.shippingapis.com/ShippingAPI.dll</default_value>
@@ -2483,8 +2483,8 @@
     </technical>
   </field>
   <field id="carriers_usps_gateway_url" module="Magento_Usps" path="carriers/usps/gateway_url">
-    <summary>The USPS Web Tools (XML) endpoint URL rate requests are sent to.</summary>
-    <usage><![CDATA[<p>The base URL of the USPS Web Tools (XML) gateway used for rate requests. Applies only when <strong>USPS Type</strong> is the XML Web Tools. Change only if USPS provides a different endpoint. Can be set per website.</p>]]></usage>
+    <summary>USPS rating endpoint (legacy Web Tools).</summary>
+    <usage><![CDATA[<p>The USPS Web Tools URL used to request rates.</p>]]></usage>
     <technical>
       <config_path>carriers/usps/gateway_url</config_path>
       <default_value>https://production.shippingapis.com/ShippingAPI.dll</default_value>
@@ -2494,8 +2494,8 @@
     </technical>
   </field>
   <field id="carriers_usps_girth" module="Magento_Usps" path="carriers/usps/girth">
-    <summary>The package girth used for USPS rating when the size is Large.</summary>
-    <usage><![CDATA[<p>The package girth (the distance around the package) sent to USPS for rate calculation. Applies only when <strong>Size</strong> is set to Large. Can be set per website.</p>]]></usage>
+    <summary>Default package girth sent to USPS.</summary>
+    <usage><![CDATA[<p>The package girth used for USPS rates on non-rectangular parcels.</p>]]></usage>
     <technical>
       <config_path>carriers/usps/girth</config_path>
       <scope>Website</scope>
@@ -2503,8 +2503,8 @@
     </technical>
   </field>
   <field id="carriers_usps_handling_action" module="Magento_Usps" path="carriers/usps/handling_action">
-    <summary>Whether the handling fee is applied once per order or to each package.</summary>
-    <usage><![CDATA[<p>Determines whether the handling fee is charged <strong>per order</strong> or <strong>per package</strong>. Can be set per website.</p>]]></usage>
+    <summary>Whether USPS handling applies per order or per package.</summary>
+    <usage><![CDATA[<p>Whether the handling fee is charged once per order or for each package.</p>]]></usage>
     <values>
       <value id="O" label="Per Order">Apply the handling fee once per order.</value>
       <value id="P" label="Per Package">Apply the handling fee to each package.</value>
@@ -2517,8 +2517,8 @@
     </technical>
   </field>
   <field id="carriers_usps_handling_fee" module="Magento_Usps" path="carriers/usps/handling_fee">
-    <summary>The handling fee amount or percentage added to USPS rates.</summary>
-    <usage><![CDATA[<p>The handling fee value added to the USPS rate, interpreted as a fixed amount or a percentage according to <strong>Calculate Handling Fee</strong>. Can be set per website.</p>]]></usage>
+    <summary>A handling fee added to USPS rates.</summary>
+    <usage><![CDATA[<p>An extra amount added on top of USPS's returned rate.</p>]]></usage>
     <technical>
       <config_path>carriers/usps/handling_fee</config_path>
       <scope>Website</scope>
@@ -2526,8 +2526,8 @@
     </technical>
   </field>
   <field id="carriers_usps_handling_type" module="Magento_Usps" path="carriers/usps/handling_type">
-    <summary>Whether the handling fee is a fixed amount or a percentage of the rate.</summary>
-    <usage><![CDATA[<p>Chooses how the handling fee is calculated — as a <strong>fixed</strong> amount or a <strong>percentage</strong> of the shipping rate. Can be set per website.</p>]]></usage>
+    <summary>Whether the USPS handling fee is fixed or a percentage.</summary>
+    <usage><![CDATA[<p>Whether the handling fee is a fixed amount or a percentage of the rate.</p>]]></usage>
     <values>
       <value id="F" label="Fixed">Add a fixed handling amount.</value>
       <value id="P" label="Percent">Add handling as a percentage of the rate.</value>
@@ -2540,8 +2540,8 @@
     </technical>
   </field>
   <field id="carriers_usps_height" module="Magento_Usps" path="carriers/usps/height">
-    <summary>The package height used for USPS rating when the size is Large.</summary>
-    <usage><![CDATA[<p>The package height sent to USPS for rate calculation. Applies only when <strong>Size</strong> is set to Large. Can be set per website.</p>]]></usage>
+    <summary>Default package height sent to USPS.</summary>
+    <usage><![CDATA[<p>The package height used in USPS rate requests.</p>]]></usage>
     <technical>
       <config_path>carriers/usps/height</config_path>
       <scope>Website</scope>
@@ -2550,8 +2550,8 @@
     </technical>
   </field>
   <field id="carriers_usps_length" module="Magento_Usps" path="carriers/usps/length">
-    <summary>The package length used for USPS rating when the size is Large.</summary>
-    <usage><![CDATA[<p>The package length sent to USPS for rate calculation. Applies only when <strong>Size</strong> is set to Large. Can be set per website.</p>]]></usage>
+    <summary>Default package length sent to USPS.</summary>
+    <usage><![CDATA[<p>The package length used in USPS rate requests.</p>]]></usage>
     <technical>
       <config_path>carriers/usps/length</config_path>
       <scope>Website</scope>
@@ -2560,8 +2560,8 @@
     </technical>
   </field>
   <field id="carriers_usps_machinable" module="Magento_Usps" path="carriers/usps/machinable">
-    <summary>Whether packages are machinable (handled by USPS sorting machines), which affects rates.</summary>
-    <usage><![CDATA[<p>Declares whether shipments are machinable — able to be processed by USPS automated sorting equipment — which influences the rates returned. Applies only when <strong>USPS Type</strong> is the XML Web Tools. Can be set per website.</p>]]></usage>
+    <summary>Whether packages are machinable.</summary>
+    <usage><![CDATA[<p>Whether packages can be processed by USPS machines; non-machinable items may cost more.</p>]]></usage>
     <values>
       <value id="true" label="Yes"/>
       <value id="false" label="No"/>
@@ -2575,8 +2575,8 @@
     </technical>
   </field>
   <field id="carriers_usps_max_package_weight" module="Magento_Usps" path="carriers/usps/max_package_weight">
-    <summary>The maximum weight per package before an order is split into multiple packages.</summary>
-    <usage><![CDATA[<p>The heaviest a single package may be; orders over this weight are divided into multiple packages for rating. Consult USPS for the maximum supported weight. Can be set per website.</p>]]></usage>
+    <summary>Heaviest package USPS will rate.</summary>
+    <usage><![CDATA[<p>Orders over this weight are split into multiple packages for rating.</p>]]></usage>
     <technical>
       <config_path>carriers/usps/max_package_weight</config_path>
       <default_value>70</default_value>
@@ -2585,8 +2585,8 @@
     </technical>
   </field>
   <field id="carriers_usps_mid" module="Magento_Usps" path="carriers/usps/mid">
-    <summary>The USPS Mailer Identifier (MID) associated with your account.</summary>
-    <usage><![CDATA[<p>Your USPS Mailer Identifier (MID), used to identify the mailer on shipments. Applies only when <strong>USPS Type</strong> is REST.</p>]]></usage>
+    <summary>Your USPS Mailer ID (MID).</summary>
+    <usage><![CDATA[<p>The USPS Mailer ID used on shipments.</p>]]></usage>
     <technical>
       <config_path>carriers/usps/mid</config_path>
       <scope>Store View</scope>
@@ -2595,8 +2595,8 @@
     </technical>
   </field>
   <field id="carriers_usps_mmid" module="Magento_Usps" path="carriers/usps/mmid">
-    <summary>The Mailer Identifier (MID) used on USPS manifests.</summary>
-    <usage><![CDATA[<p>The Manifest MID used when generating USPS manifests. Applies only when <strong>USPS Type</strong> is REST.</p>]]></usage>
+    <summary>Your USPS Manifest Mailer ID.</summary>
+    <usage><![CDATA[<p>The Mailer ID used for manifesting shipments.</p>]]></usage>
     <technical>
       <config_path>carriers/usps/mmid</config_path>
       <scope>Store View</scope>
@@ -2605,8 +2605,8 @@
     </technical>
   </field>
   <field id="carriers_usps_mode" module="Magento_Usps" path="carriers/usps/mode">
-    <summary>Whether the carrier connects to the USPS production or test environment.</summary>
-    <usage><![CDATA[<p>Switches the carrier between the USPS live/production environment and the development/test environment, which determines which gateway URL is used. Can be set per website.</p>]]></usage>
+    <summary>Use the USPS development or live endpoint.</summary>
+    <usage><![CDATA[<p>Whether requests go to USPS's development or production servers.</p>]]></usage>
     <values>
       <value id="0" label="Development"/>
       <value id="1" label="Live"/>
@@ -2619,8 +2619,8 @@
     </technical>
   </field>
   <field id="carriers_usps_password" module="Magento_Usps" path="carriers/usps/password">
-    <summary>The password for the USPS Web Tools (XML) account.</summary>
-    <usage><![CDATA[<p>The password paired with the USPS Web Tools (XML) user ID. Stored encrypted. Applies only when <strong>USPS Type</strong> is the XML Web Tools.</p>]]></usage>
+    <summary>Your USPS Web Tools password.</summary>
+    <usage><![CDATA[<p>Credential for the legacy USPS Web Tools API.</p>]]></usage>
     <technical>
       <config_path>carriers/usps/password</config_path>
       <scope>Website</scope>
@@ -2629,8 +2629,8 @@
     </technical>
   </field>
   <field id="carriers_usps_price_type" module="Magento_Usps" path="carriers/usps/price_type">
-    <summary>Which USPS pricing option is requested for rates.</summary>
-    <usage><![CDATA[<p>Selects the pricing option USPS returns for rate requests (for example retail versus commercial pricing). Applies only when <strong>USPS Type</strong> is REST.</p>]]></usage>
+    <summary>Use commercial or retail USPS pricing.</summary>
+    <usage><![CDATA[<p>Whether rates use commercial (account) pricing or retail pricing.</p>]]></usage>
     <values>
       <value id="COMMERCIAL" label="Commercial"/>
       <value id="RETAIL" label="Retail"/>
@@ -2644,8 +2644,8 @@
     </technical>
   </field>
   <field id="carriers_usps_rest_allowed_methods" module="Magento_Usps" path="carriers/usps/rest_allowed_methods">
-    <summary>Which USPS (REST API) shipping methods are offered to customers at checkout.</summary>
-    <usage><![CDATA[<p>Selects which USPS services returned by the REST API are offered to shoppers at checkout; unselected services are hidden. Applies only when <strong>USPS Type</strong> is REST. Can be set per website.</p>]]></usage>
+    <summary>Which USPS services are offered (REST API).</summary>
+    <usage><![CDATA[<p>The USPS services customers can choose from when using the REST API.</p>]]></usage>
     <technical>
       <config_path>carriers/usps/rest_allowed_methods</config_path>
       <default_value>LIBRARY_MAIL_MACHINABLE_5-DIGIT,MEDIA_MAIL_MACHINABLE_5-DIGIT,USPS_GROUND_ADVANTAGE_MACHINABLE_SINGLE-PIECE,PRIORITY_MAIL_MACHINABLE_SINGLE-PIECE,PRIORITY_MAIL_FLAT_RATE_ENVELOPE,PRIORITY_MAIL_MACHINABLE_MEDIUM_FLAT_RATE_BOX,PRIORITY_MAIL_MACHINABLE_LARGE_FLAT_RATE_BOX,PRIORITY_MAIL_MACHINABLE_SMALL_FLAT_RATE_BOX,PRIORITY_MAIL_PADDED_FLAT_RATE_ENVELOPE,PRIORITY_MAIL_LEGAL_FLAT_RATE_ENVELOPE,PRIORITY_MAIL_EXPRESS_MACHINABLE_SINGLE-PIECE,PRIORITY_MAIL_EXPRESS_FLAT_RATE_ENVELOPE,PRIORITY_MAIL_EXPRESS_LEGAL_FLAT_RATE_ENVELOPE,FIRST-CLASS_PACKAGE_INTERNATIONAL_SERVICE_MACHINABLE_ISC_SINGLE-PIECE,PRIORITY_MAIL_INTERNATIONAL_ISC_SINGLE-PIECE,PRIORITY_MAIL_INTERNATIONAL_ISC_FLAT_RATE_ENVELOPE</default_value>
@@ -2656,8 +2656,8 @@
     </technical>
   </field>
   <field id="carriers_usps_sallowspecific" module="Magento_Usps" path="carriers/usps/sallowspecific">
-    <summary>Whether USPS is offered to all allowed countries or only selected ones.</summary>
-    <usage><![CDATA[<p>Chooses whether USPS shipping is available for <strong>all allowed countries</strong> or only the <strong>specific countries</strong> selected below. Can be set per website.</p>]]></usage>
+    <summary>Whether USPS is limited to specific countries.</summary>
+    <usage><![CDATA[<p>Offer USPS in all allowed countries, or restrict it to the countries chosen below.</p>]]></usage>
     <values>
       <value id="0" label="All Allowed Countries">Offer this method in every country your store already allows.</value>
       <value id="1" label="Specific Countries">Limit this method to the specific countries you pick below.</value>
@@ -2670,8 +2670,8 @@
     </technical>
   </field>
   <field id="carriers_usps_shipment_requesttype" module="Magento_Usps" path="carriers/usps/shipment_requesttype">
-    <summary>How items are grouped into packages when USPS rates are requested.</summary>
-    <usage><![CDATA[<p>Controls how items are grouped into packages for rate requests (for example a single combined request versus per-package requests). Can be set per website.</p>]]></usage>
+    <summary>How multi-package orders are requested.</summary>
+    <usage><![CDATA[<p>Whether the order is divided into equal weights (one request) or rated from the origin weight.</p>]]></usage>
     <values>
       <value id="0" label="Divide to equal weight (one request)">Split the cart into equal weights and send one rate request.</value>
       <value id="1" label="Use origin weight (few requests)">Use the real package weight and send a request per package.</value>
@@ -2684,8 +2684,8 @@
     </technical>
   </field>
   <field id="carriers_usps_showmethod" module="Magento_Usps" path="carriers/usps/showmethod">
-    <summary>Whether USPS is still listed at checkout when it returns no rates.</summary>
-    <usage><![CDATA[<p>When <strong>Yes</strong>, the USPS carrier is shown at checkout even when it returns no applicable rates, typically with the error message. Can be set per website.</p>]]></usage>
+    <summary>Show USPS even when it returns no rates.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, USPS is shown (with its error message) instead of being hidden when it can't return rates.</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -2697,8 +2697,8 @@
     </technical>
   </field>
   <field id="carriers_usps_size" module="Magento_Usps" path="carriers/usps/size">
-    <summary>The package size category sent to USPS; selecting Large reveals dimension fields.</summary>
-    <usage><![CDATA[<p>The USPS package size category. Choosing the <strong>Large</strong> size requires the width, length, height and girth values below. Can be set per website.</p>]]></usage>
+    <summary>The USPS package size class.</summary>
+    <usage><![CDATA[<p>Whether the package is Regular or Large by USPS size rules.</p>]]></usage>
     <values>
       <value id="REGULAR" label="Regular"/>
       <value id="LARGE" label="Large"/>
@@ -2711,8 +2711,8 @@
     </technical>
   </field>
   <field id="carriers_usps_sort_order" module="Magento_Usps" path="carriers/usps/sort_order">
-    <summary>The position of USPS relative to other carriers in the checkout list.</summary>
-    <usage><![CDATA[<p>A numeric value controlling where USPS appears among shipping carriers at checkout; lower values sort higher. Can be set per website.</p>]]></usage>
+    <summary>Position of USPS among shipping methods.</summary>
+    <usage><![CDATA[<p>Controls where USPS appears in the list of shipping options. Lower numbers appear first.</p>]]></usage>
     <technical>
       <config_path>carriers/usps/sort_order</config_path>
       <scope>Website</scope>
@@ -2720,8 +2720,8 @@
     </technical>
   </field>
   <field id="carriers_usps_specificcountry" module="Magento_Usps" path="carriers/usps/specificcountry">
-    <summary>The countries USPS shipping is offered to when limited to specific countries.</summary>
-    <usage><![CDATA[<p>The list of destination countries that may use USPS shipping, applied when <strong>Ship to Applicable Countries</strong> is set to specific countries. Can be set per website.</p>]]></usage>
+    <summary>The countries USPS ships to.</summary>
+    <usage><![CDATA[<p>The countries where USPS is offered, used when it is limited to specific countries.</p>]]></usage>
     <technical>
       <config_path>carriers/usps/specificcountry</config_path>
       <scope>Website</scope>
@@ -2729,8 +2729,8 @@
     </technical>
   </field>
   <field id="carriers_usps_specificerrmsg" module="Magento_Usps" path="carriers/usps/specificerrmsg">
-    <summary>The message shown to customers when USPS rates can't be retrieved.</summary>
-    <usage><![CDATA[<p>The text shown to shoppers at checkout when the USPS carrier cannot return a rate. Can differ per store view.</p>]]></usage>
+    <summary>Message shown when USPS is unavailable.</summary>
+    <usage><![CDATA[<p>The text shown to customers when USPS can't return a rate.</p>]]></usage>
     <technical>
       <config_path>carriers/usps/specificerrmsg</config_path>
       <default_value>This shipping method is currently unavailable. If you would like to ship using this shipping method, please contact us.</default_value>
@@ -2738,8 +2738,8 @@
     </technical>
   </field>
   <field id="carriers_usps_title" module="Magento_Usps" path="carriers/usps/title">
-    <summary>The carrier name shown to customers next to USPS shipping options at checkout.</summary>
-    <usage><![CDATA[<p>The label displayed to shoppers for this carrier&#039;s shipping methods at checkout. Can differ per store view, so each storefront can show its own wording.</p>]]></usage>
+    <summary>The carrier heading shown for USPS.</summary>
+    <usage><![CDATA[<p>The group title shown above USPS's rates at checkout.</p>]]></usage>
     <technical>
       <config_path>carriers/usps/title</config_path>
       <default_value>United States Postal Service</default_value>
@@ -2747,8 +2747,8 @@
     </technical>
   </field>
   <field id="carriers_usps_userid" module="Magento_Usps" path="carriers/usps/userid">
-    <summary>The USPS Web Tools (XML) account user ID used to authenticate rate requests.</summary>
-    <usage><![CDATA[<p>The user ID issued by USPS for the Web Tools (XML) API, used to authenticate requests. Stored encrypted. Applies only when <strong>USPS Type</strong> is the XML Web Tools.</p>]]></usage>
+    <summary>Your USPS Web Tools user ID.</summary>
+    <usage><![CDATA[<p>Credential for the legacy USPS Web Tools API.</p>]]></usage>
     <technical>
       <config_path>carriers/usps/userid</config_path>
       <scope>Website</scope>
@@ -2757,8 +2757,8 @@
     </technical>
   </field>
   <field id="carriers_usps_usps_type" module="Magento_Usps" path="carriers/usps/usps_type">
-    <summary>Which USPS API integration to use &#x2014; the legacy XML Web Tools or the newer REST API.</summary>
-    <usage><![CDATA[<p>Selects the USPS API the carrier connects through: the legacy <strong>USPS Web Tools (XML)</strong> or the newer <strong>USPS REST</strong> API. The choice determines which credential and gateway fields below apply. Can be set per website.</p>]]></usage>
+    <summary>Which USPS API to use.</summary>
+    <usage><![CDATA[<p>Selects the USPS integration — the modern REST APIs or the legacy Web Tools API.</p>]]></usage>
     <values>
       <value id="USPS_XML" label="USPS Web Tools API"/>
       <value id="USPS_REST" label="USPS Rest APIs"/>
@@ -2771,8 +2771,8 @@
     </technical>
   </field>
   <field id="carriers_usps_width" module="Magento_Usps" path="carriers/usps/width">
-    <summary>The package width used for USPS rating when the size is Large.</summary>
-    <usage><![CDATA[<p>The package width sent to USPS for rate calculation. Applies only when <strong>Size</strong> is set to Large. Can be set per website.</p>]]></usage>
+    <summary>Default package width sent to USPS.</summary>
+    <usage><![CDATA[<p>The package width used in USPS rate requests.</p>]]></usage>
     <technical>
       <config_path>carriers/usps/width</config_path>
       <scope>Website</scope>
@@ -96870,16 +96870,16 @@
     </technical>
   </field>
   <field id="shipping_origin_city" module="Magento_Shipping" section="Shipping Settings" path="shipping/origin/city">
-    <summary>The city the store ships from.</summary>
-    <usage><![CDATA[<p>The city of the store&#039;s shipping origin address. Can be set per website.</p>]]></usage>
+    <summary>The city goods ship from.</summary>
+    <usage><![CDATA[<p>The origin city used in carrier rate and label requests.</p>]]></usage>
     <technical>
       <config_path>shipping/origin/city</config_path>
       <scope>Website</scope>
     </technical>
   </field>
   <field id="shipping_origin_country_id" module="Magento_Shipping" section="Shipping Settings" path="shipping/origin/country_id">
-    <summary>The country the store ships from, used as the origin for shipping-rate calculation.</summary>
-    <usage><![CDATA[<p>The country of the store&#039;s shipping origin. Carriers use it as the starting point when calculating shipping rates and estimating delivery. Can be set per website.</p>]]></usage>
+    <summary>The country goods ship from.</summary>
+    <usage><![CDATA[<p>Your shipping origin country, used as the From address when calculating carrier rates and taxes.</p>]]></usage>
     <technical>
       <config_path>shipping/origin/country_id</config_path>
       <default_value>US</default_value>
@@ -96888,8 +96888,8 @@
     </technical>
   </field>
   <field id="shipping_origin_postcode" module="Magento_Shipping" section="Shipping Settings" path="shipping/origin/postcode">
-    <summary>The ZIP or postal code the store ships from.</summary>
-    <usage><![CDATA[<p>The postal code of the store&#039;s shipping origin, used by carriers to calculate shipping rates. Can be set per website.</p>]]></usage>
+    <summary>The postal code goods ship from.</summary>
+    <usage><![CDATA[<p>Your shipping origin postcode — the From ZIP carriers rate against.</p>]]></usage>
     <technical>
       <config_path>shipping/origin/postcode</config_path>
       <default_value>90034</default_value>
@@ -96897,8 +96897,8 @@
     </technical>
   </field>
   <field id="shipping_origin_region_id" module="Magento_Shipping" section="Shipping Settings" path="shipping/origin/region_id">
-    <summary>The state or region the store ships from.</summary>
-    <usage><![CDATA[<p>The region or state of the store&#039;s shipping origin, paired with the origin country for rate calculation. Can be set per website.</p>]]></usage>
+    <summary>The state or region goods ship from.</summary>
+    <usage><![CDATA[<p>The origin state/region used in carrier rate requests.</p>]]></usage>
     <technical>
       <config_path>shipping/origin/region_id</config_path>
       <default_value>12</default_value>
@@ -96906,24 +96906,24 @@
     </technical>
   </field>
   <field id="shipping_origin_street_line1" module="Magento_Shipping" section="Shipping Settings" path="shipping/origin/street_line1">
-    <summary>The street address the store ships from.</summary>
-    <usage><![CDATA[<p>The street address of the store&#039;s shipping origin. Can be set per website.</p>]]></usage>
+    <summary>The street address goods ship from.</summary>
+    <usage><![CDATA[<p>The first line of the shipping origin street address.</p>]]></usage>
     <technical>
       <config_path>shipping/origin/street_line1</config_path>
       <scope>Website</scope>
     </technical>
   </field>
   <field id="shipping_origin_street_line2" module="Magento_Shipping" section="Shipping Settings" path="shipping/origin/street_line2">
-    <summary>The second line of the store's shipping origin street address.</summary>
-    <usage><![CDATA[<p>An optional second line for the shipping origin street address. Can be set per website.</p>]]></usage>
+    <summary>Additional origin street address line.</summary>
+    <usage><![CDATA[<p>An optional second line for the shipping origin street address.</p>]]></usage>
     <technical>
       <config_path>shipping/origin/street_line2</config_path>
       <scope>Website</scope>
     </technical>
   </field>
   <field id="shipping_shipping_policy_enable_shipping_policy" module="Magento_Shipping" section="Shipping Settings" path="shipping/shipping_policy/enable_shipping_policy">
-    <summary>Whether a custom shipping policy is shown to customers at checkout.</summary>
-    <usage><![CDATA[<p>When <strong>Yes</strong>, the custom shipping policy text is displayed to customers during checkout. Set to <strong>No</strong> to hide it. Can be set per website.</p>]]></usage>
+    <summary>Show a shipping policy during checkout.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, the shipping-policy text below is shown to customers at checkout.</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -96936,8 +96936,8 @@
     </technical>
   </field>
   <field id="shipping_shipping_policy_shipping_policy_content" module="Magento_Shipping" section="Shipping Settings" path="shipping/shipping_policy/shipping_policy_content">
-    <summary>The custom shipping policy text shown to customers.</summary>
-    <usage><![CDATA[<p>The shipping policy wording displayed at checkout. Applies only when <strong>Apply custom Shipping Policy</strong> is set to Yes. Can differ per website or store view.</p>]]></usage>
+    <summary>The shipping policy text shown to customers.</summary>
+    <usage><![CDATA[<p>The shipping-policy content displayed at checkout when the policy is enabled.</p>]]></usage>
     <technical>
       <config_path>shipping/shipping_policy/shipping_policy_content</config_path>
       <scope>Store View</scope>
