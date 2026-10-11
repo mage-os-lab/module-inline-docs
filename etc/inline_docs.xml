@@ -6212,8 +6212,8 @@
     </technical>
   </field>
   <field id="general_country_allow" module="Magento_Backend" section="General" path="general/country/allow">
-    <summary>Which countries customers may select in address and checkout forms.</summary>
-    <usage><![CDATA[<p>The set of countries offered in country dropdowns across the store (registration, checkout, addresses). Can differ per website.</p>]]></usage>
+    <summary>The countries customers may register and order from.</summary>
+    <usage><![CDATA[<p>The set of countries offered in address country dropdowns across the store.</p>]]></usage>
     <technical>
       <config_path>general/country/allow</config_path>
       <default_value>AF,AL,DZ,AS,AD,AO,AI,AQ,AG,AR,AM,AW,AU,AT,AX,AZ,BS,BH,BD,BB,BY,BE,BZ,BJ,BM,BL,BT,BO,BQ,BA,BW,BV,BR,IO,VG,BN,BG,BF,BI,KH,CM,CA,CD,CV,KY,CF,TD,CL,CN,CX,CW,CC,CO,KM,CG,CK,CR,HR,CU,CY,CZ,DK,DJ,DM,DO,EC,EG,SV,GQ,ER,EE,ET,FK,FO,FJ,FI,FR,GF,PF,TF,GA,GM,GE,DE,GG,GH,GI,GR,GL,GD,GP,GU,GT,GN,GW,GY,HT,HM,HN,HK,HU,IS,IM,IN,ID,IR,IQ,IE,IL,IT,CI,JE,JM,JP,JO,KZ,KE,KI,KW,KG,LA,LV,LB,LS,LR,LY,LI,LT,LU,ME,MF,MO,MK,MG,MW,MY,MV,ML,MT,MH,MQ,MR,MU,YT,FX,MX,FM,MD,MC,MN,MS,MA,MZ,MM,NA,NR,NP,NL,AN,NC,NZ,NI,NE,NG,NU,NF,KP,MP,NO,OM,PK,PW,PA,PG,PY,PE,PH,PN,PL,PS,PT,PR,QA,RE,RO,RS,RU,RW,SH,KN,LC,PM,VC,WS,SM,ST,SA,SN,SC,SL,SG,SK,SI,SB,SO,ZA,GS,KR,ES,LK,SD,SR,SJ,SZ,SE,CH,SX,SY,TL,TW,TJ,TZ,TH,TG,TK,TO,TT,TN,TR,TM,TC,TV,VI,UG,UA,AE,GB,US,UM,UY,UZ,VU,VA,VE,VN,WF,EH,XK,YE,ZM,ZW</default_value>
@@ -6222,8 +6222,8 @@
     </technical>
   </field>
   <field id="general_country_default" module="Magento_Backend" section="General" path="general/country/default">
-    <summary>The country selected by default in address and checkout forms.</summary>
-    <usage><![CDATA[<p>The pre-selected country in country dropdowns. Can differ per website or store view, so each store can default to its primary market.</p>]]></usage>
+    <summary>The country selected by default on address forms.</summary>
+    <usage><![CDATA[<p>The pre-selected country for new addresses and the default used when guessing a visitor's region.</p>]]></usage>
     <technical>
       <config_path>general/country/default</config_path>
       <default_value>US</default_value>
@@ -6232,8 +6232,8 @@
     </technical>
   </field>
   <field id="general_country_destinations" module="Magento_Backend" section="General" path="general/country/destinations">
-    <summary>Countries listed at the top of country dropdowns as quick-pick destinations.</summary>
-    <usage><![CDATA[<p>Countries pinned to the top of country selectors as frequently used destinations, ahead of the full alphabetical list. Can differ per website or store view.</p>]]></usage>
+    <summary>Countries shown at the top of country dropdowns.</summary>
+    <usage><![CDATA[<p>Priority countries listed first, above a separator, in country selectors for quicker selection.</p>]]></usage>
     <technical>
       <config_path>general/country/destinations</config_path>
       <scope>Store View</scope>
@@ -6241,8 +6241,8 @@
     </technical>
   </field>
   <field id="general_country_eu_countries" module="Magento_Backend" section="General" path="general/country/eu_countries">
-    <summary>Which countries are treated as part of the European Union.</summary>
-    <usage><![CDATA[<p>The list of countries the store treats as EU members, used by EU-specific logic such as VAT handling.</p>]]></usage>
+    <summary>Which countries are treated as part of the EU.</summary>
+    <usage><![CDATA[<p>The countries Magento considers EU members, used for VAT and tax rules.</p>]]></usage>
     <technical>
       <config_path>general/country/eu_countries</config_path>
       <default_value>AT,BE,BG,CY,CZ,DK,EE,FI,FR,DE,GR,HR,HU,IE,IT,LV,LT,LU,MT,NL,PL,PT,RO,SK,SI,ES,SE</default_value>
@@ -6251,8 +6251,8 @@
     </technical>
   </field>
   <field id="general_country_optional_zip_countries" module="Magento_Directory" path="general/country/optional_zip_countries">
-    <summary>The countries for which the ZIP/postal code field is not required in addresses.</summary>
-    <usage><![CDATA[<p>Addresses for the selected countries can be saved without a ZIP/postal code; for all others it stays mandatory.</p>]]></usage>
+    <summary>Countries where the postal code is optional.</summary>
+    <usage><![CDATA[<p>Countries for which a ZIP / postal code is not required on address forms.</p>]]></usage>
     <technical>
       <config_path>general/country/optional_zip_countries</config_path>
       <default_value>HK,IE,MO,PA,GB</default_value>
@@ -6261,8 +6261,8 @@
     </technical>
   </field>
   <field id="general_locale_code" module="Magento_Backend" section="General" path="general/locale/code">
-    <summary>The language/locale used for the store's interface and formatting.</summary>
-    <usage><![CDATA[<p>The locale that sets the store&#039;s language and number/date formatting. Can differ per website or store view, so each store can run in its own language.</p>]]></usage>
+    <summary>The store's language and locale.</summary>
+    <usage><![CDATA[<p>The locale that sets the storefront language along with date and number formats.</p>]]></usage>
     <technical>
       <config_path>general/locale/code</config_path>
       <default_value>en_US</default_value>
@@ -6271,8 +6271,8 @@
     </technical>
   </field>
   <field id="general_locale_firstday" module="Magento_Backend" section="General" path="general/locale/firstday">
-    <summary>Which weekday calendars treat as the first day of the week.</summary>
-    <usage><![CDATA[<p>The day shown first in calendar controls (e.g. Sunday or Monday). Can differ per website or store view to match local convention.</p>]]></usage>
+    <summary>The first day of the week in calendars.</summary>
+    <usage><![CDATA[<p>Which day date pickers and calendars start the week on.</p>]]></usage>
     <values>
       <value id="0" label="Sunday"/>
       <value id="1" label="Monday"/>
@@ -6290,8 +6290,8 @@
     </technical>
   </field>
   <field id="general_locale_timezone" module="Magento_Backend" section="General" path="general/locale/timezone">
-    <summary>The time zone used for storing and displaying store dates and times.</summary>
-    <usage><![CDATA[<p>The time zone applied to the store&#039;s dates and times (orders, reports, schedules). Can differ per website.</p>]]></usage>
+    <summary>The store's time zone.</summary>
+    <usage><![CDATA[<p>The time zone used for order timestamps, reports and scheduled (cron) tasks.</p>]]></usage>
     <technical>
       <config_path>general/locale/timezone</config_path>
       <default_value>America/Los_Angeles</default_value>
@@ -6301,8 +6301,8 @@
     </technical>
   </field>
   <field id="general_locale_weekend" module="Magento_Backend" section="General" path="general/locale/weekend">
-    <summary>Which days are treated as the weekend.</summary>
-    <usage><![CDATA[<p>The days marked as weekend, used by date-based logic. Can differ per website or store view to match local convention.</p>]]></usage>
+    <summary>Which days count as the weekend.</summary>
+    <usage><![CDATA[<p>The days treated as the weekend in sales reports and statistics.</p>]]></usage>
     <values>
       <value id="0" label="Sunday"/>
       <value id="1" label="Monday"/>
@@ -6320,8 +6320,8 @@
     </technical>
   </field>
   <field id="general_locale_weight_unit" module="Magento_Directory" path="general/locale/weight_unit">
-    <summary>The unit of measure used for product weights.</summary>
-    <usage><![CDATA[<p>The weight unit applied to products: <strong>lbs</strong> or <strong>kgs</strong>. Can differ per website or store view.</p>]]></usage>
+    <summary>The unit used for product weights.</summary>
+    <usage><![CDATA[<p>Whether product weights are expressed in pounds or kilograms.</p>]]></usage>
     <values>
       <value id="lbs" label="lbs"/>
       <value id="kgs" label="kgs"/>
@@ -6335,8 +6335,8 @@
     </technical>
   </field>
   <field id="general_region_display_all" module="Magento_Directory" path="general/region/display_all">
-    <summary>Whether the state/province field is shown even for countries where it is optional.</summary>
-    <usage><![CDATA[<p>When <strong>Yes</strong>, the state/province selector appears for countries where state is optional, letting customers supply it anyway.</p>]]></usage>
+    <summary>Show the state/region field for all countries.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, the state/region selector is shown even for countries that have no predefined region list.</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -6348,8 +6348,8 @@
     </technical>
   </field>
   <field id="general_region_state_required" module="Magento_Directory" path="general/region/state_required">
-    <summary>The countries for which a state/province must be provided in addresses.</summary>
-    <usage><![CDATA[<p>Addresses for the selected countries require a state/province to be chosen or entered.</p>]]></usage>
+    <summary>Countries where a state/region is mandatory.</summary>
+    <usage><![CDATA[<p>The countries for which customers must provide a state or region on address forms.</p>]]></usage>
     <technical>
       <config_path>general/region/state_required</config_path>
       <scope>Global</scope>
@@ -6357,8 +6357,8 @@
     </technical>
   </field>
   <field id="general_single_store_mode_enabled" module="Magento_Backend" section="General" path="general/single_store_mode/enabled">
-    <summary>Yes hides the store-view switcher and scope selectors to simplify a single-store admin.</summary>
-    <usage><![CDATA[<p>When <strong>Yes</strong>, the admin drops store-view switchers and scope selectors for a simpler single-store experience. As the field note says, it is ignored once the system has more than one store view, so it has no effect on a multi-store setup.</p>]]></usage>
+    <summary>Hide multi-store controls for a single-store setup.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, store and website scope switchers are hidden to simplify the admin. Ignored if the installation has more than one store.</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -6371,16 +6371,16 @@
     </technical>
   </field>
   <field id="general_store_information_city" module="Magento_Backend" section="General" path="general/store_information/city">
-    <summary>The store's city, shown in emails and documents.</summary>
-    <usage><![CDATA[<p>The city of the store&#039;s address, displayed in customer-facing templates. Can differ per website.</p>]]></usage>
+    <summary>Your business city.</summary>
+    <usage><![CDATA[<p>The city of your business address, shown on documents.</p>]]></usage>
     <technical>
       <config_path>general/store_information/city</config_path>
       <scope>Website</scope>
     </technical>
   </field>
   <field id="general_store_information_country_id" module="Magento_Backend" section="General" path="general/store_information/country_id">
-    <summary>The store's country, used in emails, documents and address formatting.</summary>
-    <usage><![CDATA[<p>The country of the store&#039;s registered address, shown in customer-facing templates. Can differ per website.</p>]]></usage>
+    <summary>The country your business is located in.</summary>
+    <usage><![CDATA[<p>Your business country, shown on documents and used in some tax and VAT logic.</p>]]></usage>
     <technical>
       <config_path>general/store_information/country_id</config_path>
       <scope>Website</scope>
@@ -6388,67 +6388,76 @@
     </technical>
   </field>
   <field id="general_store_information_hours" module="Magento_Backend" section="General" path="general/store_information/hours">
-    <summary>The store's hours of operation shown in emails and documents.</summary>
-    <usage><![CDATA[<p>Free-text hours of operation displayed in customer-facing templates. Can differ per website or store view.</p>]]></usage>
+    <summary>Your store's opening hours.</summary>
+    <usage><![CDATA[<p>Business hours shown to customers wherever store information is displayed.</p>]]></usage>
     <technical>
       <config_path>general/store_information/hours</config_path>
       <scope>Store View</scope>
     </technical>
   </field>
   <field id="general_store_information_merchant_vat_number" module="Magento_Backend" section="General" path="general/store_information/merchant_vat_number">
-    <summary>The store's VAT registration number, shown on applicable documents.</summary>
-    <usage><![CDATA[<p>The merchant&#039;s VAT registration number, displayed in customer-facing templates such as invoices where required. Can differ per website.</p>]]></usage>
+    <summary>Your business VAT number.</summary>
+    <usage><![CDATA[<p>The merchant VAT number shown on documents and used for EU VAT validation.</p>]]></usage>
     <technical>
       <config_path>general/store_information/merchant_vat_number</config_path>
       <scope>Website</scope>
     </technical>
   </field>
   <field id="general_store_information_name" module="Magento_Backend" section="General" path="general/store_information/name">
-    <summary>The store name shown in transactional emails, invoices and similar documents.</summary>
-    <usage><![CDATA[<p>The store&#039;s name as it appears in customer-facing templates such as email headers and printed documents. Can differ per website or store view.</p>]]></usage>
+    <summary>Your store or company name.</summary>
+    <usage><![CDATA[<p>The business name shown on invoices, emails and other documents.</p>]]></usage>
     <technical>
       <config_path>general/store_information/name</config_path>
       <scope>Store View</scope>
     </technical>
   </field>
   <field id="general_store_information_phone" module="Magento_Backend" section="General" path="general/store_information/phone">
-    <summary>The store contact phone number shown in emails and documents.</summary>
-    <usage><![CDATA[<p>The store phone number displayed in customer-facing templates such as emails and invoices. Can differ per website or store view.</p>]]></usage>
+    <summary>Your store contact phone number.</summary>
+    <usage><![CDATA[<p>The phone number shown to customers and on documents.</p>]]></usage>
     <technical>
       <config_path>general/store_information/phone</config_path>
       <scope>Store View</scope>
     </technical>
   </field>
   <field id="general_store_information_postcode" module="Magento_Backend" section="General" path="general/store_information/postcode">
-    <summary>The store's ZIP/postal code, shown in emails and documents.</summary>
-    <usage><![CDATA[<p>The postal code of the store&#039;s address, displayed in customer-facing templates. Can differ per website.</p>]]></usage>
+    <summary>Your business postal code.</summary>
+    <usage><![CDATA[<p>The postal code of your business address, shown on documents.</p>]]></usage>
     <technical>
       <config_path>general/store_information/postcode</config_path>
       <scope>Website</scope>
     </technical>
   </field>
   <field id="general_store_information_region_id" module="Magento_Backend" section="General" path="general/store_information/region_id">
-    <summary>The store's region or state, shown in emails and documents.</summary>
-    <usage><![CDATA[<p>The region/state of the store&#039;s address, displayed in customer-facing templates. Can differ per website.</p>]]></usage>
+    <summary>The state or region your business is in.</summary>
+    <usage><![CDATA[<p>Your business state/region, shown on documents.</p>]]></usage>
     <technical>
       <config_path>general/store_information/region_id</config_path>
       <scope>Website</scope>
     </technical>
   </field>
   <field id="general_store_information_street_line1" module="Magento_Backend" section="General" path="general/store_information/street_line1">
-    <summary>The store's street address, shown in emails and documents.</summary>
-    <usage><![CDATA[<p>The first line of the store&#039;s street address, displayed in customer-facing templates. Can differ per website.</p>]]></usage>
+    <summary>Your business street address.</summary>
+    <usage><![CDATA[<p>The first line of your business street address, shown on documents.</p>]]></usage>
     <technical>
       <config_path>general/store_information/street_line1</config_path>
       <scope>Website</scope>
     </technical>
   </field>
   <field id="general_store_information_street_line2" module="Magento_Backend" section="General" path="general/store_information/street_line2">
-    <summary>The second line of the store's street address, shown in emails and documents.</summary>
-    <usage><![CDATA[<p>An optional second line of the store&#039;s street address, displayed in customer-facing templates. Can differ per website.</p>]]></usage>
+    <summary>Additional business street address line.</summary>
+    <usage><![CDATA[<p>An optional second line for your business street address.</p>]]></usage>
     <technical>
       <config_path>general/store_information/street_line2</config_path>
       <scope>Website</scope>
+    </technical>
+  </field>
+  <field id="general_store_information_validate_vat_number" module="Magento_Customer" path="general/store_information/validate_vat_number">
+    <summary>Check your VAT number against the EU service.</summary>
+    <usage><![CDATA[<p>Validates the merchant VAT number entered above against the EU VIES service.</p>]]></usage>
+    <technical>
+      <config_path>general/store_information/validate_vat_number</config_path>
+      <scope>Website</scope>
+      <frontend_model>Magento\Customer\Block\Adminhtml\System\Config\Validatevat</frontend_model>
     </technical>
   </field>
   <field id="google_adwords_active" module="Magento_GoogleAdwords" path="google/adwords/active">
