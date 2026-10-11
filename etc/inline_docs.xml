@@ -4337,8 +4337,8 @@
     </technical>
   </field>
   <field id="checkout_cart_cart_merge_preference" module="Magento_Checkout" section="Checkout" path="checkout/cart/cart_merge_preference">
-    <summary>Decides how item quantities combine when a returning customer's guest cart and saved cart overlap.</summary>
-    <usage><![CDATA[<p>When a logged-in customer has the same item in both their guest cart and their saved cart, this chooses how the quantities are combined. The options set the merge rule — such as which quantity wins or whether they add together. Default scope.</p>]]></usage>
+    <summary>How a guest cart merges with the saved cart at login.</summary>
+    <usage><![CDATA[<p>When a guest signs in and both carts hold the same product, this decides whose quantity wins — or whether the two are added together.</p>]]></usage>
     <values>
       <value id="guest" label="Guest Priority &#x2013; Override with guest cart quantity">When carts merge at login, keep the guest cart's quantities.</value>
       <value id="customer" label="Customer Priority &#x2013; Override with customer cart quantity">When carts merge at login, keep the saved customer cart's quantities.</value>
@@ -4352,8 +4352,8 @@
     </technical>
   </field>
   <field id="checkout_cart_configurable_product_image" module="Magento_ConfigurableProduct" path="checkout/cart/configurable_product_image">
-    <summary>Whether the cart shows the chosen variation's image or the configurable parent product's image.</summary>
-    <usage><![CDATA[<p>Controls which image appears in the shopping cart for a configurable product line: the image of the specific variation the customer selected, or the parent product&#039;s image. Can be set per website or store view.</p>]]></usage>
+    <summary>Which image represents a configurable product in the cart.</summary>
+    <usage><![CDATA[<p>Whether the cart shows the chosen variation's own thumbnail or the parent configurable product's thumbnail.</p>]]></usage>
     <values>
       <value id="itself" label="Product Thumbnail Itself">Use each product's own thumbnail in the cart.</value>
       <value id="parent" label="Parent Product Thumbnail">Use the parent (configurable/grouped) product's thumbnail.</value>
@@ -4366,8 +4366,8 @@
     </technical>
   </field>
   <field id="checkout_cart_crosssell_enabled" module="Magento_Checkout" section="Checkout" path="checkout/cart/crosssell_enabled">
-    <summary>Whether cross-sell product suggestions are shown on the shopping cart page.</summary>
-    <usage><![CDATA[<p>Controls the display of cross-sell (&quot;you might also like&quot;) products on the cart page.</p>]]></usage>
+    <summary>Show cross-sell products on the cart page.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, the shopping cart displays cross-sell product suggestions.</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -4380,8 +4380,8 @@
     </technical>
   </field>
   <field id="checkout_cart_delete_quote_after" module="Magento_Checkout" section="Checkout" path="checkout/cart/delete_quote_after">
-    <summary>How many days an inactive cart (quote) is kept before it is cleared.</summary>
-    <usage><![CDATA[<p>The lifetime, in days, of an abandoned shopping cart. After this period the quote is eligible to be removed by the clean-up process.</p>]]></usage>
+    <summary>How long an abandoned cart (quote) is kept (days).</summary>
+    <usage><![CDATA[<p>The number of days an inactive quote is retained before the cron job clears it.</p>]]></usage>
     <technical>
       <config_path>checkout/cart/delete_quote_after</config_path>
       <default_value>30</default_value>
@@ -4390,8 +4390,8 @@
     </technical>
   </field>
   <field id="checkout_cart_enable_clear_shopping_cart" module="Magento_Checkout" section="Checkout" path="checkout/cart/enable_clear_shopping_cart">
-    <summary>Whether an "empty cart" button is shown on the shopping cart page.</summary>
-    <usage><![CDATA[<p>When <strong>Yes</strong>, customers get a button to clear the whole cart in one action.</p>]]></usage>
+    <summary>Show a "Clear Shopping Cart" button.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, shoppers get a button to empty the whole cart at once.</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -4404,8 +4404,8 @@
     </technical>
   </field>
   <field id="checkout_cart_grouped_product_image" module="Magento_GroupedProduct" path="checkout/cart/grouped_product_image">
-    <summary>Which image represents a grouped product's items in the cart &#x2014; the grouped parent's or each associated product's own.</summary>
-    <usage><![CDATA[<p>Chooses whether the shopping cart shows the grouped (parent) product&#039;s image or each associated product&#039;s own image for items added as part of a grouped product. Can be set per store view.</p>]]></usage>
+    <summary>Which image represents a grouped product in the cart.</summary>
+    <usage><![CDATA[<p>Whether the cart shows each associated item's own thumbnail or the parent grouped product's thumbnail.</p>]]></usage>
     <values>
       <value id="itself" label="Product Thumbnail Itself">Use each product's own thumbnail in the cart.</value>
       <value id="parent" label="Parent Product Thumbnail">Use the parent (configurable/grouped) product's thumbnail.</value>
@@ -4418,8 +4418,8 @@
     </technical>
   </field>
   <field id="checkout_cart_link_use_qty" module="Magento_Checkout" section="Checkout" path="checkout/cart_link/use_qty">
-    <summary>Whether the cart link counts distinct items or total item quantity.</summary>
-    <usage><![CDATA[<p>Chooses what the header cart summary counts: the number of distinct items in the cart, or the total quantity across all items.</p>]]></usage>
+    <summary>What the header cart link counts.</summary>
+    <usage><![CDATA[<p>Whether the cart link in the header shows the number of distinct items or the total quantity of units.</p>]]></usage>
     <values>
       <value id="0" label="Display number of items in cart">Show the count of line items in the mini-cart.</value>
       <value id="1" label="Display item quantities">Show the total quantity of units in the mini-cart.</value>
@@ -4432,8 +4432,8 @@
     </technical>
   </field>
   <field id="checkout_cart_number_items_to_display_pager" module="Magento_Checkout" section="Checkout" path="checkout/cart/number_items_to_display_pager">
-    <summary>Number of cart line items shown per page before pagination appears.</summary>
-    <usage><![CDATA[<p>How many items the shopping cart lists on one page; once the cart holds more, a pager is shown.</p>]]></usage>
+    <summary>Cart items shown before pagination kicks in.</summary>
+    <usage><![CDATA[<p>The number of line items displayed on the cart page before a pager appears.</p>]]></usage>
     <technical>
       <config_path>checkout/cart/number_items_to_display_pager</config_path>
       <default_value>20</default_value>
@@ -4442,8 +4442,8 @@
     </technical>
   </field>
   <field id="checkout_cart_redirect_to_cart" module="Magento_Checkout" section="Checkout" path="checkout/cart/redirect_to_cart">
-    <summary>Whether adding a product sends the shopper straight to the cart or leaves them on the page.</summary>
-    <usage><![CDATA[<p>When <strong>Yes</strong>, adding a product redirects to the shopping cart page. When <strong>No</strong>, the shopper stays where they are (typically with a mini-cart update).</p>]]></usage>
+    <summary>Send shoppers to the cart after adding a product.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, adding a product redirects to the cart page. When <strong>No</strong>, the shopper stays on the current page.</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -4456,8 +4456,8 @@
     </technical>
   </field>
   <field id="checkout_options_display_billing_address_on" module="Magento_Checkout" section="Checkout" path="checkout/options/display_billing_address_on">
-    <summary>Whether the billing address is collected on the payment step or on its own checkout page.</summary>
-    <usage><![CDATA[<p>Chooses where the billing address is asked for: on the <strong>Payment Method</strong> step, or on a separate <strong>Payment Page</strong>.</p>]]></usage>
+    <summary>Where the billing address is collected during checkout.</summary>
+    <usage><![CDATA[<p>Whether the billing address appears on the payment step or on its own dedicated checkout page.</p>]]></usage>
     <values>
       <value id="0" label="Payment Method">Collect the billing address on the payment step.</value>
       <value id="1" label="Payment Page">Collect the billing address on its own page.</value>
@@ -4470,8 +4470,8 @@
     </technical>
   </field>
   <field id="checkout_options_enable_agreements" module="Magento_CheckoutAgreements" path="checkout/options/enable_agreements">
-    <summary>Turns the Terms and Conditions step on at checkout.</summary>
-    <usage><![CDATA[<p>When <strong>Yes</strong>, the configured Terms and Conditions are shown at checkout and must be accepted before an order can be placed. Can be set per store view.</p>]]></usage>
+    <summary>Require shoppers to accept terms and conditions.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, the configured checkout agreements (terms &amp; conditions) must be accepted before an order can be placed.</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -4484,8 +4484,8 @@
     </technical>
   </field>
   <field id="checkout_options_enable_guest_checkout_login" path="checkout/options/enable_guest_checkout_login">
-    <summary>Lets guests check if an email already has an account &#x2014; convenient, but it discloses account existence.</summary>
-    <usage><![CDATA[<p>Scoped per website and store view, so the email lookup can be turned on only where you want it. Weigh the smoother guest checkout against revealing to unauthenticated users whether an email is already registered.</p>]]></usage>
+    <summary>Let guests check whether an email already has an account.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, unauthenticated shoppers can query whether an email is already registered. Turning it off helps prevent account enumeration.</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -4498,8 +4498,8 @@
     </technical>
   </field>
   <field id="checkout_options_guest_checkout" module="Magento_Checkout" section="Checkout" path="checkout/options/guest_checkout">
-    <summary>Lets shoppers place an order without creating or signing into an account.</summary>
-    <usage><![CDATA[<p>When <strong>Yes</strong>, customers can check out as a guest. When <strong>No</strong>, they must register or sign in before they can place an order.</p>]]></usage>
+    <summary>Allow ordering without creating an account.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, customers can check out as a guest. When <strong>No</strong>, they must register or sign in to place an order.</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -4512,8 +4512,8 @@
     </technical>
   </field>
   <field id="checkout_options_max_items_display_count" module="Magento_Checkout" section="Checkout" path="checkout/options/max_items_display_count">
-    <summary>How many line items the order summary lists before the rest are collapsed.</summary>
-    <usage><![CDATA[<p>The number of items shown in the checkout order summary; any beyond this are hidden behind a toggle to keep the summary short.</p>]]></usage>
+    <summary>Maximum order items shown on the checkout review.</summary>
+    <usage><![CDATA[<p>Caps how many line items are listed in the order summary during checkout.</p>]]></usage>
     <technical>
       <config_path>checkout/options/max_items_display_count</config_path>
       <default_value>10</default_value>
@@ -4522,8 +4522,8 @@
     </technical>
   </field>
   <field id="checkout_options_onepage_checkout_enabled" module="Magento_Checkout" section="Checkout" path="checkout/options/onepage_checkout_enabled">
-    <summary>Turns the one-page checkout flow on or off for the storefront.</summary>
-    <usage><![CDATA[<p>Controls whether customers check out through Magento&#039;s single-page checkout. Set to <strong>No</strong> to disable it (for example when a custom checkout replaces it).</p>]]></usage>
+    <summary>Enable the standard one-page checkout.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, the built-in one-page checkout is available. Turning it off is usually done only when a custom checkout replaces it.</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -4536,8 +4536,8 @@
     </technical>
   </field>
   <field id="checkout_payment_failed_copy_method" module="Magento_Checkout" section="Checkout" path="checkout/payment_failed/copy_method">
-    <summary>How copies of the payment-failed email are sent &#x2014; blind copy or a separate email.</summary>
-    <usage><![CDATA[<p>Chooses how additional recipients receive the payment-failure notice: as a <strong>Bcc</strong> on the original email, or as a <strong>Separate Email</strong>.</p>]]></usage>
+    <summary>How copies of payment-failed emails are sent.</summary>
+    <usage><![CDATA[<p>Whether additional recipients are blind-copied on one email or each sent a separate copy.</p>]]></usage>
     <values>
       <value id="bcc" label="Bcc">Send one email and blind-copy the extra recipients.</value>
       <value id="copy" label="Separate Email">Send each recipient a separate copy of the email.</value>
@@ -4549,8 +4549,8 @@
     </technical>
   </field>
   <field id="checkout_payment_failed_copy_to" module="Magento_Checkout" section="Checkout" path="checkout/payment_failed/copy_to">
-    <summary>Extra recipients who get a copy of payment-failed emails; handy for monitoring failed checkouts.</summary>
-    <usage><![CDATA[<p>Additional addresses copied on the payment-failed notification email, separated by commas. Useful for routing failed-payment alerts to staff or a monitoring inbox. Can differ per website/store.</p>]]></usage>
+    <summary>Extra recipients of payment-failed notifications.</summary>
+    <usage><![CDATA[<p>Comma-separated email addresses that also receive payment-failure notices.</p>]]></usage>
     <technical>
       <config_path>checkout/payment_failed/copy_to</config_path>
       <scope>Store View</scope>
@@ -4558,8 +4558,8 @@
     </technical>
   </field>
   <field id="checkout_payment_failed_identity" module="Magento_Checkout" section="Checkout" path="checkout/payment_failed/identity">
-    <summary>Which store email identity the "payment failed" notification is sent from.</summary>
-    <usage><![CDATA[<p>The sender identity for payment-failure emails — one of the <strong>Store Email Addresses</strong> identities (General Contact, Sales Representative, Customer Support, Custom 1/2).</p>]]></usage>
+    <summary>The store identity payment-failed emails are sent from.</summary>
+    <usage><![CDATA[<p>Which store email identity (sender) is used for payment-failure emails.</p>]]></usage>
     <values>
       <value id="general" label="General Contact">Send as the General Contact store identity.</value>
       <value id="sales" label="Sales Representative">Send as the Sales Representative store identity.</value>
@@ -4575,8 +4575,8 @@
     </technical>
   </field>
   <field id="checkout_payment_failed_receiver" module="Magento_Checkout" section="Checkout" path="checkout/payment_failed/receiver">
-    <summary>Which store email identity receives the "payment failed" notification.</summary>
-    <usage><![CDATA[<p>The internal recipient of payment-failure emails, chosen from the configured <strong>Store Email Addresses</strong> identities.</p>]]></usage>
+    <summary>The store contact that receives payment-failed emails.</summary>
+    <usage><![CDATA[<p>Which store identity is notified when a customer's payment fails.</p>]]></usage>
     <values>
       <value id="general" label="General Contact">Send as the General Contact store identity.</value>
       <value id="sales" label="Sales Representative">Send as the Sales Representative store identity.</value>
@@ -4592,8 +4592,8 @@
     </technical>
   </field>
   <field id="checkout_payment_failed_template" module="Magento_Checkout" section="Checkout" path="checkout/payment_failed/template">
-    <summary>Email template for the notice sent to customers when a checkout payment attempt fails.</summary>
-    <usage><![CDATA[<p>Selects the email template used to notify customers that a payment attempt failed during checkout. Choosing Default falls back to the theme&#039;s template (native note); pick a custom template to override it. Can differ per website/store view.</p>]]></usage>
+    <summary>The email template for payment-failed notifications.</summary>
+    <usage><![CDATA[<p>The transactional template used when a payment attempt fails at checkout.</p>]]></usage>
     <technical>
       <config_path>checkout/payment_failed/template</config_path>
       <default_value>checkout_payment_failed_template</default_value>
@@ -4602,8 +4602,8 @@
     </technical>
   </field>
   <field id="checkout_sidebar_count" module="Magento_Checkout" section="Checkout" path="checkout/sidebar/count">
-    <summary>How many of the most recent items the mini-cart shows before it scrolls.</summary>
-    <usage><![CDATA[<p>The number of items visible in the mini-cart before its list becomes scrollable.</p>]]></usage>
+    <summary>How many items the mini-cart lists.</summary>
+    <usage><![CDATA[<p>The number of recent items shown in the mini-cart dropdown.</p>]]></usage>
     <technical>
       <config_path>checkout/sidebar/count</config_path>
       <default_value>5</default_value>
@@ -4612,8 +4612,8 @@
     </technical>
   </field>
   <field id="checkout_sidebar_display" module="Magento_Checkout" section="Checkout" path="checkout/sidebar/display">
-    <summary>Whether the mini-cart dropdown is shown in the page header.</summary>
-    <usage><![CDATA[<p>Controls the header mini-cart. Set to <strong>No</strong> to hide the dropdown cart preview.</p>]]></usage>
+    <summary>Show the mini-cart in the header.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, the mini-cart dropdown is available from the header cart icon.</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -4626,8 +4626,8 @@
     </technical>
   </field>
   <field id="checkout_sidebar_max_items_display_count" module="Magento_Checkout" section="Checkout" path="checkout/sidebar/max_items_display_count">
-    <summary>Maximum number of items the mini-cart will list.</summary>
-    <usage><![CDATA[<p>An upper bound on how many items the mini-cart renders, regardless of cart size, to keep the dropdown manageable.</p>]]></usage>
+    <summary>Maximum items shown in the mini-cart before scrolling.</summary>
+    <usage><![CDATA[<p>Caps how many items the mini-cart displays before the list scrolls.</p>]]></usage>
     <technical>
       <config_path>checkout/sidebar/max_items_display_count</config_path>
       <default_value>10</default_value>
