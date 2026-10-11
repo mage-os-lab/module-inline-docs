@@ -99150,8 +99150,8 @@ productalert</default_value>
     </technical>
   </field>
   <field id="web_browser_capabilities_cookies" module="Magento_Cms" path="web/browser_capabilities/cookies">
-    <summary>Whether visitors with cookies disabled are redirected to the No Cookies CMS page.</summary>
-    <usage><![CDATA[<p>When <strong>Yes</strong>, visitors whose browsers have cookies disabled are redirected to the configured CMS No Cookies page. Can be set per website or store view.</p>]]></usage>
+    <summary>Warn visitors whose browser blocks cookies.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, customers whose browser has cookies disabled are shown a notice, since the store needs cookies to work.</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -99164,8 +99164,8 @@ productalert</default_value>
     </technical>
   </field>
   <field id="web_browser_capabilities_javascript" module="Magento_Cms" path="web/browser_capabilities/javascript">
-    <summary>Whether a notice is shown to visitors who have JavaScript disabled.</summary>
-    <usage><![CDATA[<p>When <strong>Yes</strong>, a notice is displayed to visitors whose browsers have JavaScript disabled. Can be set per website or store view.</p>]]></usage>
+    <summary>Warn visitors whose browser has JavaScript off.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, a notice is shown to customers with JavaScript disabled.</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -99178,8 +99178,8 @@ productalert</default_value>
     </technical>
   </field>
   <field id="web_browser_capabilities_local_storage" module="Magento_Cms" path="web/browser_capabilities/local_storage">
-    <summary>Whether a notice is shown to visitors who have local storage disabled.</summary>
-    <usage><![CDATA[<p>When <strong>Yes</strong>, a notice is displayed to visitors whose browsers have local storage disabled. Can be set per website or store view.</p>]]></usage>
+    <summary>Warn visitors whose browser blocks local storage.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, a notice is shown to customers whose browser has local storage disabled.</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -99192,8 +99192,8 @@ productalert</default_value>
     </technical>
   </field>
   <field id="web_cookie_cookie_domain" module="Magento_Cookie" path="web/cookie/cookie_domain">
-    <summary>Domain cookies are issued for; a mismatch with the real site domain breaks login and sessions.</summary>
-    <usage><![CDATA[<p>Scopes session and other cookies to a domain. It must match the domain customers actually use (a leading dot shares across subdomains); a mismatch silently breaks sessions and login. Leave empty to use the current domain. Website/store scoped for multi-domain stores.</p>]]></usage>
+    <summary>The domain cookies are set for.</summary>
+    <usage><![CDATA[<p>The domain used when setting cookies. Leave blank to use the current domain, or set it (e.g. <code>.example.com</code>) to share cookies across subdomains.</p>]]></usage>
     <technical>
       <config_path>web/cookie/cookie_domain</config_path>
       <scope>Store View</scope>
@@ -99201,8 +99201,8 @@ productalert</default_value>
     </technical>
   </field>
   <field id="web_cookie_cookie_httponly" module="Magento_Cookie" path="web/cookie/cookie_httponly">
-    <summary>Yes sets the HttpOnly flag so scripts can't read cookies; No exposes session cookies to XSS &#x2014; don't.</summary>
-    <usage><![CDATA[<p>When <strong>Yes</strong>, cookies carry the HttpOnly flag, so client-side JavaScript cannot read them — this blocks session theft via cross-site scripting. The native warning is serious: <strong>No</strong> leaves session cookies readable by scripts. Set per website or store view.</p>]]></usage>
+    <summary>Mark cookies as HTTP-only (recommended).</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, cookies cannot be read by JavaScript, which protects them from theft. <strong>Do not set to No</strong> — it weakens security.</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -99215,8 +99215,8 @@ productalert</default_value>
     </technical>
   </field>
   <field id="web_cookie_cookie_lifetime" module="Magento_Cookie" path="web/cookie/cookie_lifetime">
-    <summary>How long cookies persist, in seconds; shorter values log customers out sooner. Can differ per store view.</summary>
-    <usage><![CDATA[<p>The cookie lifetime in seconds, as the field note states. A shorter value expires sessions and stored preferences sooner (more frequent re-logins), a longer one keeps them around. Scoped to website/store, so it can vary per store view.</p>]]></usage>
+    <summary>How long cookies live (seconds).</summary>
+    <usage><![CDATA[<p>The lifetime of session and other cookies, in seconds.</p>]]></usage>
     <technical>
       <config_path>web/cookie/cookie_lifetime</config_path>
       <default_value>3600</default_value>
@@ -99226,8 +99226,8 @@ productalert</default_value>
     </technical>
   </field>
   <field id="web_cookie_cookie_path" module="Magento_Cookie" path="web/cookie/cookie_path">
-    <summary>Scopes cookies to a URL path; set narrower than / only if the store runs in a subfolder, or logins and cart break. Needs a cache flush.</summary>
-    <usage><![CDATA[<p>Restricts the browser to send Magento cookies only under this path. Leave it at / for most stores; narrowing it is right only when the store runs in a subdirectory, otherwise sessions, login and cart silently fail. Takes effect after a cache flush; settable per website/store.</p>]]></usage>
+    <summary>The path cookies are scoped to.</summary>
+    <usage><![CDATA[<p>The URL path cookies apply to. Use <code>/</code> for the whole site, or a subpath to limit them.</p>]]></usage>
     <technical>
       <config_path>web/cookie/cookie_path</config_path>
       <scope>Store View</scope>
@@ -99235,8 +99235,8 @@ productalert</default_value>
     </technical>
   </field>
   <field id="web_cookie_cookie_restriction" module="Magento_Cookie" path="web/cookie/cookie_restriction">
-    <summary>Yes enables cookie-consent mode: visitors are told cookies are needed and some are withheld until accepted (GDPR/privacy compliance).</summary>
-    <usage><![CDATA[<p>When Yes, Cookie Restriction Mode shows storefront visitors a consent notice (native note) and holds back non-essential cookies until they accept — used to meet GDPR and similar privacy requirements. Can differ per website.</p>]]></usage>
+    <summary>Enable cookie-consent restriction mode.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, Cookie Restriction Mode asks visitors to consent before non-essential cookies are set, for privacy compliance.</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -99250,8 +99250,8 @@ productalert</default_value>
     </technical>
   </field>
   <field id="web_default_cms_home_page" module="Magento_Cms" path="web/default/cms_home_page">
-    <summary>The CMS page shown as the storefront home page.</summary>
-    <usage><![CDATA[<p>Selects which existing CMS page is used as the storefront home page. Can be set per website or store view.</p>]]></usage>
+    <summary>The CMS page used as the storefront home page.</summary>
+    <usage><![CDATA[<p>Which CMS page is shown at the store's root URL.</p>]]></usage>
     <technical>
       <config_path>web/default/cms_home_page</config_path>
       <default_value>home</default_value>
@@ -99260,8 +99260,8 @@ productalert</default_value>
     </technical>
   </field>
   <field id="web_default_cms_no_cookies" module="Magento_Cms" path="web/default/cms_no_cookies">
-    <summary>The CMS page shown when the visitor's browser has cookies disabled.</summary>
-    <usage><![CDATA[<p>Selects the CMS page displayed when a visitor&#039;s browser has cookies disabled. Can be set per website or store view.</p>]]></usage>
+    <summary>The CMS page shown when cookies are disabled.</summary>
+    <usage><![CDATA[<p>Which CMS page is displayed to visitors whose browser blocks cookies.</p>]]></usage>
     <technical>
       <config_path>web/default/cms_no_cookies</config_path>
       <default_value>enable-cookies</default_value>
@@ -99270,8 +99270,8 @@ productalert</default_value>
     </technical>
   </field>
   <field id="web_default_cms_no_route" module="Magento_Cms" path="web/default/cms_no_route">
-    <summary>The CMS page shown when a requested page is not found (404).</summary>
-    <usage><![CDATA[<p>Selects the CMS page displayed when a URL does not match any route, i.e. a 404. Can be set per website or store view.</p>]]></usage>
+    <summary>The CMS page shown for 404 (not found).</summary>
+    <usage><![CDATA[<p>Which CMS page is displayed when a requested URL doesn't exist.</p>]]></usage>
     <technical>
       <config_path>web/default/cms_no_route</config_path>
       <default_value>no-route</default_value>
@@ -99280,8 +99280,8 @@ productalert</default_value>
     </technical>
   </field>
   <field id="web_default_front" module="Magento_Backend" section="Web" path="web/default/front">
-    <summary>The default storefront landing path used when no specific route is requested.</summary>
-    <usage><![CDATA[<p>The route the storefront falls back to for the home page when no path is given (typically <code>cms</code>). Can differ per website or store view.</p>]]></usage>
+    <summary>The default route loaded at the store root.</summary>
+    <usage><![CDATA[<p>The action path loaded at the store root (default <code>cms</code>), before the home page resolves.</p>]]></usage>
     <technical>
       <config_path>web/default/front</config_path>
       <default_value>cms</default_value>
@@ -99290,7 +99290,7 @@ productalert</default_value>
   </field>
   <field id="web_default_layouts_default_category_layout" module="Magento_Catalog" path="web/default_layouts/default_category_layout">
     <summary>The default page layout for category pages.</summary>
-    <usage><![CDATA[<p>The layout applied to category pages that don&#039;t specify their own.</p>]]></usage>
+    <usage><![CDATA[<p>The column layout applied to category pages unless an individual category overrides it.</p>]]></usage>
     <values>
       <value id="empty" label="Empty"/>
       <value id="1column" label="1 column"/>
@@ -99309,8 +99309,8 @@ productalert</default_value>
     </technical>
   </field>
   <field id="web_default_layouts_default_cms_layout" module="Magento_Cms" path="web/default_layouts/default_cms_layout">
-    <summary>The default page layout applied to CMS pages.</summary>
-    <usage><![CDATA[<p>The layout (for example 1 column or 2 columns) used by default for CMS pages that do not specify their own.</p>]]></usage>
+    <summary>The default page layout for CMS pages.</summary>
+    <usage><![CDATA[<p>The column layout applied to CMS pages unless an individual page overrides it.</p>]]></usage>
     <values>
       <value id="empty" label="Empty"/>
       <value id="1column" label="1 column"/>
@@ -99330,7 +99330,7 @@ productalert</default_value>
   </field>
   <field id="web_default_layouts_default_product_layout" module="Magento_Catalog" path="web/default_layouts/default_product_layout">
     <summary>The default page layout for product pages.</summary>
-    <usage><![CDATA[<p>The layout (e.g. 1 column, 2 columns left/right, 3 columns) applied to product pages that don&#039;t specify their own.</p>]]></usage>
+    <usage><![CDATA[<p>The column layout applied to product pages unless an individual product overrides it.</p>]]></usage>
     <values>
       <value id="empty" label="Empty"/>
       <value id="1column" label="1 column"/>
@@ -99349,8 +99349,8 @@ productalert</default_value>
     </technical>
   </field>
   <field id="web_default_no_route" module="Magento_Backend" section="Web" path="web/default/no_route">
-    <summary>The path served when a requested URL matches no route (the 404 page).</summary>
-    <usage><![CDATA[<p>The internal path rendered when a URL cannot be matched to any route, i.e. the &#039;page not found&#039; target. Can differ per website or store view.</p>]]></usage>
+    <summary>The route that handles not-found URLs.</summary>
+    <usage><![CDATA[<p>The action path (for example <code>cms/noroute/index</code>) used when no route matches a request.</p>]]></usage>
     <technical>
       <config_path>web/default/no_route</config_path>
       <default_value>cms/noroute/index</default_value>
@@ -99358,8 +99358,8 @@ productalert</default_value>
     </technical>
   </field>
   <field id="web_default_show_cms_breadcrumbs" module="Magento_Cms" path="web/default/show_cms_breadcrumbs">
-    <summary>Whether breadcrumb navigation is shown on CMS pages.</summary>
-    <usage><![CDATA[<p>When <strong>Yes</strong>, breadcrumb navigation is displayed on CMS pages. Can be set per website or store view.</p>]]></usage>
+    <summary>Show breadcrumbs on CMS pages.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, breadcrumb navigation is shown on CMS pages.</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -99372,8 +99372,8 @@ productalert</default_value>
     </technical>
   </field>
   <field id="web_secure_base_link_url" module="Magento_Backend" section="Web" path="web/secure/base_link_url">
-    <summary>HTTPS base for building storefront links; use the placeholder to track the base URL automatically.</summary>
-    <usage><![CDATA[<p>The HTTPS base used to build links on the storefront. Using the <code>{{secure_base_url}}</code>/<code>{{unsecure_base_url}}</code> placeholder keeps it in step with the base URL instead of hardcoding it. Can differ per website or store view; a wrong value breaks generated secure links.</p>]]></usage>
+    <summary>The secure base URL used for links.</summary>
+    <usage><![CDATA[<p>The HTTPS base used when building links. May start with <code>{{secure_base_url}}</code> or <code>{{unsecure_base_url}}</code>.</p>]]></usage>
     <technical>
       <config_path>web/secure/base_link_url</config_path>
       <default_value>{{secure_base_url}}</default_value>
@@ -99382,8 +99382,8 @@ productalert</default_value>
     </technical>
   </field>
   <field id="web_secure_base_media_url" module="Magento_Backend" section="Web" path="web/secure/base_media_url">
-    <summary>Points secure user/media files at a host or CDN; blank derives it from the secure base URL. Must end in a slash and needs a cache flush.</summary>
-    <usage><![CDATA[<p>Sets where secure user media files are served from, e.g. a CDN or separate media host. Leave it empty (or use the {{secure_base_url}}/{{unsecure_base_url}} placeholders) to derive it from the base URL. A missing trailing slash breaks asset paths, and changes apply only after a cache flush. Per website/store.</p>]]></usage>
+    <summary>The secure base URL for media files.</summary>
+    <usage><![CDATA[<p>The HTTPS base for product and other media. Leave empty to derive it from the secure base URL.</p>]]></usage>
     <technical>
       <config_path>web/secure/base_media_url</config_path>
       <scope>Store View</scope>
@@ -99391,8 +99391,8 @@ productalert</default_value>
     </technical>
   </field>
   <field id="web_secure_base_static_url" module="Magento_Backend" section="Web" path="web/secure/base_static_url">
-    <summary>Overrides where static view files are served over HTTPS, e.g. a CDN; can differ per store view.</summary>
-    <usage><![CDATA[<p>Sets the HTTPS base URL for static view files (CSS, JS, fonts), typically to point them at a CDN. As the field note says, it may be empty or use the <code>{{secure_base_url}}</code> / <code>{{unsecure_base_url}}</code> placeholders. Scoped to website/store, so each store view can use a different host.</p>]]></usage>
+    <summary>The secure base URL for static files.</summary>
+    <usage><![CDATA[<p>The HTTPS base for compiled static assets (CSS/JS). Leave empty to derive it from the secure base URL.</p>]]></usage>
     <technical>
       <config_path>web/secure/base_static_url</config_path>
       <scope>Store View</scope>
@@ -99400,8 +99400,8 @@ productalert</default_value>
     </technical>
   </field>
   <field id="web_secure_base_url" module="Magento_Backend" section="Web" path="web/secure/base_url">
-    <summary>The HTTPS base URL for storefront pages, links and assets; supports {{base_url}} placeholders.</summary>
-    <usage><![CDATA[<p>Base HTTPS URL for secure pages, links and static assets. Can differ per website/store view for multi-domain setups. A wrong value breaks secure pages and asset loading; flush caches after changing. Placeholders such as {{base_url}} are accepted.</p>]]></usage>
+    <summary>The store's secure (HTTPS) base URL.</summary>
+    <usage><![CDATA[<p>The root HTTPS URL of the store. Specify a full URL or a placeholder such as <code>{{base_url}}</code>.</p>]]></usage>
     <technical>
       <config_path>web/secure/base_url</config_path>
       <default_value>{{unsecure_base_url}}</default_value>
@@ -99410,8 +99410,8 @@ productalert</default_value>
     </technical>
   </field>
   <field id="web_secure_enable_hsts" module="Magento_Backend" section="Web" path="web/secure/enable_hsts">
-    <summary>Yes sends the HSTS header telling browsers to use HTTPS only; enable only once HTTPS fully works, as browsers then refuse HTTP.</summary>
-    <usage><![CDATA[<p>When Yes, Magento sends the HTTP Strict Transport Security header, instructing browsers to connect only over HTTPS and blocking downgrade attacks. Requires secure URLs on both storefront and admin (depends). Browsers cache it for its max-age, so enable only once HTTPS is fully working. Can differ per website/store view.</p>]]></usage>
+    <summary>Send the HSTS security header.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, the store sends HTTP Strict Transport Security, telling browsers to always use HTTPS. Make sure HTTPS works everywhere first.</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -99425,8 +99425,8 @@ productalert</default_value>
     </technical>
   </field>
   <field id="web_secure_enable_upgrade_insecure" module="Magento_Backend" section="Web" path="web/secure/enable_upgrade_insecure">
-    <summary>Adds a header so browsers auto-upgrade http asset requests to https, avoiding mixed-content warnings.</summary>
-    <usage><![CDATA[<p>When <strong>Yes</strong>, sends the <code>upgrade-insecure-requests</code> CSP directive so browsers automatically fetch http assets over https, preventing mixed-content blocks. Relevant only when secure URLs are used on the storefront and admin. Can differ per website/store.</p>]]></usage>
+    <summary>Upgrade insecure requests to HTTPS.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, the store asks browsers to automatically load any HTTP resources over HTTPS instead.</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -99440,8 +99440,8 @@ productalert</default_value>
     </technical>
   </field>
   <field id="web_secure_offloader_header" module="Magento_Backend" section="Web" path="web/secure/offloader_header">
-    <summary>The HTTP header used to detect that SSL is terminated by a load balancer or proxy.</summary>
-    <usage><![CDATA[<p>The request header (e.g. <code>X-Forwarded-Proto</code>) that the store reads to recognise HTTPS when SSL is offloaded to a proxy or load balancer rather than handled by the web server directly.</p>]]></usage>
+    <summary>Header used to detect SSL termination upstream.</summary>
+    <usage><![CDATA[<p>The request header a load balancer or proxy sets to signal that SSL was terminated before Magento (for example <code>X-Forwarded-Proto</code>).</p>]]></usage>
     <technical>
       <config_path>web/secure/offloader_header</config_path>
       <default_value>X-Forwarded-Proto</default_value>
@@ -99449,8 +99449,8 @@ productalert</default_value>
     </technical>
   </field>
   <field id="web_secure_use_in_adminhtml" module="Magento_Backend" section="Web" path="web/secure/use_in_adminhtml">
-    <summary>Yes forces the Admin over HTTPS; needs a valid cert on the secure base URL or you risk locking yourself out.</summary>
-    <usage><![CDATA[<p>When <strong>Yes</strong>, the Admin panel is served over HTTPS so login and session cookies are encrypted. Gotcha: this requires a working SSL certificate on the secure base URL (enter the https protocol, per the note) — if it&#039;s missing you can lock yourself out of the Admin. Default scope.</p>]]></usage>
+    <summary>Serve the admin over HTTPS.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, secure (HTTPS) URLs are used in the admin.</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -99464,8 +99464,8 @@ productalert</default_value>
     </technical>
   </field>
   <field id="web_secure_use_in_frontend" module="Magento_Backend" section="Web" path="web/secure/use_in_frontend">
-    <summary>Forces the storefront onto HTTPS using the Secure Base URL; needs a valid certificate.</summary>
-    <usage><![CDATA[<p>When <strong>Yes</strong>, the storefront is served over HTTPS via the Secure Base URL. That URL must use the https protocol and have a valid certificate, or customers hit errors. Website/store scoped, so you can secure specific store views.</p>]]></usage>
+    <summary>Serve the storefront over HTTPS.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, secure (HTTPS) URLs are used on the storefront.</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -99479,8 +99479,8 @@ productalert</default_value>
     </technical>
   </field>
   <field id="web_seo_use_rewrites" module="Magento_Backend" section="Web" path="web/seo/use_rewrites">
-    <summary>Removes index.php from storefront URLs using web server rewrites.</summary>
-    <usage><![CDATA[<p>When <strong>Yes</strong>, URLs are generated without <code>index.php</code>, relying on the web server&#039;s rewrite rules (e.g. Apache mod_rewrite or Nginx). Enable only when rewrites are configured on the server. Can differ per store view.</p>]]></usage>
+    <summary>Use clean URLs without index.php.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, server rewrites remove <code>index.php</code> from URLs. Requires the web server to support URL rewrites.</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -99493,8 +99493,8 @@ productalert</default_value>
     </technical>
   </field>
   <field id="web_session_use_http_user_agent" module="Magento_Backend" section="Web" path="web/session/use_http_user_agent">
-    <summary>Validates the browser's HTTP_USER_AGENT for the session, as anti-hijacking protection.</summary>
-    <usage><![CDATA[<p>When <strong>Yes</strong>, the session is tied to the request&#039;s HTTP_USER_AGENT and invalidated if it changes, guarding against session hijacking.</p>]]></usage>
+    <summary>Validate the session against the User-Agent.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, a session is tied to the browser's User-Agent, adding a check against session hijacking.</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -99507,8 +99507,8 @@ productalert</default_value>
     </technical>
   </field>
   <field id="web_session_use_http_via" module="Magento_Backend" section="Web" path="web/session/use_http_via">
-    <summary>Validates the HTTP_VIA header for the session, as anti-hijacking protection.</summary>
-    <usage><![CDATA[<p>When <strong>Yes</strong>, the session is tied to the request&#039;s HTTP_VIA header and invalidated if it changes. May cause issues behind some proxies.</p>]]></usage>
+    <summary>Validate the session against the Via header.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, the Via header is included in session validation. May cause problems behind some proxies.</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -99521,8 +99521,8 @@ productalert</default_value>
     </technical>
   </field>
   <field id="web_session_use_http_x_forwarded_for" module="Magento_Backend" section="Web" path="web/session/use_http_x_forwarded_for">
-    <summary>Validates the HTTP_X_FORWARDED_FOR header for the session, as anti-hijacking protection.</summary>
-    <usage><![CDATA[<p>When <strong>Yes</strong>, the session is tied to the request&#039;s HTTP_X_FORWARDED_FOR header and invalidated if it changes. May cause issues behind some proxies/load balancers.</p>]]></usage>
+    <summary>Validate the session against X-Forwarded-For.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, the X-Forwarded-For header is included in session validation. May cause problems behind some proxies or CDNs.</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -99535,8 +99535,8 @@ productalert</default_value>
     </technical>
   </field>
   <field id="web_session_use_remote_addr" module="Magento_Backend" section="Web" path="web/session/use_remote_addr">
-    <summary>Validates that a session's client IP (REMOTE_ADDR) stays consistent, as anti-hijacking protection.</summary>
-    <usage><![CDATA[<p>When <strong>Yes</strong>, the session is bound to the client&#039;s REMOTE_ADDR and invalidated if it changes, guarding against session hijacking. May cause issues behind some proxies/NAT.</p>]]></usage>
+    <summary>Validate the session against the client IP.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, a session is tied to the client's IP address. May break for users whose IP changes mid-session.</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
@@ -99549,8 +99549,8 @@ productalert</default_value>
     </technical>
   </field>
   <field id="web_unsecure_base_link_url" module="Magento_Backend" section="Web" path="web/unsecure/base_link_url">
-    <summary>Base HTTP URL used to build storefront links; the {{unsecure_base_url}} placeholder keeps it tied to your main base URL.</summary>
-    <usage><![CDATA[<p>The base address Magento uses to build non-secure (HTTP) links to store pages. The <code>{{unsecure_base_url}}</code> placeholder (per the note) keeps it derived from the main base URL so you set the domain once. Changing it affects all generated links. Set per website or store view for multi-domain setups.</p>]]></usage>
+    <summary>The base URL used for links.</summary>
+    <usage><![CDATA[<p>The base used when building links. May start with <code>{{unsecure_base_url}}</code>.</p>]]></usage>
     <technical>
       <config_path>web/unsecure/base_link_url</config_path>
       <default_value>{{unsecure_base_url}}</default_value>
@@ -99559,8 +99559,8 @@ productalert</default_value>
     </technical>
   </field>
   <field id="web_unsecure_base_media_url" module="Magento_Backend" section="Web" path="web/unsecure/base_media_url">
-    <summary>Where the storefront loads media from; point it at a CDN or separate host to offload image traffic.</summary>
-    <usage><![CDATA[<p>Base URL the storefront uses for user media files such as product images. Set it to a CDN or dedicated media host to offload asset traffic from the web server. May be empty or start with the {{unsecure_base_url}} placeholder. Can differ per website/store.</p>]]></usage>
+    <summary>The base URL for media files.</summary>
+    <usage><![CDATA[<p>The base for product and other media. Leave empty to derive it from the base URL.</p>]]></usage>
     <technical>
       <config_path>web/unsecure/base_media_url</config_path>
       <scope>Store View</scope>
@@ -99568,8 +99568,8 @@ productalert</default_value>
     </technical>
   </field>
   <field id="web_unsecure_base_static_url" module="Magento_Backend" section="Web" path="web/unsecure/base_static_url">
-    <summary>HTTP base URL for static view files (CSS/JS/images); set it to a CDN to offload assets, or leave empty to inherit the base URL.</summary>
-    <usage><![CDATA[<p>The base URL from which static view files (CSS, JavaScript, images) are served over HTTP. Point it at a CDN to serve assets from a separate host; leave empty or use the {{unsecure_base_url}} placeholder to inherit the store base URL. Can differ per website/store view.</p>]]></usage>
+    <summary>The base URL for static files.</summary>
+    <usage><![CDATA[<p>The base for compiled static assets (CSS/JS). Leave empty to derive it from the base URL.</p>]]></usage>
     <technical>
       <config_path>web/unsecure/base_static_url</config_path>
       <scope>Store View</scope>
@@ -99577,8 +99577,8 @@ productalert</default_value>
     </technical>
   </field>
   <field id="web_unsecure_base_url" module="Magento_Backend" section="Web" path="web/unsecure/base_url">
-    <summary>Root HTTP URL for building storefront links and assets; a wrong value can break the whole site.</summary>
-    <usage><![CDATA[<p>The base for all non-secure (http) URLs — links, images, scripts. You may use the <code>{{base_url}}</code> placeholder. An incorrect value breaks asset loading and can lock you out, and changes usually need a cache flush. Website/store scoped for multi-domain setups.</p>]]></usage>
+    <summary>The store's base (HTTP) URL.</summary>
+    <usage><![CDATA[<p>The root URL of the store. Specify a full URL or a placeholder such as <code>{{base_url}}</code>.</p>]]></usage>
     <technical>
       <config_path>web/unsecure/base_url</config_path>
       <default_value>{{base_url}}</default_value>
@@ -99587,8 +99587,8 @@ productalert</default_value>
     </technical>
   </field>
   <field id="web_url_catalog_media_url_format" module="Magento_Catalog" path="web/url/catalog_media_url_format">
-    <summary>Chooses image-proxy vs legacy catalog media URLs; switching back to legacy needs a CLI image regen.</summary>
-    <usage><![CDATA[<p>Selects how catalog image URLs are built: a query-parameter format your CDN/web server optimizes, or the legacy per-size path for backward compatibility. As the field note warns, switching back to legacy means you must regenerate images via the CLI before they appear correctly.</p>]]></usage>
+    <summary>How catalog image URLs are formed.</summary>
+    <usage><![CDATA[<p>Whether product image variants are served via query parameters (CDN-friendly) or as uniquely hashed files (legacy mode).</p>]]></usage>
     <values>
       <value id="image_optimization_parameters" label="Image optimization based on query parameters">Serve image variants via query parameters (CDN-friendly).</value>
       <value id="hash" label="Unique hash per image variant (Legacy mode)">Serve each variant as a uniquely hashed file (legacy).</value>
@@ -99601,8 +99601,8 @@ productalert</default_value>
     </technical>
   </field>
   <field id="web_url_redirect_to_base" module="Magento_Backend" section="Web" path="web/url/redirect_to_base">
-    <summary>Forces visitors onto the canonical base host to avoid duplicate URLs and split sessions; choose off, or a temporary vs permanent redirect.</summary>
-    <usage><![CDATA[<p>Redirects requests arriving on a non-canonical host to your configured base URL, preventing duplicate-content and split-session problems. The options let you disable it or pick a temporary versus a permanent redirect; a permanent one is cached hard by browsers and search engines, so test before enabling. Per website/store.</p>]]></usage>
+    <summary>Redirect unrecognized hosts to the base URL.</summary>
+    <usage><![CDATA[<p>Whether requests to a non-base host are redirected to the configured base URL, and with which redirect code.</p>]]></usage>
     <values>
       <value id="0" label="No">Do not redirect between base URLs.</value>
       <value id="1" label="Yes (302 Found)">Redirect with a temporary 302 (Found).</value>
@@ -99616,8 +99616,8 @@ productalert</default_value>
     </technical>
   </field>
   <field id="web_url_use_store" module="Magento_Backend" section="Web" path="web/url/use_store">
-    <summary>Adds the store code to storefront URLs; changing it rewrites every storefront link.</summary>
-    <usage><![CDATA[<p>When <strong>Yes</strong>, the active store code is inserted into storefront URLs so different store views are addressable. As the field note warns, hard-coded URLs without a store code in third-party services (e.g. PayPal) may then break, so change it with care.</p>]]></usage>
+    <summary>Put the store code in URLs.</summary>
+    <usage><![CDATA[<p>When <strong>Yes</strong>, the store code is added to URLs (for example <code>/en/</code>). <strong>Warning:</strong> can cause issues in some setups.</p>]]></usage>
     <values>
       <value id="1" label="Yes"/>
       <value id="0" label="No"/>
