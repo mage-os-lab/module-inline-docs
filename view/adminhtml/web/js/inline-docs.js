@@ -141,7 +141,11 @@ define(['jquery', 'mage/translate'], function ($, $t) {
             $('<h3 class="mosdoc-popover__title"/>').text(title).appendTo($header);
         }
         if (block.path) {
-            buildCopyButton(block.path).appendTo($header);
+            // Show the path next to its copy button, so it's clear what gets copied.
+            var $pathRow = $('<div class="mosdoc-popover__pathrow"/>');
+            $('<code class="mosdoc-popover__path"/>').text(block.path).appendTo($pathRow);
+            buildCopyButton(block.path).appendTo($pathRow);
+            $pathRow.appendTo($header);
         }
 
         var $body = $('<div class="mosdoc-popover__body"/>');
@@ -297,9 +301,10 @@ define(['jquery', 'mage/translate'], function ($, $t) {
         var $marker = $('<button/>', {
             type: 'button',
             'class': 'mosdoc-marker',
+            // aria-label only — no `title`, which would render a native tooltip
+            // on top of the popover that opens on the same hover.
             'aria-label': title ? $t('Documentation for') + ' ' + title : $t('Documentation for this setting'),
-            'aria-expanded': 'false',
-            title: $t('Documentation for this setting')
+            'aria-expanded': 'false'
         }).data('mosdocKey', elementId);
 
         // Hover opens the card (after a short settle); leaving marker or card closes it.

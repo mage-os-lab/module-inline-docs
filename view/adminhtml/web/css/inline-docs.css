@@ -109,7 +109,6 @@
 /* ------------------------------------------------------------ card header --- */
 
 .mosdoc-popover__header {
-    position: relative;
     flex: 0 0 auto;
     padding: 14px 16px 10px;
     border-bottom: 1px solid var(--mosdoc-line);
@@ -117,20 +116,34 @@
 
 .mosdoc-popover__title {
     margin: 0;
-    /* room for the copy button parked top-right */
-    padding-right: 56px;
     font-size: 14px;
     font-weight: 700;
     line-height: 1.35;
     color: #1a1a1a;
 }
 
-/* Quiet copy-to-clipboard button in the header's top-right. The path value isn't
-   shown — it's handy to paste, but rarely worth reading. */
+/* Config path shown beside its copy button, so it's clear what gets copied.
+   Kept subtle (muted, monospace) so it doesn't compete with the title. */
+.mosdoc-popover__pathrow {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 7px;
+}
+
+.mosdoc-popover__path {
+    flex: 1 1 auto;
+    min-width: 0;
+    overflow: hidden;
+    color: var(--mosdoc-muted);
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 11px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
 .mosdoc-popover__copy {
-    position: absolute;
-    top: 12px;
-    right: 12px;
+    flex: 0 0 auto;
     padding: 2px 8px;
     border: 1px solid var(--mosdoc-line);
     border-radius: 5px;
@@ -162,8 +175,7 @@
 
 .mosdoc-popover__summary {
     margin: 0 0 .7em;
-    font-weight: 600;
-    color: #1a1a1a;
+    color: var(--mosdoc-ink);
 }
 
 .mosdoc-popover__summary:last-child {
