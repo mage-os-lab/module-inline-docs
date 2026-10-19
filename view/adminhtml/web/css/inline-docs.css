@@ -6,8 +6,9 @@
  * the form itself. It gains contrast on hover and focus, and the card only appears
  * when asked for.
  *
- * The card is laid out as a fixed header + footer around a scrolling body, so a long
- * note (usage + accepted values + technical facts) never grows past the viewport.
+ * The card is laid out as a fixed header + footer around a scrolling body: a field
+ * label as the heading, a copy-path button, a one-line summary and an optional
+ * usage body, with the owning module named in the footer.
  *
  * Everything is namespaced `mosdoc-` — the admin stylesheet is a shared space and
  * generic class names there cause damage a long way from here.
@@ -108,6 +109,7 @@
 /* ------------------------------------------------------------ card header --- */
 
 .mosdoc-popover__header {
+    position: relative;
     flex: 0 0 auto;
     padding: 14px 16px 10px;
     border-bottom: 1px solid var(--mosdoc-line);
@@ -115,22 +117,39 @@
 
 .mosdoc-popover__title {
     margin: 0;
+    /* room for the copy button parked top-right */
+    padding-right: 56px;
     font-size: 14px;
     font-weight: 700;
     line-height: 1.35;
     color: #1a1a1a;
 }
 
-.mosdoc-popover__path {
-    display: inline-block;
-    margin-top: 7px;
-    padding: 2px 7px;
+/* Quiet copy-to-clipboard button in the header's top-right. The path value isn't
+   shown — it's handy to paste, but rarely worth reading. */
+.mosdoc-popover__copy {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    padding: 2px 8px;
+    border: 1px solid var(--mosdoc-line);
     border-radius: 5px;
-    background: var(--mosdoc-chip);
+    background: var(--mosdoc-surface);
     color: var(--mosdoc-muted);
-    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-    font-size: 11px;
-    word-break: break-all;
+    font: 500 11px/1.4 system-ui, -apple-system, "Segoe UI", sans-serif;
+    cursor: pointer;
+    transition: color .15s ease, border-color .15s ease, background-color .15s ease;
+}
+
+.mosdoc-popover__copy:hover,
+.mosdoc-popover__copy:focus-visible {
+    color: var(--mosdoc-accent);
+    border-color: var(--mosdoc-accent);
+}
+
+.mosdoc-popover__copy--done {
+    color: #1a7f37;
+    border-color: #1a7f37;
 }
 
 /* -------------------------------------------------------------- card body --- */
@@ -145,6 +164,10 @@
     margin: 0 0 .7em;
     font-weight: 600;
     color: #1a1a1a;
+}
+
+.mosdoc-popover__summary:last-child {
+    margin-bottom: 0;
 }
 
 .mosdoc-popover__usage p {
@@ -182,83 +205,6 @@
     color: var(--mosdoc-accent);
 }
 
-/* ------------------------------------------------------ values / technical --- */
-
-.mosdoc-popover__section {
-    margin-top: 14px;
-    padding-top: 12px;
-    border-top: 1px solid var(--mosdoc-line);
-}
-
-.mosdoc-popover__section-title {
-    margin: 0 0 8px;
-    color: var(--mosdoc-muted);
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: .06em;
-    text-transform: uppercase;
-}
-
-.mosdoc-popover__values {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-.mosdoc-popover__values li {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    align-items: baseline;
-    gap: 2px 8px;
-    margin-bottom: 7px;
-}
-
-.mosdoc-popover__values li:last-child {
-    margin-bottom: 0;
-}
-
-.mosdoc-popover__value-id {
-    grid-row: 1;
-    padding: 1px 6px;
-    border-radius: 4px;
-    background: var(--mosdoc-chip);
-    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-    font-size: 11px;
-}
-
-.mosdoc-popover__value-label {
-    grid-row: 1;
-    font-weight: 600;
-    color: #1a1a1a;
-}
-
-.mosdoc-popover__value-desc {
-    grid-column: 2;
-    grid-row: 2;
-    color: var(--mosdoc-muted);
-    font-size: 12px;
-}
-
-.mosdoc-popover__technical {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 4px 12px;
-    margin: 0;
-}
-
-.mosdoc-popover__technical dt {
-    color: var(--mosdoc-muted);
-    font-size: 11px;
-    white-space: nowrap;
-}
-
-.mosdoc-popover__technical dd {
-    margin: 0;
-    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-    font-size: 11px;
-    word-break: break-word;
-}
-
 /* ------------------------------------------------------------ card footer --- */
 
 .mosdoc-popover__foot {
@@ -271,13 +217,13 @@
     border-top: 1px solid var(--mosdoc-line);
 }
 
+/* Module shown verbatim (e.g. Magento_CatalogInventory) — not uppercased. */
 .mosdoc-popover__module {
     overflow: hidden;
     color: var(--mosdoc-muted);
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
     font-size: 11px;
-    letter-spacing: .02em;
     text-overflow: ellipsis;
-    text-transform: uppercase;
     white-space: nowrap;
 }
 

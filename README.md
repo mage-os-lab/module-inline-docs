@@ -2,10 +2,9 @@
 
 In-admin documentation for **Magento / Mage-OS**: a small marker next to a
 **Stores → Configuration** field opens a documentation card explaining what that
-setting actually does — the field's own label as the heading, its config path, a
-one-line summary, a fuller explanation, the **accepted values** for a dropdown, a
-**technical details** block (config path, scope, source/backend model, default,
-dependencies), and the owning module.
+setting actually does — the field's own label as the heading, a one-line summary, a
+fuller explanation, and the owning module. The field's config path is a
+copy-to-clipboard button in the header.
 
 <img width="1077" height="782" alt="inline_docs_v2" src="https://github.com/user-attachments/assets/6c78bae5-b0be-4550-877e-f57213a6e979" />
 
@@ -22,19 +21,15 @@ a brief `<comment>`, the card sits alongside it and goes deeper.
 ## What ships with it
 
 Notes for **~7,400 Mage-OS / Magento core configuration fields** — effectively the
-whole of **Stores → Configuration** for core. Each carries a structured card:
-
-- a one-line **summary** and a fuller **usage** explanation,
-- a **technical details** block (config path, scope, source/backend/frontend model,
-  default value, dependencies) — all extracted facts, not invented,
-- **accepted values** with per-option descriptions for ~4,900 select fields.
+whole of **Stores → Configuration** for core. Each carries a one-line **summary** and
+an optional fuller **usage** explanation, with the owning module named in the footer
+and the config path available as a copy button.
 
 Nine high-traffic sections — Inventory, Sales, Catalog, Customer, Checkout, Payment,
-Shipping, General and Web — are authored to full depth, with prose grounded in each
-field's source classes. The rest carry concise generated notes plus the same card,
-technical facts and accepted values. Store-specific option sources (customer groups,
-CMS pages, tax classes, …) are deliberately **not** listed as values, so nothing
-from one installation leaks into the shipped notes.
+Shipping, General and Web — are authored with prose grounded in each field's source
+classes; the rest carry concise generated notes. The aim is a short, high-signal note
+per field — what the setting does and what isn't obvious from its label — rather than
+restating the dropdown options or dumping technical metadata into the popover.
 
 ## How a field is matched to a note
 
@@ -57,47 +52,33 @@ by shipping one.
 
 ```xml
 <config xsi:noNamespaceSchemaLocation="urn:magento:module:MageOS_InlineDocs:etc/inline_docs.xsd">
-    <field id="cataloginventory_item_options_backorders"
+    <field id="cataloginventory_options_show_out_of_stock"
            module="Magento_CatalogInventory"
            section="Inventory"
-           path="cataloginventory/item_options/backorders">
-        <summary>Whether customers can order more than the quantity in stock.</summary>
-        <usage><![CDATA[<p>Controls what happens when a shopper orders beyond available
-            stock. Allowing backorders lets quantity fall below zero so the order is
-            still accepted.</p>]]></usage>
-        <values>
-            <value id="0" label="No Backorders">Orders cannot exceed available stock.</value>
-            <value id="1" label="Allow Qty Below 0">Stock may go negative; orders are accepted with no notice to the customer.</value>
-            <value id="2" label="Allow Qty Below 0 and Notify Customer">Backorders are accepted and the shopper is told the item is backordered.</value>
-        </values>
-        <technical>
-            <config_path>cataloginventory/item_options/backorders</config_path>
-            <scope>Global</scope>
-            <source_model>Magento\CatalogInventory\Model\Source\Backorders</source_model>
-        </technical>
+           path="cataloginventory/options/show_out_of_stock">
+        <summary>Shows out-of-stock products in catalog listings and search.</summary>
+        <usage><![CDATA[<p>When off, out-of-stock products stay reachable by their direct
+            URL but drop out of listings and search. Changing it reindexes the catalog,
+            so the storefront keeps the old behaviour until reindexing completes.</p>]]></usage>
     </field>
 </config>
 ```
 
-Only `summary` is required; everything below it is optional, so a field may carry a
-one-liner or a full card.
+Only `summary` is required; `usage` is optional, so a field may carry a one-liner or
+a short card.
 
 - **`summary`** — the one-line lead shown bold at the top of the card (also the best
   candidate for the field's own native `<comment>`).
 - **`usage`** — the fuller explanation. May carry a small set of inline HTML
   (`p`, `ul`/`ol`/`li`, `code`, `strong`, `em`, `a`, `br`), authored in CDATA.
-- **`values`** — per-option meaning for select/multiselect fields.
-- **`technical`** — extracted facts: `config_path`, `default_value`, `scope`,
-  `source_model`, `backend_model`, `frontend_model`, `validation`, `depends`.
 - Attributes: **`id`** (the DOM join key, required), **`module`** and **`section`**
-  (shown in the footer), **`path`** (the card's config-path pill), and an optional
-  **`url`** for the "Full documentation" link.
+  (shown in the footer), **`path`** (offered as a copy-to-clipboard value in the
+  header), and an optional **`url`** for the "Full documentation" link.
 
 The bundled core notes are generated by the companion
 [magento-doc-generator](https://github.com/nicolasperic/magento-doc-generator):
 deterministic extraction from each module's `system.xml` and the live, merged admin
-config (so `path`, `scope`, models, defaults and resolved option values are read, not
-guessed) → grounded prose → `inline_docs.xml`.
+config (so `path` and module are read, not guessed) → grounded prose → `inline_docs.xml`.
 
 ## Install
 
@@ -125,8 +106,7 @@ Enable Inline Documentation → Yes**.
 - **`inline_docs.xml` config type** — `Model/Config/{Reader,Converter,SchemaLocator,Data}`
   parse, validate, merge and cache every module's notes into one id-keyed map.
 - **`Model/InlineDocProvider`** — resolves a page's element ids to their cards from
-  that map, pairing each technical fact with a translated label. No network, no
-  token; a miss simply returns nothing.
+  that map. No network, no token; a miss simply returns nothing.
 - **`Controller/Adminhtml/Inline/Fetch`** — one request per page returns the
   cards for the ids on it.
 - **`view/adminhtml/web/js/inline-docs.js`** — renders the marker and the card

@@ -13,10 +13,10 @@
  * the generator recorded. A lookup, not a guess. Everything is one request per page.
  *
  * What a marker opens is a small documentation card: the field's own label as the
- * heading (read from the page, not duplicated in the data), the admin path as a
- * pill, a one-line summary, a longer usage body, the accepted values, the technical
- * facts, and a footer naming the owning module. Fields with nothing written about
- * them get no marker, which is the intended outcome rather than a gap.
+ * heading (read from the page, not duplicated in the data), a one-line summary, an
+ * optional longer usage body, and a footer naming the owning module. The admin path
+ * is offered as a copy-to-clipboard button in the header, not shown as prose. Fields
+ * with nothing written about them get no marker, which is the intended outcome.
  */
 define(['jquery', 'mage/translate'], function ($, $t) {
     'use strict';
@@ -91,39 +91,47 @@ define(['jquery', 'mage/translate'], function ($, $t) {
         return frag;
     }
 
-    /** A documentation section with a small heading, used for values and technical. */
-    function buildSection(title) {
-        return $('<div class="mosdoc-popover__section"/>')
-            .append($('<h4 class="mosdoc-popover__section-title"/>').text(title));
-    }
+    /**
+     * A small copy-to-clipboard button for the config path. The path value itself
+     * isn't shown — it's rarely read, but handy to paste — so it sits as a quiet
+     * icon button in the header's top-right and flashes "Copied" on use.
+     */
+    function buildCopyButton(path) {
+        var $btn = $('<button/>', {
+            type: 'button',
+            'class': 'mosdoc-popover__copy',
+            'aria-label': $t('Copy config path') + ': ' + path,
+            title: $t('Copy config path')
+        }).text($t('Copy'));
 
-    function buildValues(values) {
-        var $section = buildSection($t('Accepted values')),
-            $list = $('<ul class="mosdoc-popover__values"/>');
+        $btn.on('click', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
 
-        values.forEach(function (value) {
-            var $item = $('<li/>');
-            $('<code class="mosdoc-popover__value-id"/>').text(value.id).appendTo($item);
-            $('<span class="mosdoc-popover__value-label"/>').text(value.label).appendTo($item);
-            if (value.description) {
-                $('<span class="mosdoc-popover__value-desc"/>').text(value.description).appendTo($item);
+            var done = function () {
+                $btn.addClass('mosdoc-popover__copy--done').text($t('Copied'));
+                window.setTimeout(function () {
+                    $btn.removeClass('mosdoc-popover__copy--done').text($t('Copy'));
+                }, 1200);
+            };
+
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(path).then(done, function () {});
+            } else {
+                // Fallback for contexts without the async clipboard API.
+                var ta = document.createElement('textarea');
+                ta.value = path;
+                ta.setAttribute('readonly', '');
+                ta.style.position = 'absolute';
+                ta.style.left = '-9999px';
+                document.body.appendChild(ta);
+                ta.select();
+                try { document.execCommand('copy'); done(); } catch (err) { /* no-op */ }
+                document.body.removeChild(ta);
             }
-            $list.append($item);
         });
 
-        return $section.append($list);
-    }
-
-    function buildTechnical(rows) {
-        var $section = buildSection($t('Technical details')),
-            $list = $('<dl class="mosdoc-popover__technical"/>');
-
-        rows.forEach(function (row) {
-            $('<dt/>').text(row.label).appendTo($list);
-            $('<dd/>').text(row.value).appendTo($list);
-        });
-
-        return $section.append($list);
+        return $btn;
     }
 
     /** Assemble the card for one field into the popover body/foot. */
@@ -133,7 +141,7 @@ define(['jquery', 'mage/translate'], function ($, $t) {
             $('<h3 class="mosdoc-popover__title"/>').text(title).appendTo($header);
         }
         if (block.path) {
-            $('<code class="mosdoc-popover__path"/>').text(block.path).appendTo($header);
+            buildCopyButton(block.path).appendTo($header);
         }
 
         var $body = $('<div class="mosdoc-popover__body"/>');
@@ -142,12 +150,6 @@ define(['jquery', 'mage/translate'], function ($, $t) {
         }
         if (block.usage) {
             $('<div class="mosdoc-popover__usage"/>').append(sanitizeHtml(block.usage)).appendTo($body);
-        }
-        if (block.values && block.values.length) {
-            $body.append(buildValues(block.values));
-        }
-        if (block.technical && block.technical.length) {
-            $body.append(buildTechnical(block.technical));
         }
 
         var $foot = $('<div class="mosdoc-popover__foot"/>')
