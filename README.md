@@ -6,9 +6,7 @@ setting actually does — the field's own label as the heading, a one-line summa
 fuller explanation, and the owning module. The field's config path is a
 copy-to-clipboard button in the header.
 
-<img width="1077" height="782" alt="inline_docs_v2" src="https://github.com/user-attachments/assets/6c78bae5-b0be-4550-877e-f57213a6e979" />
-
-
+<img width="1342" height="528" alt="inline_docs" src="https://github.com/user-attachments/assets/58692d84-33db-48e3-9693-30e58d5e5cc3" />
 
 The notes **ship inside the module** and are served locally. There is no external
 documentation service, no API token, and no HTTP call on page load — so it is safe
